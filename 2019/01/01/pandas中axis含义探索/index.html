@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="description" content="Pandas中axis含义探索">
+
+
+
+
+  <meta name="keywords" content="python,pandas,">
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/01/01/pandas中axis含义探索/">
+
+
+<meta name="description" content="问题的提出 【啥呀这么一本正经的标题  就是在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。 总结在这里 先进行一下枚举式的探索  总结 这里列一张表格简单总结一下：     axis=0 axis=1     sum() 对列求和，返回一行数据 对行求和，返回一列数据   concat">
+<meta name="keywords" content="python,pandas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pandas中axis含义探索">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/pandas中axis含义探索/index.html">
+<meta property="og:site_name" content="Orin Ful Vopaaz">
+<meta property="og:description" content="问题的提出 【啥呀这么一本正经的标题  就是在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。 总结在这里 先进行一下枚举式的探索  总结 这里列一张表格简单总结一下：     axis=0 axis=1     sum() 对列求和，返回一行数据 对行求和，返回一列数据   concat">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-01T03:06:20.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pandas中axis含义探索">
+<meta name="twitter:description" content="问题的提出 【啥呀这么一本正经的标题  就是在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。 总结在这里 先进行一下枚举式的探索  总结 这里列一张表格简单总结一下：     axis=0 axis=1     sum() 对列求和，返回一行数据 对行求和，返回一列数据   concat">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> Pandas中axis含义探索 - Orin Ful Vopaaz </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Orin Ful Vopaaz</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          Pandas中axis含义探索
+        
+      </h1>
+
+      <time class="post-time">
+          Jan 01 2019
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h1 id="问题的提出"><a href="#问题的提出" class="headerlink" title="问题的提出"></a>问题的提出</h1><p><small> 【啥呀这么一本正经的标题 </small></p>
+<p>就是在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…<br>每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。</p>
+<p><a href="#sum">总结在这里</a></p>
+<h1 id="先进行一下枚举式的探索"><a href="#先进行一下枚举式的探索" class="headerlink" title="先进行一下枚举式的探索"></a>先进行一下枚举式的探索</h1><iframe src="/htmls/axis研究.html" width="800" height="2000" frameborder="0" allowfullscreen></iframe>
+<p><span id="sum"></span></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p></p>
+<p>这里列一张表格简单总结一下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">axis=0</th>
+<th style="text-align:center">axis=1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">sum()</td>
+<td style="text-align:center">对列求和，返回一行数据</td>
+<td style="text-align:center">对行求和，返回一列数据</td>
+</tr>
+<tr>
+<td style="text-align:center">concat()</td>
+<td style="text-align:center">堆积行，列的数量不变</td>
+<td style="text-align:center">堆积列，行的数量不变</td>
+</tr>
+<tr>
+<td style="text-align:center">drop()/dropna()</td>
+<td style="text-align:center">删除一行</td>
+<td style="text-align:center">删除一列</td>
+</tr>
+<tr>
+<td style="text-align:center">apply()</td>
+<td style="text-align:center">抽取每一列迭代</td>
+<td style="text-align:center">抽取每一行迭代</td>
+</tr>
+</tbody>
+</table>
+<p>好了那么问题就在于到底怎么把这个玩意给记下来了…</p>
+<p>感觉好像暂时找不到规律…如果能找到再更新。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+		
+		<div class="post-tags">
+		  
+			<a href="/tags/python/">python</a>
+		  
+			<a href="/tags/pandas/">pandas</a>
+		  
+		</div>
+		
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/01/01/hexo中引用jupyter notebook/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hexo 中引用 jupyter notebook</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/12/31/2018-Year-End-Summary/">
+        <span class="next-text nav-default">2018 Year-End Summary</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2018 -
+    
+    2019
+    <span class="footer-author">Vopaaz.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
