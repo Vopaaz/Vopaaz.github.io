@@ -43,7 +43,7 @@
 <meta property="og:site_name" content="Orin Ful Vopaaz">
 <meta property="og:description" content="乱捣鼓事情真的是…充满 bug 并且在解决 bug 的时候会出现船新的 bug… 在写《Pandas中axis含义探索》这篇文章的时候，用的是 Jupyter Notebook 来写代码并且导出，但是发现引用的时候出现了严重的问题:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-03T15:48:59.049Z">
+<meta property="og:updated_time" content="2019-01-03T15:52:40.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 中引用 jupyter notebook">
 <meta name="twitter:description" content="乱捣鼓事情真的是…充满 bug 并且在解决 bug 的时候会出现船新的 bug… 在写《Pandas中axis含义探索》这篇文章的时候，用的是 Jupyter Notebook 来写代码并且导出，但是发现引用的时候出现了严重的问题:">
@@ -149,25 +149,21 @@
 <li>在 Jupyter Notebook 中导出 .md 文件</li>
 <li>利用 VSCode 中 Markdown Preview Enhanced 插件的渲染器导出成 html 文件</li>
 <li>将 html 文件放入资源文件夹</li>
-<li><p>在 html 的开头加上这样三行：</p>
-
-
+<li>在 html 的开头加上这样三行：
+<br>
 ---
 <br>
 layout: false
 <br>
 ---
-
-
 </li>
-<li><p>在 /_posts/title.md 中利用  {% iframe path_to.html 800 2000 %}  来引入 html 文件</p>
-</li>
+<li>在 /_posts/title.md 中利用  {% iframe path_to.html default 2000 %}  来引入 html 文件</li>
 </ol>
 <p>最终实现效果还算比较好看吧。</p>
 <h1 id="下面开始引用-Notebook-的技术总结【x"><a href="#下面开始引用-Notebook-的技术总结【x" class="headerlink" title="下面开始引用 Notebook 的技术总结【x"></a>下面开始引用 Notebook 的技术总结【x</h1><ol>
 <li>直接用 Jupyter Notebook 导出的 html 会使得字体变得非常丑陋，所以要导出成 .md 再用 VSCode 转换成 .html</li>
 <li>如果不进行 (4) 的步骤，html 文件会被渲染上主站标题等等</li>
-<li>步骤 (5) 中的长和宽要根据 iframe 的具体大小适当调节</li>
+<li>步骤 (5) 中的长和宽可以根据 iframe 的具体大小适当调节</li>
 </ol>
 <p>引用 Notebook 的技术总结完毕【x</p>
 <p>——————</p>
@@ -192,9 +188,9 @@ layout: false
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2019/01/12/CheatSheet分享/">
+      <a class="prev" href="/2019/01/05/数据结构整理/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">【Draft】 概统 & 公司金融 Cheat Sheet 分享</span>
+        <span class="prev-text nav-default">数据结构自学报告【划去】期末整理</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
