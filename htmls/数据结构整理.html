@@ -211,6 +211,17 @@ code.language-yaml {
 /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
  
       </style>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
@@ -672,7 +683,7 @@ code.language-yaml {
 <span class="token keyword">void</span> <span class="token function">Pop</span><span class="token punctuation">(</span>Stack s<span class="token punctuation">)</span><span class="token punctuation">{</span>
     s<span class="token operator">-&gt;</span>top <span class="token operator">--</span><span class="token punctuation">;</span>  <span class="token comment">// No need to clean the top cell.</span>
 <span class="token punctuation">}</span>
-</pre><p>&#x53E6;&#x5916;&#xFF0C;&#x7F6E;&#x7A7A; Stack &#x53EA;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x5C06; s-&gt;top = 1, &#x65E0;&#x9700;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#x3002;</p>
+</pre><p>&#x53E6;&#x5916;&#xFF0C;&#x7F6E;&#x7A7A; Stack &#x53EA;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x5C06; s-&gt;top = -1, &#x65E0;&#x9700;&#x5BF9;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#x3002;</p>
 <h3 class="mume-header" id="application-maze-solving">Application: Maze Solving</h3>
 
 <p>&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF1A;</p>
@@ -714,7 +725,7 @@ code.language-yaml {
 
 <span class="token keyword">typedef</span> <span class="token keyword">struct</span> QueueRecord <span class="token operator">*</span> Queue<span class="token punctuation">;</span>
 
-<span class="token comment">// Assering q is neither full nor empty.</span>
+<span class="token comment">// Asserting q is neither full nor empty.</span>
 
 <span class="token keyword">int</span> <span class="token function">Succ</span><span class="token punctuation">(</span><span class="token keyword">int</span> position<span class="token punctuation">,</span> Queue q<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span>position <span class="token operator">==</span> q<span class="token operator">-&gt;</span>capacity<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -761,7 +772,7 @@ code.language-yaml {
 <p>&#x4E8C;&#x53C9;&#x6811;&#x7684;&#x6DF1;&#x5EA6;&#xFF1A;</p>
 <ul>
 <li>Worst case: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>&#x2212;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
-<li>Best case: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mo>&#x2061;</mo><mo>(</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></li>
+<li>Best case: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mo>&#x2061;</mo><mo>(</mo><mi>N</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log(N))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></li>
 <li>Average case: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>log</mi><mo>&#x2061;</mo><mo>(</mo><mi>N</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\log(N))</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span> ~ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mi>N</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(N^{1/2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathit" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">/</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
 </ul>
 <p>Implementation:</p>
