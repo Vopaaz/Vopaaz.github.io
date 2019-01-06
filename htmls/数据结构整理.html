@@ -447,9 +447,9 @@ code.language-yaml {
     <span class="token keyword">int</span> prev1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> prev2 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">int</span> curr <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> temp<span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>curr <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        temp <span class="token operator">=</span> prev1 <span class="token operator">+</span> prev <span class="token number">2</span><span class="token punctuation">;</span>
-        prev <span class="token number">1</span> <span class="token operator">=</span> prev <span class="token number">2</span><span class="token punctuation">;</span>
-        prev <span class="token number">2</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+        temp <span class="token operator">=</span> prev1 <span class="token operator">+</span> prev2<span class="token punctuation">;</span>
+        prev1 <span class="token operator">=</span> prev2<span class="token punctuation">;</span>
+        prev2 <span class="token operator">=</span> temp<span class="token punctuation">;</span>
         curr <span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> prev2<span class="token punctuation">;</span>
