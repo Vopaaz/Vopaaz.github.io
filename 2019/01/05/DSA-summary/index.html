@@ -12,12 +12,12 @@
 
 
 
-  <meta name="description" content="Pandas 中 axis 含义探索">
+  <meta name="description" content="数据结构自学报告【划去】期末整理">
 
 
 
 
-  <meta name="keywords" content="python,pandas,">
+  <meta name="keywords" content="study,">
 
 
 
@@ -32,21 +32,21 @@
 
 
 
-<link rel="canonical" href="http://yoursite.com/2019/01/01/pandas中axis含义探索/">
+<link rel="canonical" href="http://yoursite.com/2019/01/05/DSA-summary/">
 
 
-<meta name="description" content="在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错… 每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。">
-<meta name="keywords" content="python,pandas">
+<meta name="description" content="For 经管学院卫强老师数据结构课程">
+<meta name="keywords" content="study">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Pandas 中 axis 含义探索">
-<meta property="og:url" content="http://yoursite.com/2019/01/01/pandas中axis含义探索/index.html">
+<meta property="og:title" content="数据结构自学报告【划去】期末整理">
+<meta property="og:url" content="http://yoursite.com/2019/01/05/DSA-summary/index.html">
 <meta property="og:site_name" content="Orin Ful Vopaaz">
-<meta property="og:description" content="在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错… 每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。">
+<meta property="og:description" content="For 经管学院卫强老师数据结构课程">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-03T15:48:22.517Z">
+<meta property="og:updated_time" content="2019-01-06T05:35:01.448Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pandas 中 axis 含义探索">
-<meta name="twitter:description" content="在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错… 每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。">
+<meta name="twitter:title" content="数据结构自学报告【划去】期末整理">
+<meta name="twitter:description" content="For 经管学院卫强老师数据结构课程">
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1">
@@ -81,7 +81,7 @@
 
 
 
-    <title> Pandas 中 axis 含义探索 - Orin Ful Vopaaz </title>
+    <title> 数据结构自学报告【划去】期末整理 - Orin Ful Vopaaz </title>
   </head>
 
   <body>
@@ -127,12 +127,12 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Pandas 中 axis 含义探索
+          数据结构自学报告【划去】期末整理
         
       </h1>
 
       <time class="post-time">
-          Jan 01 2019
+          Jan 05 2019
       </time>
     </header>
 
@@ -140,48 +140,25 @@
 
     
             <div class="post-content">
-            <p>在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…<br>
-每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。</p>
+            <blockquote>
+<p>For 经管学院卫强老师数据结构课程</p>
+</blockquote>
 <a id="more"></a>
-<p><a href="#sum">总结在这里</a></p>
-<h1>先进行一下枚举式的探索</h1>
-<iframe src="/htmls/axis研究.html" width="100%" height="2000" frameborder="0" allowfullscreen></iframe>
-<p><span id="sum"></span></p>
-<h1>总结</h1>
-<p>这里列一张表格简单总结一下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">axis=0</th>
-<th style="text-align:center">axis=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">sum()</td>
-<td style="text-align:center">对列求和，返回一行数据</td>
-<td style="text-align:center">对行求和，返回一列数据</td>
-</tr>
-<tr>
-<td style="text-align:center">concat()</td>
-<td style="text-align:center">堆积行，列的数量不变</td>
-<td style="text-align:center">堆积列，行的数量不变</td>
-</tr>
-<tr>
-<td style="text-align:center">drop()/dropna()</td>
-<td style="text-align:center">删除一行</td>
-<td style="text-align:center">删除一列</td>
-</tr>
-<tr>
-<td style="text-align:center">apply()</td>
-<td style="text-align:center">抽取每一列迭代</td>
-<td style="text-align:center">抽取每一行迭代</td>
-</tr>
-</tbody>
-</table>
-<p>好了那么问题就在于到底怎么把这个玩意给记下来了…</p>
-<p>感觉好像暂时找不到规律…如果能找到再更新。</p>
+<p>一些注意事项：</p>
+<ul>
+<li>老师的 PPT 中有很多代码是错误的。我已经尽量修改，但是仍然可能不完全准确。</li>
+<li>文中出现的部分代码为 pseudo-code, 因为考试形式是笔试题，不用 coding, 代码主要是帮助理解。</li>
+<li>将所有算法的复杂度总结在了 Appendix: Table of Complexity of ALL Algorithms 中，文章主体对每种算法介绍的部分不包括复杂度</li>
+<li>部分内容是自己的理解，不保证完全准确</li>
+</ul>
+<p><font size="6"> <a href="/htmls/数据结构整理.html"> 进入阅读 Start Reading <a> </a></a></font></p>
+<p>References:</p>
+<ul>
+<li>Course Slides of Prof. Wei</li>
+<li><a href="https://www.cnblogs.com/cherryljr/p/6669489.html" target="_blank" rel="noopener">https://www.cnblogs.com/cherryljr/p/6669489.html</a></li>
+<li><a href="https://blog.csdn.net/gdut2015go/article/details/46548769" target="_blank" rel="noopener">https://blog.csdn.net/gdut2015go/article/details/46548769</a></li>
+</ul>
+<p>If there is any infringement/error, please <a href="mailto:liyifan945@163.com" target="_self">contact me</a>, modification or deletion will be implemented immediately.</p>
 
             </div>
           
@@ -191,9 +168,7 @@
 		
 		<div class="post-tags">
 		  
-			<a href="/tags/python/">python</a>
-		  
-			<a href="/tags/pandas/">pandas</a>
+			<a href="/tags/study/">study</a>
 		  
 		</div>
 		
@@ -202,15 +177,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2019/01/01/hexo中引用jupyter notebook/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Hexo 中引用 jupyter notebook</span>
-        <span class="prev-text nav-mobile">Prev</span>
-      </a>
     
-    
-      <a class="next" href="/2018/12/31/2018-Year-End-Summary/">
-        <span class="next-text nav-default">2018 Year-End Summary</span>
+      <a class="next" href="/2019/01/01/JupyterNotebook-in-Hexo/">
+        <span class="next-text nav-default">Hexo 中引用 Jupyter Notebook</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
