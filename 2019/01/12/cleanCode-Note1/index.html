@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -273,7 +273,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// High level</span><br><span class="line">obj.getHtml()</span><br><span class="line"></span><br><span class="line">// Low level</span><br><span class="line">obj.append(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>函数的整体组织形式应当可以用 &quot;To&quot; 语言来清晰地，自顶向下地描述：
+<li>函数的整体组织形式应当可以用 “To” 语言来清晰地，自顶向下地描述：
 <ol>
 <li><strong>To</strong> do A, firstly do B, if C, then do D</li>
 <li><strong>To</strong> do B, firstly do B1, then do B2</li>
@@ -284,7 +284,7 @@
 <li>注意每一行 To 仅仅只能对应 1 个函数，并且这行描述应当是简洁而清晰的。如果过长则说明应当拆分函数。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">A</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B()</span><br><span class="line">    <span class="keyword">if</span> C():</span><br><span class="line">        D()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">B</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B1()</span><br><span class="line">    B2()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">C</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    E()</span><br><span class="line">    <span class="keyword">return</span> F()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">D</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    D1()</span><br><span class="line">    D2()</span><br></pre></td></tr></table></figure>
-<h2>函数参数</h2>
+<h2 id="函数参数">函数参数</h2>
 <ul>
 <li>函数参数地数量应当越少越好，如果超过了 3 个，则必须进行封装，将逻辑上有关联的几个变量封装成一个 <code>class</code></li>
 <li>不要使用“输出参数”，即函数返回值为 <code>void</code>, 而对于其中某一个参数进行转换。这不直观，也不符合正常人的思维方式</li>

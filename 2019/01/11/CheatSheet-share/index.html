@@ -254,12 +254,12 @@
 <hr>
 <h1>Update 2019-1-14 有关字体设置</h1>
 <p>在概统考试前一天的时候，就感觉到默认的 Times New Roman 字体在这么密集的情况下阅读体验极差，因此也试验了几种字体，但是效果都无法令人满意。</p>
-<p>今天逛知乎的时候发现了 <a href="https://www.ctan.org/pkg/ebgaramond" target="_blank" rel="noopener"> EB Garamond </a> 这个超美的字体，尝试应用了之后发现效果<strong>极好</strong>，阅读体验大大提升，已经更新在两份 tex 文件中。</p>
+<p>今天逛知乎的时候发现了 <a href="https://github.com/georgd/EB-Garamond/blob/master/specimen/Specimen.pdf" target="_blank" rel="noopener"> EB Garamond </a> 这个超美的字体，尝试应用了之后发现效果<strong>极好</strong>，阅读体验大大提升，已经更新在两份 tex 文件中。</p>
 <p>但是由于字体宽度不同等原因，有可能对页面布局造成影响。可以手动对代码进一步进行调整，也可以禁用此字体，使用 Times New Roman. 如需禁用，只需要 comment 掉导言区的这一行代码即可：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[lining]</span><span class="string">&#123;ebgaramond&#125;</span></span></span><br></pre></td></tr></table></figure>
 <p>后文中的预览图更新有些麻烦，就暂时保留了，查看新字体效果直接编译即可。</p>
-<hr>
 <p><span id="gaitong"><span></span></span></p>
+<hr>
 <h1>Readme for 概统 CheatSheet</h1>
 <blockquote>
 <p>For 经管学院黎波老师概率论与数理统计课程。</p>
@@ -282,7 +282,7 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pygments</span><br></pre></td></tr></table></figure>
 <ol start="3">
-<li>LaTeX的编译命令需要添加 <em>&quot;--shell-escape&quot;</em></li>
+<li>LaTeX的编译命令需要添加 <em>“--shell-escape”</em></li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xelatex.exe -synctex=1 -interaction=nonstopmode --shell-escape Statistics_cheat_sheet.tex</span><br></pre></td></tr></table></figure>
 <ul>
@@ -292,16 +292,16 @@
 </ul>
 <p>以下是预览：</p>
 <img src="https://s2.ax1x.com/2019/01/10/FOjn3T.png">
-<hr>
 <p><span id="gongjin"></span></p>
+<hr>
 <h1>Readme for 公金 CheatSheet</h1>
 <blockquote>
 <p>For 经管学院陈云玲老师公司金融课程。</p>
 </blockquote>
 <p>一些必要的说明：</p>
 <ol>
-<li><strong>需要用到一张 Dupont Analysis 的截图</strong>，实在是懒得写 tikz 的代码了【】。可以找一张想放的杜邦分析的图命名为 &quot;dupont.png&quot;, 放在同一目录下再编译。也可以直接修改代码，位置在第 180 行左右。</li>
-<li>同样支持概统 cheat sheet 中的 \sectionline, \bigtitle, \smalltitle 三个命令。</li>
+<li><strong>需要用到一张 Dupont Analysis 的截图</strong>，实在是懒得写 tikz 的代码了【】。可以找一张想放的杜邦分析的图命名为 “dupont.png”, 放在同一目录下再编译。也可以直接修改代码，位置在第 180 行左右。</li>
+<li>同样支持概统 cheat sheet 中的 <code>\sectionline</code>, <code>\bigtitle</code>, <code>\smalltitle</code> 三个命令。</li>
 <li>因为需要记在纸上的东西比较少，所以还写了很多复习过程中遇见的要提醒自己的东西，这部分可以直接删去。</li>
 </ol>
 <p>以下是预览：</p>
