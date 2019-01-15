@@ -243,28 +243,20 @@
     <div class="post-content">
       
         <p>乱捣鼓事情真的是…充满 bug 并且在解决 bug 的时候会出现船新的 bug…</p>
-<p>在写&lt;a href=&quot;/2019/01/01/pandas中axis含义探索&quot;&gt;《Pandas中axis含义探索》&lt;/a&gt;这篇文章的时候，用的是 Jupyter Notebook 来写代码并且导出，但是发现引用的时候出现了严重的问题:</p>
-<p>&lt;!-- more --&gt;</p>
+<p>在写<a href="/2019/01/01/pandas中axis含义探索">《Pandas中axis含义探索》</a>这篇文章的时候，用的是 Jupyter Notebook 来写代码并且导出，但是发现引用的时候出现了严重的问题:</p>
+<a id="more"></a>
 <p>直接复制黏贴 Jupyter 生成的 Markdown 文件中代码到 Hexo _posts 下面的.md文件中，渲染成的表格极其丑陋。</p>
 <p>【啊对这里要说的是仅限于使用了pandas生成的表格会渲染丑陋，其他方便表现还不错。</p>
 <h1>捣鼓了一上午之后终于找到了比较好的解决办法。</h1>
 <ol>
-<li>
-<p>在 Jupyter Notebook 中导出 .md 文件</p>
-</li>
-<li>
-<p>利用 VSCode 中 Markdown Preview Enhanced 插件的渲染器导出成 html 文件，注意采用 “cdn host” 模式</p>
-</li>
-<li>
-<p>将 html 文件放入资源文件夹</p>
-</li>
-<li>
-<p>在 html 的开头加上这样三行：<br>
-&lt;!–￼0–&gt;</p>
-</li>
-<li>
-<p>在 /_posts/title.md 中利用 &lt;!–￼1–&gt; 来引入 html 文件</p>
-</li>
+<li>在 Jupyter Notebook 中导出 .md 文件</li>
+<li>利用 VSCode 中 Markdown Preview Enhanced 插件的渲染器导出成 html 文件，注意采用 “cdn host” 模式</li>
+<li>将 html 文件放入资源文件夹</li>
+<li>在 html 的开头加上这样三行：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在 /_posts/title.md 中利用  {% iframe path_to.html default 2000 %}  来引入 html 文件</li>
 </ol>
 <p>最终实现效果还算比较好看吧。</p>
 <h1>下面开始引用 Notebook 的技术总结【x</h1>
