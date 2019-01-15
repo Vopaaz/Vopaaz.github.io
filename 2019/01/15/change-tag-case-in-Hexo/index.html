@@ -245,7 +245,7 @@
         <p>这两天发现以前使用的博客主题 <a href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener"> PolarBear</a> 模板不是很完善，有些功能是缺失的，而且那个界面实在是太…素雅了🤣。后来看文档发现 PolarBear 是基于 <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">even</a> 写的，因此今天干脆就决定替换到 even 这个主题。</p>
 <a id="more"></a>
 <p>顺手发现以前写的文章 tag, 首字母有的大写有的小写看得很不爽，所以就打算全部改成首字母大写统一格式。</p>
-<p>结果就悲剧了…在网站的 <a href="/tag/">tag</a> 页面上能够正常显示大写，但是点进每一个具体的标签就会显示 404.</p>
+<p>结果就悲剧了…在网站的 <a href="/tags/">tags</a> 页面上能够正常显示大写，但是点进每一个具体的标签就会显示 404.</p>
 <h1>解决方案</h1>
 <p>通过查看 Github 上的 Repository, 发现 tag 文件夹下的各个具体的 tag 各自有一个文件夹，标题是其名称，内有一个 index.html 页面。问题就出在这些文件夹的标题仍然是小写的，没有被同步为修改后的大写标题。查看本地的 .deploy_git 文件夹发现本地生成的 tag 文件夹下的小文件夹内容是正确的。</p>
 <p>当时已经猜测到问题是 git 对于大小写是不敏感的，因此尝试了以下两个解决方法：</p>
