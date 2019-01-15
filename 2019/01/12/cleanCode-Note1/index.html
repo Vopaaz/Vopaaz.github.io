@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="coding, Reading Notes, Orin Ful Vopaaz">
+  <meta name="keywords" content="Coding, Reading Notes, Orin Ful Vopaaz">
 
 
 
@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -247,35 +247,33 @@
 <a id="more"></a>
 <h1>命名</h1>
 <ul>
-<li>避免误导：编程语言中可能有很多专有类型，例如 List, 如果某个变量不是这种类型，就不要将这个关键字用于命名，例如 accountList, 可以用 accountGroup 等代替</li>
+<li>避免误导：编程语言中可能有很多专有类型，例如 <code>List</code>, 如果某个变量不是这种类型，就不要将这个关键字用于命名，例如 accountList, 可以用 accountGroup 等代替</li>
 <li>尽量用长名字描述清楚变量的含义，不要使用简短的名字或是缩写</li>
 <li>将各种常量都定义为可以搜索的名称，这将便于搜索和后续的修改</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Wrong:</span></span><br><span class="line"><span class="keyword">if</span>(classroom.studentNumber &gt; <span class="number">40</span>)&#123;</span><br><span class="line">    doSomeThing();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Correct:</span></span><br><span class="line"><span class="keyword">final</span> <span class="keyword">int</span> MAX_STUDENTS_PER_CLASS = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">if</span>(classroom.studentNumber &gt; MAX_STUDENTS_PER_CLASS)&#123;</span><br><span class="line">    doSomeThing();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>将一整个工程/模块中的同一个概念对应同一个词，例如以下三者不要混用
-<ul>
+<ol>
 <li>controller</li>
 <li>driver</li>
 <li>manager</li>
-</ul>
+</ol>
 </li>
 </ul>
 <h1>函数</h1>
 <blockquote>
-<p>函数的第一规则是要短小，第二条规则是还要更短小。<br>
+<p>函数的第一规则是要短小，第二条规则是还要更短小。
 函数应该只做一件事。</p>
 </blockquote>
 <ul>
 <li>尽最大可能地拆分函数。</li>
-<li>if-else 语句和 while 语句中的代码块应当尽量短小，可以拆分另一个函数出来用于专门处理这种情况，尽量避免多重嵌套</li>
+<li><code>if-else</code> 语句和 <code>while</code> 语句中的代码块应当尽量短小，可以拆分另一个函数出来用于专门处理这种情况，尽量避免多重嵌套</li>
 <li>对“函数应该只做一件事”的详细解释：做的事情在同一抽象层面上</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// High level</span><br><span class="line">obj.getHtml()</span><br><span class="line"></span><br><span class="line">// Low level</span><br><span class="line">obj.append(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
 <ul>
-<li>函数的整体组织形式应当可以用 “To” 语言来清晰地，自顶向下地描述
-<ul>
-<li>描述
+<li>函数的整体组织形式应当可以用 &quot;To&quot; 语言来清晰地，自顶向下地描述：
 <ol>
 <li><strong>To</strong> do A, firstly do B, if C, then do D</li>
 <li><strong>To</strong> do B, firstly do B1, then do B2</li>
@@ -283,52 +281,31 @@
 <li><strong>To</strong> do D, firstly do D1, then do D2</li>
 </ol>
 </li>
-<li>注意每一行 To 仅仅只能对应 1 个函数，并且这行描述应当是简洁而清晰的。如果过长则说明应当拆分函数</li>
-<li>代码：</li>
-</ul>
-</li>
+<li>注意每一行 To 仅仅只能对应 1 个函数，并且这行描述应当是简洁而清晰的。如果过长则说明应当拆分函数。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">A</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B()</span><br><span class="line">    <span class="keyword">if</span> C():</span><br><span class="line">        D()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">B</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B1()</span><br><span class="line">    B2()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">C</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    E()</span><br><span class="line">    <span class="keyword">return</span> F()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">D</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    D1()</span><br><span class="line">    D2()</span><br></pre></td></tr></table></figure>
-<h2 id="函数参数">函数参数</h2>
+<h2>函数参数</h2>
 <ul>
-<li>函数参数地数量应当越少越好，如果超过了 3 个，则必须进行封装，将逻辑上有关联的几个变量封装成一个 class</li>
-<li>不要使用“输出参数”，即函数返回值为 void, 而对于其中某一个参数进行转换。这不直观，也不符合正常人的思维方式
-<ul>
+<li>函数参数地数量应当越少越好，如果超过了 3 个，则必须进行封装，将逻辑上有关联的几个变量封装成一个 <code>class</code></li>
+<li>不要使用“输出参数”，即函数返回值为 <code>void</code>, 而对于其中某一个参数进行转换。这不直观，也不符合正常人的思维方式</li>
 <li>当一个函数要对某些实体的状态作出修改时，只能够修改其所属的对象的状态</li>
 </ul>
-</li>
-</ul>
-<p>刚开始学 Python 的时候对于 list 的两个排序分不清楚，看到这里就豁然开朗，而且觉得这是个很好的例子了：</p>
+<p>刚开始学 Python 的时候对于 <code>list</code> 的两个排序分不清楚，看到这里就豁然开朗，而且觉得这是个很好的例子了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sorted(theList)</span><br><span class="line"><span class="comment"># The List itself is not changed, the function returns a new list which is sorted.</span></span><br><span class="line"></span><br><span class="line">theList.sort()</span><br><span class="line"><span class="comment"># Return None, as it is a "behavior", having no meaning for return value intuitively.</span></span><br><span class="line"><span class="comment"># Instead, it change the arrangement of the object that "sort()" belongs to: "theList".</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>
-<p>绝对不使用标识函数（某个输入变量为 boolean, True 代表做某件事，而 False 代表做另一件事）</p>
-<ul>
-<li>这直接违反了一个函数只做一件事的原则</li>
-<li>将其拆分为 doSomeThingForCaseA(), doSomeThingForCaseB() 两个函数</li>
-</ul>
-</li>
-<li>
-<p>如果一个函数有两个参数，那么两者的位置就可能在使用时搞反。虽然现在的 editor 或者 IDE 可能有提示的功能，但是有时候提示确实没有那么好用。</p>
-</li>
+<li>绝对不使用标识函数（某个输入变量为 <code>boolean</code>, <code>True</code> 代表做某件事，而 <code>False</code> 代表做另一件事）。这直接违反了一个函数只做一件事的原则，应当将其拆分为 <code>doSomeThingForCaseA()</code>, <code>doSomeThingForCaseB()</code> 两个函数</li>
+<li>如果一个函数有两个参数，那么两者的位置就可能在使用时搞反。虽然现在的 editor 或者 IDE 可能有提示的功能，但是有时候提示确实没有那么好用。</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">assertEquals</span><span class="params">(<span class="keyword">int</span> expected, <span class="keyword">int</span> actual)</span></span>; <span class="comment">// Easy to place the params in the wrong order.</span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">assertExpectedEqualsActural</span><span class="params">(<span class="keyword">int</span> expected, <span class="keyword">int</span> actual)</span></span>; <span class="comment">// A better choice</span></span><br></pre></td></tr></table></figure>
 <p>在之前为了 java 考试写轮子的时候，就遇到过这个错误，当时在考场上还造成了一些小问题。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">write_txt</span><span class="params">(String path, String text)</span></span>;</span><br><span class="line"><span class="comment">// Misplace path with text on the exam.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">writeTextIntoFilePath</span><span class="params">(String text, String filePath)</span></span>;</span><br><span class="line"><span class="comment">// If it was changed into this, things will be much better.</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>保证函数没有<strong>副作用</strong>，不做它没有声明要做的任何事情
-<ul>
-<li>例如在 checkValidPassword() 中，不能够因为 password 被验证是 valid, 就进行 login, open new session 等操作</li>
+<li>保证函数没有<strong>副作用</strong>，不做它没有声明要做的任何事情:</li>
 </ul>
-</li>
-</ul>
-<p>这一问题在我写下载网络学堂文件的脚本中也出现，但是这里无法上 code 示例因为写的真的太差已经删了【】</p>
+<p>例如在 <code>checkValidPassword()</code> 中，不能够因为 password 被验证是 valid, 就进行 login, open new session 等操作。
+这一问题在我写下载网络学堂文件的脚本中也出现，但是这里无法上 code 示例因为写的真的太差已经删了【】</p>
 <ul>
-<li>函数要么做什么事，要么回答什么事，两者不可兼得
-<ul>
-<li>如果函数做什么事情之后可能出错，直接 raise Exception, 而不是通过返回错误码</li>
-</ul>
-</li>
+<li>函数要么做什么事，要么回答什么事，两者不可兼得。如果函数做什么事情之后可能出错，直接 raise Exception, 而不是通过返回错误码</li>
 <li>try-catch 代码块中应当只有一行代码，调用一个函数来专门处理错误的情况，这样可以保证主函数逻辑清晰。因为处理异常本身已经是一件足够复杂的事情。</li>
 </ul>
 
@@ -368,7 +345,7 @@
         
           <div class="post-tags">
             
-              <a href="/tags/coding/">coding</a>
+              <a href="/tags/Coding/">Coding</a>
             
               <a href="/tags/Reading-Notes/">Reading Notes</a>
             

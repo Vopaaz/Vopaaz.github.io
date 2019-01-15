@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="python, coding, pandas, Orin Ful Vopaaz">
+  <meta name="keywords" content="Python, Pandas, Coding, Orin Ful Vopaaz">
 
 
 
@@ -242,7 +242,7 @@
 
     <div class="post-content">
       
-        <p>在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…<br>
+        <p>在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错...
 每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。</p>
 <a id="more"></a>
 <p><a href="#sum">总结在这里</a></p>
@@ -251,39 +251,14 @@
 <p><span id="sum"></span></p>
 <h1>总结</h1>
 <p>这里列一张表格简单总结一下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">axis=0</th>
-<th style="text-align:center">axis=1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">sum()</td>
-<td style="text-align:center">对列求和，返回一行数据</td>
-<td style="text-align:center">对行求和，返回一列数据</td>
-</tr>
-<tr>
-<td style="text-align:center">concat()</td>
-<td style="text-align:center">堆积行，列的数量不变</td>
-<td style="text-align:center">堆积列，行的数量不变</td>
-</tr>
-<tr>
-<td style="text-align:center">drop()/dropna()</td>
-<td style="text-align:center">删除一行</td>
-<td style="text-align:center">删除一列</td>
-</tr>
-<tr>
-<td style="text-align:center">apply()</td>
-<td style="text-align:center">抽取每一列迭代</td>
-<td style="text-align:center">抽取每一行迭代</td>
-</tr>
-</tbody>
-</table>
-<p>好了那么问题就在于到底怎么把这个玩意给记下来了…</p>
-<p>感觉好像暂时找不到规律…如果能找到再更新。</p>
+<p>|                 |         axis=0         |         axis=1         |
+|:---------------:|:----------------------:|:----------------------:|
+|      sum()      | 对列求和，返回一行数据 | 对行求和，返回一列数据 |
+|     concat()    |  堆积行，列的数量不变  |  堆积列，行的数量不变  |
+| drop()/dropna() |        删除一行        |        删除一列        |
+|     apply()     |     抽取每一列迭代     |     抽取每一行迭代     |</p>
+<p>好了那么问题就在于到底怎么把这个玩意给记下来了...</p>
+<p>感觉好像暂时找不到规律...如果能找到再更新。</p>
 
       
     </div>
@@ -321,11 +296,11 @@
         
           <div class="post-tags">
             
-              <a href="/tags/python/">python</a>
+              <a href="/tags/Python/">Python</a>
             
-              <a href="/tags/coding/">coding</a>
+              <a href="/tags/Pandas/">Pandas</a>
             
-              <a href="/tags/pandas/">pandas</a>
+              <a href="/tags/Coding/">Coding</a>
             
           </div>
         
