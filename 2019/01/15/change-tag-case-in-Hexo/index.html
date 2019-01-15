@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="在 Hexo 中改变标签大小写">
+
+
+
+
+  <meta name="keywords" content="Hexo, Orin Ful Vopaaz">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/01/15/change-tag-case-in-Hexo/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 在 Hexo 中改变标签大小写 - Orin Ful Vopaaz </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          在 Hexo 中改变标签大小写
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-15
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Miscellaneous</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色"><span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表渲染的问题"><span class="toc-text">列表渲染的问题</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>这两天发现以前使用的博客主题 <a href="https://github.com/frostfan/hexo-theme-polarbear" target="_blank" rel="noopener"> PolarBear</a> 模板不是很完善，有些功能是缺失的，而且那个界面实在是太…素雅了🤣。后来看文档发现 PolarBear 是基于 <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">even</a> 写的，因此今天干脆就决定替换到 even 这个主题。</p>
+<a id="more"></a>
+<p>顺手发现以前写的文章 tag, 首字母有的大写有的小写看得很不爽，所以就打算全部改成首字母大写统一格式。</p>
+<p>结果就悲剧了…在网站的 <a href="/tag/">tag</a> 页面上能够正常显示大写，但是点进每一个具体的标签就会显示 404.</p>
+<h1>解决方案</h1>
+<p>通过查看 Github 上的 Repository, 发现 tag 文件夹下的各个具体的 tag 各自有一个文件夹，标题是其名称，内有一个 index.html 页面。问题就出在这些文件夹的标题仍然是小写的，没有被同步为修改后的大写标题。查看本地的 .deploy_git 文件夹发现本地生成的 tag 文件夹下的小文件夹内容是正确的。</p>
+<p>当时已经猜测到问题是 git 对于大小写是不敏感的，因此尝试了以下两个解决方法：</p>
+<ul>
+<li>删除整个 tags 文件夹，再重新 deploy</li>
+<li>把所有已经改成大写的 tags 后面加 “1”, deploy, 再删除 “1”, deploy</li>
+</ul>
+<p>结果发现两个办法都无效，前者直接生成了小写文件夹名，后者在添加 “1” 后是大写，之后又变为小写。似乎是因为 git 已经保存了文件夹在小写名称时的快照，后续凡是有“忽略大小写”的重名，就会自然回到这个文件夹名称的版本。</p>
+<p>后来开始查找资料，发现也已经有人遇到过同样的问题。</p>
+<p>最终在<a href="https://stackoverflow.com/a/3011719/10838878" target="_blank" rel="noopener">这个回答</a>下发现，其实只要调整 git 的配置就可以…</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.ignorecase false</span><br></pre></td></tr></table></figure>
+<p>所以说到底其实是自己只用 git 客户端，而对工具本身没有了解，对命令一无所知的锅。后续要好好在这方面学习一下避免类似的情况发生。</p>
+<hr>
+<p><small>【下面部分和文章标题并没有什么关系【x </small></p>
+<h1>Miscellaneous</h1>
+<p>在换主题的时候还顺便有一些其他有用的内容，一并记录在此。</p>
+<h2 id="颜色">颜色</h2>
+<p>首先是调整主题颜色的时候，挑选颜色挑了好久，最后选定了这三个：</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$theme-color</span>: <span class="number">#5096b9</span>;</span><br><span class="line"><span class="variable">$deputy-color</span>: <span class="number">#ecececb0</span>;</span><br><span class="line"><span class="variable">$font-color</span>: <span class="number">#555555</span>;</span><br></pre></td></tr></table></figure>
+<p>分别：</p>
+<blockquote>
+<ul>
+<li>作为 <a href=""> 超链接 </a> 以及像这样的引用模块的背景颜色</li>
+</ul>
+</blockquote>
+<ul>
+<li>代码块的背景颜色</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ul>
+<li>所有主要字体的颜色</li>
+</ul>
+<h2 id="字体">字体</h2>
+<p>在 <a href="/2019/01/11/CheatSheet-share/"><em>CheatSheet Share</em></a> 这篇文章中有提到过，<a href="https://github.com/georgd/EB-Garamond/blob/master/specimen/Specimen.pdf" target="_blank" rel="noopener">EB Garamond </a> 这个字体真的惊为天人，但是考虑到很多电脑上并没有安装，可能起不到很好的效果。</p>
+<p>这里在网站标题上采用 <font face="Garamond" size="5px">Garamond</font> 字体，尽可能近似，效果也还不错。</p>
+<h2 id="列表渲染的问题">列表渲染的问题</h2>
+<p>不知道是替换了主题还是在过程中不慎改变了 markdown renderer 的原因，多级列表无法正常显示，To-Do 列表也无法正常渲染。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- Level 1</span><br><span class="line">  - Level 2</span><br><span class="line">    - Level 3</span><br><span class="line">- [ ] Todo 1</span><br><span class="line">- [ ] Todo 2</span><br></pre></td></tr></table></figure>
+<p>以上代码会生成这样的效果：</p>
+<ul>
+<li>Level 1
+<ul>
+<li>Level 2
+<ul>
+<li>Level 3</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[ ] Todo 1</li>
+<li>[ ] Todo 2</li>
+</ul>
+<p>但是这应该是多层列表的标准语法，目标效果：</p>
+<img src="https://s2.ax1x.com/2019/01/15/Fzbq2V.png" width="200">
+<p>暂时只能通过避免使用这两个功能，留待以后解决。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">Reward</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzKJKK.jpg" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzK3gx.jpg" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Hexo/">Hexo</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/01/12/cleanCode-Note1/">
+        <span class="next-text nav-default">代码整洁之道 Notes-1</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-customdefinedconnect"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
