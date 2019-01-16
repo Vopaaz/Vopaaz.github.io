@@ -260,7 +260,7 @@
 <p>可以考虑通过玄学来祈祷自己没有写错【x】</p>
 <p>在过程中写外部的 test, 位置在 <code>cnki2bibtex\tests\test.py</code>, 此时若要引用则必须回到上级目录，当时的做法是这样的：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">"."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .BibTexEntries <span class="keyword">import</span> BibTeXContentStringFactory <span class="comment"># Not sure whether this importation is right or not.</span></span><br></pre></td></tr></table></figure>
-<p>同样这里也懒得翻 git 历史记录了。总之这些问题都在于自己对于 Python import 路径的解析方式其实是一无所知，纯靠摸索。后续必须找时间看一下<a href="#https://docs.python.org/3.7/reference/import.html?highlight=import">文档</a>来搞清楚到底整个 import 路径该怎么写的问题。</p>
+<p>同样这里也懒得翻 git 历史记录了。总之这些问题都在于自己对于 Python import 路径的解析方式其实是一无所知，纯靠摸索。后续必须找时间看一下<a href="https://docs.python.org/3.7/reference/import.html?highlight=import" target="_blank" rel="noopener">文档</a>来搞清楚到底整个 import 路径该怎么写的问题。</p>
 <h1>Python decorator 的使用</h1>
 <p>最基础的装饰器写法非常容易，但是涉及到面向对象编程时，对于类或者类的实例的装饰器写法变得有些复杂。这此过程中有所涉及，在这里做一下记录。</p>
 <h2 id="review-普通装饰器">Review: 普通装饰器</h2>
