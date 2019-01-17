@@ -381,9 +381,7 @@
           
   <div class="comments" id="comments">
     
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-      </div>  
+      <div id="vcomments"></div>
     
   </div>
 
@@ -476,19 +474,21 @@
   
 
   
-   <script type="text/javascript">
-	(function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-  </script>
+  
+<!-- valine Comments -->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7/dist/Valine.min.js"></script>
+<script type="text/javascript">
+    new Valine({
+        el: '#vcomments',
+        notify: false,
+        verify: false,
+        app_id: "n8C7vXj1olLxoDIX68cRzhHa-gzGzoHsz",
+        app_key: "G08XKAkDvph7tQAO7FTAsbt9",
+        placeholder: "Comments here... \n- The information fields above are OPTIONAL! Feel free to write your comments directly😁.\n- Markdown is supported.",
+        avatar: 'retro'
+    });
+</script>
 
 
 
