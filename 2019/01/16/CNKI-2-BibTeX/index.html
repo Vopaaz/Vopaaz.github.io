@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">文件引用路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Python decorator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#review-普通装饰器"><span class="toc-text">Review: 普通装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类中函数的装饰器"><span class="toc-text">类中函数的装饰器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">项目打包以及分发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prepare-documents"><span class="toc-text">Prepare documents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#build-and-distribute"><span class="toc-text">Build and Distribute</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文件引用路径"><span class="toc-text">🐷文件引用路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#python-decorator-的使用"><span class="toc-text">🐷Python decorator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#review-普通装饰器"><span class="toc-text">🐷Review: 普通装饰器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类中函数的装饰器"><span class="toc-text">🐷类中函数的装饰器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#项目打包以及分发"><span class="toc-text">🐷项目打包以及分发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#dependency"><span class="toc-text">🐷Dependency</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#prepare-documents"><span class="toc-text">🐷Prepare documents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#build-and-distribute"><span class="toc-text">🐷Build and Distribute</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -244,10 +244,10 @@
       
         <p>在两天多的爆肝之后终于完成了 <a href="https://github.com/Vopaaz/CNKI_2_BibTeX" target="_blank" rel="noopener">cnki2bib</a> 这个小工具，也打包发到了 <a href="https://pypi.org/project/cnki2bib/" target="_blank" rel="noopener">PyPI</a> 上。写的第一个包，值得纪念下 233. 过程中也学到了很多东西，这里进行一下总结。</p>
 <a id="more"></a>
-<p>纪念一下两天的爆肝以及已经快 1600 次下载的优秀结果233.</p>
+<p>纪念一下两天的爆肝以及已经快 1600 次下载的优秀结果2333.</p>
 <img src="https://s2.ax1x.com/2019/01/15/FzhSUK.png" width="400">
 <img src="https://s2.ax1x.com/2019/01/15/FzfzE6.png" width="300">
-<h1>文件引用路径</h1>
+<h1 id="文件引用路径"><a class="header-anchor" href="#文件引用路径">🐷</a>文件引用路径</h1>
 <p>这是第一次写带着一些组织结构的项目，而不是以前那种只有一个文件或者全是同级文件夹下文件的托儿所项目了【升级到幼儿园x</p>
 <p>整个项目的结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">📦CNKI_2_BibTeX</span><br><span class="line"> ┣ 📂cnki2bibtex</span><br><span class="line"> ┃ ┣ 📂misc</span><br><span class="line"> ┃ ┃ ┣ 📜__init__.py</span><br><span class="line"> ┃ ┃ ┣ 📜EntryInformationCheck.py</span><br><span class="line"> ┃ ┃ ┗ 📜EntryCore.py</span><br><span class="line"> ┃ ┣ 📜__init__.py</span><br><span class="line"> ┃ ┣ 📜cnki2bib.py</span><br><span class="line"> ┃ ┣ 📜cnkiNetEntries.py</span><br><span class="line"> ┃ ┗ 📜BibTexEntries.py</span><br><span class="line"> ┣ 📜.gitignore</span><br><span class="line"> ┣ 📜README.md</span><br><span class="line"> ┣ 📜setup.py</span><br><span class="line"> ┗ 📜requirements.txt</span><br></pre></td></tr></table></figure>
@@ -261,16 +261,16 @@
 <p>在过程中写外部的 test, 位置在 <code>cnki2bibtex\tests\test.py</code>, 此时若要引用则必须回到上级目录，当时的做法是这样的：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">"."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .BibTexEntries <span class="keyword">import</span> BibTeXContentStringFactory <span class="comment"># Not sure whether this importation is right or not.</span></span><br></pre></td></tr></table></figure>
 <p>同样这里也懒得翻 git 历史记录了。总之这些问题都在于自己对于 Python import 路径的解析方式其实是一无所知，纯靠摸索。后续必须找时间看一下<a href="https://docs.python.org/3.7/reference/import.html?highlight=import" target="_blank" rel="noopener">文档</a>来搞清楚到底整个 import 路径该怎么写的问题。</p>
-<h1>Python decorator 的使用</h1>
+<h1 id="python-decorator-的使用"><a class="header-anchor" href="#python-decorator-的使用">🐷</a>Python decorator 的使用</h1>
 <p>最基础的装饰器写法非常容易，但是涉及到面向对象编程时，对于类或者类的实例的装饰器写法变得有些复杂。这此过程中有所涉及，在这里做一下记录。</p>
-<h2 id="review-普通装饰器">Review: 普通装饰器</h2>
+<h2 id="review-普通装饰器"><a class="header-anchor" href="#review-普通装饰器">🐷</a>Review: 普通装饰器</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        doDecoratingBeforeThings()</span><br><span class="line">        res = func(*args,**kwargs)</span><br><span class="line">        doDecoratingAfterThings()</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="meta">@decorate</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">funcToBeDecorated</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">    doSomeThing()</span><br></pre></td></tr></table></figure>
-<h2 id="类中函数的装饰器">类中函数的装饰器</h2>
+<h2 id="类中函数的装饰器"><a class="header-anchor" href="#类中函数的装饰器">🐷</a>类中函数的装饰器</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decorate</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">inner</span><span class="params">(self,*args,**kwargs)</span>:</span></span><br><span class="line">        doDecoratingBeforeThings()</span><br><span class="line">        res = func(self,*args,**kwargs)</span><br><span class="line">        doDecoratingAfterThings()</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span><span class="params">(object)</span>:</span></span><br><span class="line"><span class="meta">    @decorate</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">funcToBeDecorated</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        doSomeThing()</span><br></pre></td></tr></table></figure>
 <p>这里的情况是装饰器函数定义在类之外，此时与普通装饰器之间的差别只在于多了一个 <code>self</code>, 没有其他任何更改。</p>
 <p>对于装饰器函数定义在类内的情况此次没有涉及。</p>
-<h1>项目打包以及分发</h1>
-<h2 id="dependency">Dependency</h2>
+<h1 id="项目打包以及分发"><a class="header-anchor" href="#项目打包以及分发">🐷</a>项目打包以及分发</h1>
+<h2 id="dependency"><a class="header-anchor" href="#dependency">🐷</a>Dependency</h2>
 <p>在项目打包以及分发的环节，所涉及到的包包括：</p>
 <ul>
 <li>setuptools</li>
@@ -278,7 +278,7 @@
 <li>wheel</li>
 </ul>
 <p>其中【我记得】后两者是不在标准环境中的，尤其是在开发的 venv 环境下，需要 <code>pip install</code>.</p>
-<h2 id="prepare-documents">Prepare documents</h2>
+<h2 id="prepare-documents"><a class="header-anchor" href="#prepare-documents">🐷</a>Prepare documents</h2>
 <p>在包的根目录下准备两个文件，<code>requirements.txt</code>, <code>setup.py</code>.</p>
 <p>前者可以通过 <code>pip</code> 自动生成：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
@@ -289,8 +289,8 @@
 <p>另外， <code>entry_points</code> 参数是按照 <a href="https://click.palletsprojects.com/en/7.x/setuptools/#introduction" target="_blank" rel="noopener">click 的文档</a>写的，但在查找网络资料的时候发现广泛看见的写法和它有所不同。
 此次已经验证了用 <a href="https://click.palletsprojects.com/en/7.x/" target="_blank" rel="noopener">click</a> 来开发，这么写是没有问题的，如果以后不用这个工具【emm 大概率只会用它了？】，可能还要 double check 写法是否正确。</p>
 <p><code>cnki2bib=cnki2bibtex.cnki2bib:launch</code> 本句中，第一个 <code>cnki2bib</code> 应该对应的是项目名称 <code>name='cnki2bib'</code>, 第二个 <code>cni2bibtex.cnki2bib</code> 对应的是 <code>cnki2bib.py</code> 这个文件，而 <code>launch</code> 是作为入口的函数名，而非固定字符串：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># In cnki2bib.py</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@click.command()</span></span><br><span class="line"><span class="meta">@click.argument(some_args)</span></span><br><span class="line"><span class="meta">@click.option(some_args)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">launch</span><span class="params">(some_args)</span>:</span></span><br><span class="line">    operations()</span><br></pre></td></tr></table></figure>
-<h2 id="build-and-distribute">Build and Distribute</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># In cnki2bib.py</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@click.command()</span></span><br><span class="line"><span class="meta">@click.argument(some_args)</span></span><br><span class="line"><span class="meta">@click.option(some_args)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">launch</span><span class="params">(some_args)</span>:</span>  <span class="comment"># "launch" is the name of the function</span></span><br><span class="line">    operations()</span><br></pre></td></tr></table></figure>
+<h2 id="build-and-distribute"><a class="header-anchor" href="#build-and-distribute">🐷</a>Build and Distribute</h2>
 <p>完成了以上所有操作之后，运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python setup.py sdist bdist_wheel</span><br><span class="line">twine upload dist/*</span><br></pre></td></tr></table></figure>
 <p>再根据提示输入 PyPI 账户的用户名和密码就可以完成上传和分发。</p>
@@ -313,12 +313,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzKJKK.jpg" title="wechat">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99U7q.png" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzK3gx.jpg" title="alipay">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99NBn.png" title="alipay">
         </label>
       
     </div>
@@ -340,6 +340,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2019/01/17/cleanCode-Note2/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">代码整洁之道 Notes-2</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
     
     
       <a class="next" href="/2019/01/15/change-tag-case-in-Hexo/">
@@ -397,6 +403,10 @@
         
       
     
+      
+        
+          <a href="https://weibo.com/u/2275576474" class="iconfont icon-weibo" title="weibo"></a>
+        
       
     
       

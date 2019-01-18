@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Coding, Reading Notes, Orin Ful Vopaaz">
+  <meta name="keywords" content="Coding, Notes, Orin Ful Vopaaz">
 
 
 
@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数"><span class="toc-text">函数参数</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#命名"><span class="toc-text">🐷命名</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#函数"><span class="toc-text">🐷函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数"><span class="toc-text">🐷函数参数</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -245,7 +245,7 @@
         <p>寒假阅读的第一本书是《代码整洁之道》，回想起自己以前写代码的时候犯下的一些错误，给自己后面带来的麻烦，书中都有提到，读来确实感觉有很多收获。</p>
 <p>在笔记中也主要是记录自己没有注意的内容，将一些可能很重要但是平时已经做到的内容省略。</p>
 <a id="more"></a>
-<h1>命名</h1>
+<h1 id="命名"><a class="header-anchor" href="#命名">🐷</a>命名</h1>
 <ul>
 <li>避免误导：编程语言中可能有很多专有类型，例如 <code>List</code>, 如果某个变量不是这种类型，就不要将这个关键字用于命名，例如 accountList, 可以用 accountGroup 等代替</li>
 <li>尽量用长名字描述清楚变量的含义，不要使用简短的名字或是缩写</li>
@@ -261,7 +261,7 @@
 </ol>
 </li>
 </ul>
-<h1>函数</h1>
+<h1 id="函数"><a class="header-anchor" href="#函数">🐷</a>函数</h1>
 <blockquote>
 <p>函数的第一规则是要短小，第二条规则是还要更短小。
 函数应该只做一件事。</p>
@@ -272,6 +272,7 @@
 <li>对“函数应该只做一件事”的详细解释：做的事情在同一抽象层面上</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// High level</span><br><span class="line">obj.getHtml()</span><br><span class="line"></span><br><span class="line">// Low level</span><br><span class="line">obj.append(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure>
+<p><span id="to"></span></p>
 <ul>
 <li>函数的整体组织形式应当可以用 “To” 语言来清晰地，自顶向下地描述：
 <ol>
@@ -284,7 +285,7 @@
 <li>注意每一行 To 仅仅只能对应 1 个函数，并且这行描述应当是简洁而清晰的。如果过长则说明应当拆分函数。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">A</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B()</span><br><span class="line">    <span class="keyword">if</span> C():</span><br><span class="line">        D()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">B</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    B1()</span><br><span class="line">    B2()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">C</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    E()</span><br><span class="line">    <span class="keyword">return</span> F()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">D</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">    D1()</span><br><span class="line">    D2()</span><br></pre></td></tr></table></figure>
-<h2 id="函数参数">函数参数</h2>
+<h2 id="函数参数"><a class="header-anchor" href="#函数参数">🐷</a>函数参数</h2>
 <ul>
 <li>函数参数地数量应当越少越好，如果超过了 3 个，则必须进行封装，将逻辑上有关联的几个变量封装成一个 <code>class</code></li>
 <li>不要使用“输出参数”，即函数返回值为 <code>void</code>, 而对于其中某一个参数进行转换。这不直观，也不符合正常人的思维方式</li>
@@ -327,12 +328,12 @@
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzKJKK.jpg" title="wechat">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99U7q.png" title="wechat">
         </label>
       
       
         <label class="qr-code-image" for="reward">
-          <img class="image" src="https://s2.ax1x.com/2019/01/15/FzK3gx.jpg" title="alipay">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99NBn.png" title="alipay">
         </label>
       
     </div>
@@ -347,7 +348,7 @@
             
               <a href="/tags/Coding/">Coding</a>
             
-              <a href="/tags/Reading-Notes/">Reading Notes</a>
+              <a href="/tags/Notes/">Notes</a>
             
           </div>
         
@@ -417,6 +418,10 @@
         
       
     
+      
+        
+          <a href="https://weibo.com/u/2275576474" class="iconfont icon-weibo" title="weibo"></a>
+        
       
     
       
