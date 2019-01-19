@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">写在前面： Google Style Guide</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#纵向"><span class="toc-text">纵向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#横向"><span class="toc-text">横向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协作"><span class="toc-text">协作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">对象和数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#得墨忒定律"><span class="toc-text">得墨忒定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据传送对象"><span class="toc-text">数据传送对象</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面：-google-style-guide"><span class="toc-text">写在前面： Google Style Guide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#纵向"><span class="toc-text">纵向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#横向"><span class="toc-text">横向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协作"><span class="toc-text">协作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象和数据结构"><span class="toc-text">对象和数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#得墨忒定律"><span class="toc-text">得墨忒定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送对象"><span class="toc-text">数据传送对象</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -242,7 +242,7 @@
 
     <div class="post-content">
       
-        <h1>写在前面： Google Style Guide</h1>
+        <h2 id="写在前面：-google-style-guide">写在前面： Google Style Guide</h2>
 <p>这两天刷知乎的时候看到了 Google 有自己的 Style Guide, 和 clean code 的主题也很相关，在这里留下链接留待以后学习。【这种以后学习啥的话怎么感觉天天在说【逃x】</p>
 <a id="more"></a>
 <ul>
@@ -258,7 +258,7 @@
 </ul>
 <p>糟糕的是😭之前在为 Java 考试写轮子的时候一直在写 Python, 所以里面的命名全部都是用的下划线法，在写 <a href="/2019/01/16/CNKI-2-BibTeX/">cnki2bib</a> 的时候却因为一直在看《代码整洁之道》这本书（当时还正好在变量命名那块…），因此用的全部是驼峰式😭。</p>
 <p>后面再写东西的时候要注意根据语言来选择代码风格。</p>
-<h1>注释</h1>
+<h2 id="注释">注释</h2>
 <p>好的注释也无法弥补烂的代码，因此应当尽可能让代码能够自己说明自己（通过良好的命名和足够细的拆分）。</p>
 <p>好的注释可以有以下几种：</p>
 <ul>
@@ -270,8 +270,8 @@
 <li>TODO</li>
 </ul>
 <p>其他的注释都是多余的！减少不必要的注释也是代码整洁的重要部分。【因此毛老师的 Java 课的注释其实确实没什么必要好写的😀</p>
-<h1>格式</h1>
-<h2 id="纵向">纵向</h2>
+<h2 id="格式">格式</h2>
+<h3 id="纵向">纵向</h3>
 <p>单个源代码文件的长度：对于 Java, 尽量限制在 500 行以内。那么对于 Python 而言这个数字应当可以进一步减小，尽量控制在 300 行以内。</p>
 <p><strong>关系密切的概念应当相互靠近</strong></p>
 <ul>
@@ -279,11 +279,11 @@
 <li>循环中的控制变量总是在循环语句中声明</li>
 <li>将相关的函数尽可能放在一起。按照调用者在上，被调用者在下的顺序紧密排列。这一点可以参考 Notes 1 中提到的语句 <a href="/2019/01/12/cleanCode-Note1/#to">“To”</a> 描述规则，两者是相符的。</li>
 </ul>
-<h2 id="横向">横向</h2>
+<h3 id="横向">横向</h3>
 <p>一行代码必须有长度的限制。这一点可以通过 editor 的 auto format 工具完成，无需特别注意。</p>
-<h2 id="协作">协作</h2>
+<h3 id="协作">协作</h3>
 <p>团队合作中必须要有一个一致的规则。</p>
-<h1>对象和数据结构</h1>
+<h2 id="对象和数据结构">对象和数据结构</h2>
 <p>尽可能将这两种概念区分开：</p>
 <ul>
 <li>对象：不直接提供数据，而提供操作数据的函数</li>
@@ -295,7 +295,7 @@
 <li>过程式代码（使用数据结构的代码）便于在保持原有数据结构不变的情况下添加新函数，但是如果要改变原有的数据结构，则必须修改所有函数</li>
 </ul>
 <p>根据场景来选择该使用哪种实现方式。</p>
-<h2 id="得墨忒定律">得墨忒定律</h2>
+<h3 id="得墨忒定律">得墨忒定律</h3>
 <p>模块不应该了解它所操作的对象的内部情形，也就是像上文所说的，对象的数据应当是被隐藏起来的。</p>
 <p>类 C 的方法 f <strong>只</strong>应该调用以下对象的方法：</p>
 <ul>
@@ -312,7 +312,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String outputDir = ctxt.options.scratchDir.absolutePath</span><br></pre></td></tr></table></figure>
 <p>当然，最好的方法应当是将在这里做的事情封装成 C 能够调用的对象（也即 ctxt）的方法。需要注意的是，**对于对象，应该要求它做点什么，而不是给出它的内部情形。**例如在我们得到了绝对路径之后是要创建一个流，那么直接：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName)</span><br></pre></td></tr></table></figure>
-<h2 id="数据传送对象">数据传送对象</h2>
+<h3 id="数据传送对象">数据传送对象</h3>
 <p>DTO (Data Transfer Objects), 一个只有公共变量，没有函数的类。用它来作为数据传送的对象。</p>
 <p>这种对象尤其不需要半封装（给每个对象加上最朴素【】的 <code>setter</code> &amp; <code>getter</code>）</p>
 <blockquote>

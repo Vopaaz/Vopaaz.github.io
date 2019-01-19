@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Miscellaneous</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色"><span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表渲染的问题"><span class="toc-text">列表渲染的问题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#解决方案"><span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#miscellaneous"><span class="toc-text">Miscellaneous</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#颜色"><span class="toc-text">颜色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字体"><span class="toc-text">字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表渲染的问题"><span class="toc-text">列表渲染的问题</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -246,7 +246,7 @@
 <a id="more"></a>
 <p>顺手发现以前写的文章 tag, 首字母有的大写有的小写看得很不爽，所以就打算全部改成首字母大写统一格式。</p>
 <p>结果就悲剧了…在网站的 <a href="/tags/">tags</a> 页面上能够正常显示大写，但是点进每一个具体的标签就会显示 404.</p>
-<h1>解决方案</h1>
+<h2 id="解决方案">解决方案</h2>
 <p>通过查看 Github 上的 Repository, 发现 tag 文件夹下的各个具体的 tag 各自有一个文件夹，标题是其名称，内有一个 index.html 页面。问题就出在这些文件夹的标题仍然是小写的，没有被同步为修改后的大写标题。查看本地的 .deploy_git 文件夹发现本地生成的 tag 文件夹下的小文件夹内容是正确的。</p>
 <p>当时已经猜测到问题是 git 对于大小写是不敏感的，因此尝试了以下两个解决方法：</p>
 <ul>
@@ -260,9 +260,9 @@
 <p>所以说到底其实是自己只用 git 客户端，而对工具本身没有了解，对命令一无所知的锅。后续要好好在这方面学习一下避免类似的情况发生。</p>
 <hr>
 <p><small>【下面部分和文章标题并没有什么关系【x </small></p>
-<h1>Miscellaneous</h1>
+<h2 id="miscellaneous">Miscellaneous</h2>
 <p>在换主题的时候还顺便有一些其他有用的内容，一并记录在此。</p>
-<h2 id="颜色">颜色</h2>
+<h3 id="颜色">颜色</h3>
 <p>首先是调整主题颜色的时候，挑选颜色挑了好久，最后选定了这三个：</p>
 <figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$theme-color</span>: <span class="number">#5096b9</span>;</span><br><span class="line"><span class="variable">$deputy-color</span>: <span class="number">#ecececb0</span>;</span><br><span class="line"><span class="variable">$font-color</span>: <span class="number">#555555</span>;</span><br></pre></td></tr></table></figure>
 <p>分别：</p>
@@ -278,10 +278,10 @@
 <ul>
 <li>所有主要字体的颜色</li>
 </ul>
-<h2 id="字体">字体</h2>
+<h3 id="字体">字体</h3>
 <p>在 <a href="/2019/01/11/CheatSheet-share/"><em>CheatSheet Share</em></a> 这篇文章中有提到过，<a href="https://github.com/georgd/EB-Garamond/blob/master/specimen/Specimen.pdf" target="_blank" rel="noopener">EB Garamond </a> 这个字体真的惊为天人，但是考虑到很多电脑上并没有安装，可能起不到很好的效果。</p>
 <p>这里在网站标题上采用 <font face="Garamond" size="5px">Garamond</font> 字体，尽可能近似，效果也还不错。</p>
-<h2 id="列表渲染的问题">列表渲染的问题</h2>
+<h3 id="列表渲染的问题">列表渲染的问题</h3>
 <p>不知道是替换了主题还是在过程中不慎改变了 markdown renderer 的原因，多级列表无法正常显示，To-Do 列表也无法正常渲染。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- Level 1</span><br><span class="line">  - Level 2</span><br><span class="line">    - Level 3</span><br><span class="line">- [ ] Todo 1</span><br><span class="line">- [ ] Todo 2</span><br></pre></td></tr></table></figure>
 <p>以上代码会生成这样的效果：</p>
