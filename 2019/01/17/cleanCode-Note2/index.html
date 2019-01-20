@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面：-google-style-guide"><span class="toc-text">写在前面： Google Style Guide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#纵向"><span class="toc-text">纵向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#横向"><span class="toc-text">横向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协作"><span class="toc-text">协作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象和数据结构"><span class="toc-text">对象和数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#得墨忒定律"><span class="toc-text">得墨忒定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送对象"><span class="toc-text">数据传送对象</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#写在前面：-google-style-guide"><span class="toc-text">写在前面： Google Style Guide</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#纵向"><span class="toc-text">纵向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#横向"><span class="toc-text">横向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协作"><span class="toc-text">协作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象和数据结构"><span class="toc-text">对象和数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#得墨忒定律"><span class="toc-text">得墨忒定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据传送对象"><span class="toc-text">数据传送对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些感想"><span class="toc-text">一些感想</span></a></li></ol>
     </div>
   </div>
 
@@ -315,10 +315,12 @@
 <h3 id="数据传送对象">数据传送对象</h3>
 <p>DTO (Data Transfer Objects), 一个只有公共变量，没有函数的类。用它来作为数据传送的对象。</p>
 <p>这种对象尤其不需要半封装（给每个对象加上最朴素【】的 <code>setter</code> &amp; <code>getter</code>）</p>
-<blockquote>
+<h2 id="一些感想">一些感想</h2>
 <p>对于这整个章节，我认为应当注意 Java 和 Python 之间的不同。前者的 <code>private</code> 关键字让私有变量的设定变得非常容易，但是 Python 的双前下划线私有变量设置非常不自然，如果应用很多我觉得代码本身就很丑陋了…好像也没有看到什么 Python 项目里出现 <code>setter</code> or <code>getter</code> 这种东西。两者在设计上是有着根本的不同的。</p>
+<p>【更正： Python 有 @property, @some_attr.setter 两个装饰器可以起到这个功能】</p>
 <p>实际应用的时候可能更需要关注这种思想，而不是书中介绍的在 Java 中的实现。【嗯不用说了，应用思想仍然是一句屁话x】但至少有一点确实可以关注一下，即<strong>对于对象，应该要求它做点什么，而不是给出它的内部情形。</strong></p>
-</blockquote>
+<p>这一点在 <a href="https://github.com/Vopaaz/CNKI_2_BibTeX" target="_blank" rel="noopener">cnki2bib</a> 中的体现是，<code>BibTeXEntry</code> 有一个方法是 <code>toBibFileString</code>, 也即要求这个对象给出其最终打印的字符串，而不是在外部函数中一个一个取出它的 field 再进行组合。这会导致函数的抽象不在同一个层面上。</p>
+<p><small>【这个例子我都举烦了【x 是时候赶紧写下一个项目之类的了…【】</small></p>
 
       
     </div>
