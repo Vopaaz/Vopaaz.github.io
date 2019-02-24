@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="代码整洁之道 Notes-3">
+
+
+
+
+  <meta name="keywords" content="Notes, Coding, Orin Ful Vopaaz">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/02/24/cleanCode-Note3/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 代码整洁之道 Notes-3 - Orin Ful Vopaaz </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          代码整洁之道 Notes-3
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-24
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#错误处理"><span class="toc-text">错误处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#测试驱动编程"><span class="toc-text">测试驱动编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常处理"><span class="toc-text">异常处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#尽可能使用不可控异常"><span class="toc-text">尽可能使用不可控异常</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#java-异常"><span class="toc-text">Java 异常</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义异常类"><span class="toc-text">自定义异常类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不使用-null-值"><span class="toc-text">不使用 Null 值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#边界"><span class="toc-text">边界</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="错误处理">错误处理</h2>
+<p><strong>错误处理绝对不能弄乱代码逻辑。</strong></p>
+<p>先在代码中写 <code>try-catch-finally</code> 语句，它在代码块中定义了一个稳定的范围，无论在 <code>try</code> 部分发生了什么，<code>catch</code> 都将其维持在一个可持续的状态。</p>
+<a id="more"></a>
+<h3 id="测试驱动编程">测试驱动编程</h3>
+<p>应当使用<em>测试驱动</em>（似乎是第九章提到的内容，这里还尚未涉及，暂时无法理解先进行简单记录）的方式来写代码，尝试编写强行抛出异常的测试，再往处理器中添加行为使其满足测试要求。</p>
+<h3 id="异常处理">异常处理</h3>
+<h4 id="尽可能使用不可控异常">尽可能使用不可控异常</h4>
+<p>可控异常即在 Java 的函数签名中需要声明 <code>throws</code> 的异常，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shutDown</span><span class="params">()</span> <span class="keyword">throws</span> DeviceShutDownException</span>&#123;</span><br><span class="line">    <span class="comment">// Something.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用这种方法，一旦底层函数发生变化，如果上层函数的 <code>catch</code> 语句仍然是向上 <code>throw</code>, 那么上层函数的签名也要调整。这破坏了封装，使得抽象层级不在一个层面上的函数相互影响。</p>
+<p>这一点在 Python 中不是问题，所有的异常都不需要在函数中进行声明。Java 中似乎一直的写法都是可控异常，以后要注意更改。具体实现如下：</p>
+<h5 id="java-异常">Java 异常</h5>
+<p>不可控异常 (unchecked exception) 包括：</p>
+<ul>
+<li><code>Error</code></li>
+<li><code>RuntimeException</code></li>
+<li>以上两者的子类</li>
+</ul>
+<p>可控异常 (checked exception) 是除了以上三者以外的其他异常。</p>
+<p>书中没有明确提到如何具体在 Java 实现上一段所说尽量利用不可控异常，这里认为方案是将新定义的异常作为 <code>RuntimeException</code> 的子类</p>
+<h4 id="自定义异常类">自定义异常类</h4>
+<p><strong>自定义异常应当创建充分的环境说明、错误消息</strong>。只有这样才能更好地帮助上层函数知道发生了什么，如何解决。仅仅只依赖自带的堆栈调用信息是不够的。</p>
+<p>自定义异常类（从后文的例子看，更准确的说法是自定义抛出异常的类）的另一个 trick 是，封装一些并不关心其区别的异常（例如第三方 API 提供的）。例如本来要这么写的代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Port port = <span class="keyword">new</span> Port(<span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    port.open();</span><br><span class="line">&#125; <span class="keyword">catch</span> (TypeIException e)&#123;</span><br><span class="line">    reportPortException(e);</span><br><span class="line">    logger.log(<span class="string">"Type I Exception"</span>, e);</span><br><span class="line">&#125; <span class="keyword">catch</span> (TypeIIException e)&#123;</span><br><span class="line">    reportPortException(e);</span><br><span class="line">    logger.log(<span class="string">"Type II Exception"</span>, e);</span><br><span class="line">&#125; <span class="keyword">catch</span> (TypeIIIException e)&#123;</span><br><span class="line">    reportPortException(e);</span><br><span class="line">    logger.log(<span class="string">"Type III Exception"</span>, e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码中有大量重复的部分，因为对于这几种异常的后续处理是一样的，都是汇报并且记录。那么可以改成：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">LocalPort port = <span class="keyword">new</span> LocalPort(<span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    port.open();</span><br><span class="line">&#125; <span class="keyword">catch</span> (PortDeviceFailure e)&#123;</span><br><span class="line">    reportPortDeviceFailure(e);</span><br><span class="line">    logger.log(e.getMessage(), e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LocalPort</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Port innerPort;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LocalPort</span><span class="params">(<span class="keyword">int</span> portNumber)</span></span>&#123;</span><br><span class="line">        innerPort = <span class="keyword">new</span> Port(portNumber);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">open</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            innerPort.open();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (TypeIException e)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PortDeviceFailure(e);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (TypeIIException e)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PortDeviceFailure(e);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (TypeIIIException e)&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> PortDeviceFailure(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样通过对三种类型的 <code>Exception</code> 进行打包，简化了上一级调用函数中的代码。</p>
+<p>不直接使用 <code>catch (Exception e)</code> 的原因是有可能其他的错误需要另外处理，而 <code>Exception</code> 会包括上所有的其他的异常类。</p>
+<h3 id="不使用-null-值">不使用 Null 值</h3>
+<p>在整个项目中，都尽可能不要让任何函数返回 <code>Null</code> (<code>None</code> in Python) 值，也不要让任何函数向其他函数传递 <code>Null</code> 值，这是因为一旦有这样的 <code>Null</code> 值出现，程序的代码中必然有很多对 <code>Null</code> 值的 <code>if</code> 检查，造成了可读性的降低。尽量通过传出特例对象或异常来解决看似会传出 <code>Null</code> 值的情况。</p>
+<p>同样地，也不要向程序中传入 <code>Null</code>.</p>
+<h2 id="边界">边界</h2>
+<p>在使用第三方代码时，可以通过一个接缝类，封装第三方提供的接口为自己惯用的接口。</p>
+<p>这一项在目前能接触到的项目中不太涉及。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">Reward</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99U7q.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99NBn.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Notes/">Notes</a>
+            
+              <a href="/tags/Coding/">Coding</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/01/17/cleanCode-Note2/">
+        <span class="next-text nav-default">代码整洁之道 Notes-2</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2275576474" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-customdefinedconnect"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件引用路径"><span class="toc-text">文件引用路径</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何在这种冲突的情况下进行调试-update-2019-1-26"><span class="toc-text">如何在这种冲突的情况下进行调试 Update 2019-1-26</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python-decorator-的使用"><span class="toc-text">Python decorator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#review-普通装饰器"><span class="toc-text">Review: 普通装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类中函数的装饰器"><span class="toc-text">类中函数的装饰器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目打包以及分发"><span class="toc-text">项目打包以及分发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prepare-documents"><span class="toc-text">Prepare documents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-and-distribute"><span class="toc-text">Build and Distribute</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件引用路径"><span class="toc-text">文件引用路径</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何在这种冲突的情况下进行调试-update-2019-2-24"><span class="toc-text">如何在这种冲突的情况下进行调试 Update 2019-2-24</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装到本地"><span class="toc-text">安装到本地</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#另建立-test-py-来设置断点运行"><span class="toc-text">另建立 test.py 来设置断点运行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python-decorator-的使用"><span class="toc-text">Python decorator 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#review-普通装饰器"><span class="toc-text">Review: 普通装饰器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类中函数的装饰器"><span class="toc-text">类中函数的装饰器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目打包以及分发"><span class="toc-text">项目打包以及分发</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#dependency"><span class="toc-text">Dependency</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prepare-documents"><span class="toc-text">Prepare documents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#build-and-distribute"><span class="toc-text">Build and Distribute</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -258,17 +258,23 @@
 <p>总而言之根本的规则是，在同级文件前添加 “.”, 并以此向下引入。</p>
 <p>注意在这样写完之后，在开发环境下通过命令行运行也会…报错 “No module named ‘__main__’”, 我也忘了当时是怎么调试的了orz, 但是打包分发后运行则一切正常。</p>
 <p>可以考虑通过玄学来祈祷自己没有写错【x】</p>
-<p>在过程中写外部的 test, 位置在 <code>cnki2bibtex\tests\test.py</code>, 此时若要引用则必须回到上级目录，当时的做法是这样的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">"."</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> .BibTexEntries <span class="keyword">import</span> BibTeXContentStringFactory <span class="comment"># Not sure whether this importation is right or not.</span></span><br></pre></td></tr></table></figure>
-<p>同样这里也懒得翻 git 历史记录了。总之这些问题都在于自己对于 Python import 路径的解析方式其实是一无所知，纯靠摸索。后续必须找时间看一下<a href="https://docs.python.org/3.7/reference/import.html?highlight=import" target="_blank" rel="noopener">文档</a>来搞清楚到底整个 import 路径该怎么写的问题。</p>
-<h3 id="如何在这种冲突的情况下进行调试-update-2019-1-26">如何在这种冲突的情况下进行调试 Update 2019-1-26</h3>
-<p>在上文所说的这种坑爹的情况下要进行最终的调试，可以用如下方法：</p>
+<p><s>在过程中写外部的 test, 位置在 <code>cnki2bibtex\tests\test.py</code>, 此时若要引用则必须回到上级目录，当时的做法似乎是这样的 （<code>import</code> 语句不保证正确）：</s></p>
+<p><span id="fix"></span></p>
+<p>在修复 bug 的过程中记录了这个问题的解决方案：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="string">r"C:\Personal\gitkrakenRepo\CNKI_2_BibTeX"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> cnki2bibtex.cnkiNetEntries <span class="keyword">import</span> CNKINetEntryFactory</span><br></pre></td></tr></table></figure>
+<p>这样就可以正常设置断点，或用命令行的方式来运行了。就我目前的理解而言这种方法可以适用于放在任何位置的 <code>test.py</code> 文件。</p>
+<p>自己目前对于 Python import 路径的解析方式其实是一无所知，纯靠摸索。后续必须找时间看一下<a href="https://docs.python.org/3.7/reference/import.html?highlight=import" target="_blank" rel="noopener">文档</a>来搞清楚到底整个 import 路径该怎么写的问题。</p>
+<h3 id="如何在这种冲突的情况下进行调试-update-2019-2-24">如何在这种冲突的情况下进行调试 Update 2019-2-24</h3>
+<p>在上文所说的这种坑爹的情况下要进行最终的调试，可以用如下两种方法：</p>
+<h4 id="安装到本地">安装到本地</h4>
 <p>首先仍然用 <code>setuptools</code> 生成 <code>dist</code> 文件夹下的文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py sdist bdist_wheel</span><br></pre></td></tr></table></figure>
 <p>其次在 <strong>User</strong> 级别的 console 中（注意区别于项目的 <strong>venv</strong> ）通过如下命令进行安装。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install C:\Personal\gitkrakenRepo\CNKI_2_BibTeX\dist\cnki2bib-0.1.4.dev3-py3-none-any.whl</span><br></pre></td></tr></table></figure>
 <p>目录路径是指向上一个命令生成的 “.whl” 文件。</p>
-<p>在这种情况下，就可以在本地 console 中利用 <code>cnki2bib FILENAME</code> 来进行测试。</p>
+<p>在这种情况下，就可以在本地 console 中利用 <code>cnki2bib FILENAME</code> 来进行测试。一个不足之处是无法设置断点，但是这应当作为最终发布前的最后一道测试，因为这样的测试模拟的就是真实发布后用户使用时的运行情况。</p>
+<h4 id="另建立-test-py-来设置断点运行">另建立 <code>test.py</code> 来设置断点运行</h4>
+<p>在需要设置断点的复杂情况下，推荐使用这种方法，此时 <code>import</code> 语句的路径参考<a href="#fix">上一节</a></p>
 <h2 id="python-decorator-的使用">Python decorator 的使用</h2>
 <p>最基础的装饰器写法非常容易，但是涉及到面向对象编程时，对于类或者类的实例的装饰器写法变得有些复杂。这此过程中有所涉及，在这里做一下记录。</p>
 <h3 id="review-普通装饰器">Review: 普通装饰器</h3>
