@@ -246,20 +246,38 @@
 曾经是放在 Evernote 里面的，可惜它对于代码块复制黏贴后的格式支持实在有点差…</p>
 <a id="more"></a>
 <h2 id="表格">表格</h2>
-<p>修改表格行高</p>
+<ul>
+<li>修改表格行高</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;array&#125;</span><br><span class="line">\renewcommand\arraystrech&#123;1.75&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>过长的表格</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;longtable&#125;</span><br><span class="line"></span><br><span class="line">% No \table environment on the outside</span><br><span class="line"></span><br><span class="line">\begin&#123;longtable&#125;[c]&#123;cccc&#125;</span><br><span class="line">1 &amp; 2 &amp; 3 &amp; 4 \\\hline</span><br><span class="line">5 &amp; 6 &amp; 7 &amp; 8 \\</span><br><span class="line">\caption&#123;&#125;</span><br><span class="line">\label&#123;&#125;</span><br><span class="line">\end&#123;longtable&#125;</span><br><span class="line"></span><br><span class="line">% caption and label in the \longtable environment, with a &quot;\\&quot; at the end of the last line of the table body.</span><br></pre></td></tr></table></figure>
+<p>注意 <code>longtable</code> 环境不支持 <code>\centerline{}</code>, 如果表格仍然过宽，可以使用以下方式横置页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;pdflscape&#125;</span><br><span class="line"></span><br><span class="line">\begin&#123;landscape&#125;</span><br><span class="line">% TABLE</span><br><span class="line">\end&#123;landscape&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>控制表格某一格宽度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;longtable&#125;[c]&#123;p&#123;35em&#125;ccc&#125;</span><br></pre></td></tr></table></figure>
+<p>尚未实验这种做法是否能用在 <code>tabular</code> 环境中，并且似乎这样控制大小之后，只能够左对齐。</p>
 <h2 id="图片">图片</h2>
-<p>多图片并列</p>
+<ul>
+<li>多图片并列</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;figure&#125;[htb]</span><br><span class="line">\centering</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.32\textwidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=\textwidth]&#123;path1.png&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.32\textwidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=\textwidth]&#123;path2.png&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">\begin&#123;minipage&#125;[t]&#123;0.32\textwidth&#125;</span><br><span class="line">\centering</span><br><span class="line">\includegraphics[width=\textwidth]&#123;path3.png&#125;</span><br><span class="line">\end&#123;minipage&#125;</span><br><span class="line">\caption&#123;Mutual Caption&#125; % If put inside minipage, then its independent caption for each figure</span><br><span class="line">\label&#123;&#125;</span><br><span class="line">\end&#123;figure&#125;</span><br></pre></td></tr></table></figure>
+<p>注意以上代码如果添加空行似乎会失效。</p>
 <h2 id="标题与-toc">标题与 TOC</h2>
 <h3 id="中文">中文</h3>
-<p>调整中文文章标题格式</p>
+<ul>
+<li>调整中文文章标题格式</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\documentclass[UTF8]&#123;ctexart&#125;</span><br><span class="line"></span><br><span class="line">\CTEXsetup[name = &#123;,、&#125;, number = &#123;\chinese&#123;section&#125;&#125;, format += &#123;\flushleft\heiti&#125;]&#123;section&#125;</span><br><span class="line">\CTEXsetup[number = &#123;(\chinese&#123;subsection&#125;)&#125;, format += &#123;\flushleft\normalfont\kaishu&#125;]&#123;subsection&#125;</span><br></pre></td></tr></table></figure>
 <p>以上代码将格式调整如下：</p>
 <p><img src="https://s2.ax1x.com/2019/02/25/k5l6oR.png" alt="示例"></p>
 <p>这里 <code>\CTEXsetup</code> 的具体用法为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\CTEXsetup[OPTIONS]&#123;NAME&#125;</span><br></pre></td></tr></table></figure>
-<p><code>NAME</code>: <code>part</code>, <code>chapter</code>, <code>section</code>, <code>subsection</code>, etc.</p>
+<p>NAME: <code>part</code>, <code>chapter</code>, <code>section</code>, <code>subsection</code>, etc.</p>
 <p>OPTIONS:</p>
 <ul>
 <li><code>name</code>: 在章节编号前后插入指定的文本，用逗号分隔，即：<code>name={前,后}</code></li>
@@ -288,22 +306,42 @@
 <li><code>bibname</code></li>
 </ul>
 <h3 id="general">General</h3>
-<p>插图与表格目录：</p>
+<ul>
+<li>插图与表格目录</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\listoffigures</span><br><span class="line">\listoftables</span><br></pre></td></tr></table></figure>
-<p>将插图和表格目录包含在<code>\tableofcontents</code>中：</p>
+<ul>
+<li>将插图和表格目录包含在 <code>\tableofcontents</code> 中</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[nottoc]&#123;tocbibind&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="miscellaneous">Miscellaneous</h2>
 <h3 id="中文-v2">中文</h3>
-<p>中文字体设置：</p>
 <ul>
-<li><code>\songti</code></li>
-<li><code>\heiti</code></li>
-<li><code>\fangsong</code></li>
-<li><code>\kaishu</code></li>
-<li><code>\lishu</code></li>
-<li><code>\youyuan</code></li>
-</ul>
+<li>
+<p>中文字体设置：</p>
+</li>
+<li>
+<p><code>\songti</code></p>
+</li>
+<li>
+<p><code>\heiti</code></p>
+</li>
+<li>
+<p><code>\fangsong</code></p>
+</li>
+<li>
+<p><code>\kaishu</code></p>
+</li>
+<li>
+<p><code>\lishu</code></p>
+</li>
+<li>
+<p><code>\youyuan</code></p>
+</li>
+<li>
 <p>中文字号设置：</p>
+</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\zihao&#123;NUMBER&#125;</span><br></pre></td></tr></table></figure>
 <p>NUMBER:</p>
 <ul>
@@ -318,10 +356,19 @@
 <li>-6: 小六</li>
 </ul>
 <h3 id="general-v2">General</h3>
-<p>使用罗马字母</p>
+<ul>
+<li>使用罗马字母</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\makeatletter</span><br><span class="line">\newcommand&#123;\rmnum&#125;[1]&#123;\romannumeral #1&#125;</span><br><span class="line">\newcommand&#123;\Rmnum&#125;[1]&#123;\expandafter\@slowromancap\romannumeral #1@&#125;</span><br><span class="line">\makeatother</span><br></pre></td></tr></table></figure>
-<p>多列 enumerate/itemize 列表</p>
+<ul>
+<li>多列 <code>enumerate</code>/<code>itemize</code> 列表</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;multicol&#125; %多列enumerate列表</span><br><span class="line"></span><br><span class="line">\begin&#123;multicols&#125;&#123;2&#125;</span><br><span class="line">\begin&#123;enumerate&#125;</span><br><span class="line">    \item a</span><br><span class="line">    \item b</span><br><span class="line">    \item c</span><br><span class="line">    \item d</span><br><span class="line">    \item e</span><br><span class="line">    \item f</span><br><span class="line">\end&#123;enumerate&#125;</span><br><span class="line">\end&#123;multicols&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>将正文中未 <code>\cite{}</code> 的文献添加到文末 Reference 中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\nocite&#123;KEY&#125;</span><br></pre></td></tr></table></figure>
+<p><code>KEY</code> 为 ‘<code>*</code>’ 时代表加入所有 BibTeX 文件中的条目</p>
 
       
     </div>
