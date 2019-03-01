@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="机器学习实战 Review Notes">
+
+
+
+
+  <meta name="keywords" content="Notes, Coding, Machine Learning, Orin Ful Vopaaz">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/02/27/Hands-on-machine-learning-Review/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 机器学习实战 Review Notes - Orin Ful Vopaaz </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          机器学习实战 Review Notes
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-27
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#理论"><span class="toc-text">理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#范数-的意义"><span class="toc-text">“范数”的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#有用代码-gist"><span class="toc-text">有用代码 Gist</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pre-processing"><span class="toc-text">Pre-Processing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eda"><span class="toc-text">EDA</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型训练与预测"><span class="toc-text">模型训练与预测</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#统一的-api："><span class="toc-text">统一的 API：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网格搜索"><span class="toc-text">网格搜索</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模型评估与验证"><span class="toc-text">模型评估与验证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#k-fold-交叉验证"><span class="toc-text">K-Fold 交叉验证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#直接使用损失函数"><span class="toc-text">直接使用损失函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存与读取模型"><span class="toc-text">保存与读取模型</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>在学校数据科学导论的基础上进行的阅读，只记录一些之前没有意识到或者不会的重点。</p>
+<p>学到完全没接触过的部分之后会另外开一篇博客进行记录。</p>
+<a id="more"></a>
+<h2 id="理论">理论</h2>
+<h3 id="范数-的意义">“范数”的意义</h3>
+<p>包含 n 个元素的向量 v 的 k 范数定义为 <img src="https://s2.ax1x.com/2019/02/26/kIhQBT.png" width="400"></p>
+<p>其中一范数对应 <a href="https://en.wikipedia.org/wiki/Mean_absolute_error" target="_blank" rel="noopener">MAE</a>, 二范数对应 <a href="https://en.wikipedia.org/wiki/Root-mean-square_deviation" target="_blank" rel="noopener">RMSE</a>.</p>
+<p>0 范数只给出向量中元素的数量，而无穷大范数给出向量中元素的最大绝对值。</p>
+<p><strong>范数的指数越高，就越关注大的价值，而忽视小的价值</strong>。因此范数越大，对异常值越敏感。</p>
+<h2 id="有用代码-gist">有用代码 Gist</h2>
+<h3 id="pre-processing">Pre-Processing</h3>
+<ul>
+<li>查看 DataFrame 中类型字段下，有多少种分类，每种类别下有多少样本</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"col"</span>].value_counts()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>DataFrame.where()</code> 函数</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame.where(cond, other=nan, inplace=<span class="keyword">False</span>, axis=<span class="keyword">None</span>, level=<span class="keyword">None</span>, try_cast=<span class="keyword">False</span>, raise_on_error=<span class="keyword">True</span>)</span><br></pre></td></tr></table></figure>
+<p>如果 cond (condition) 为真，保持原来的值，否则替换为 other, other的形状必须与根据 axis 切片后得到的行/列相同。</p>
+<ul>
+<li>将类别属性独热编码的类: <code>LabelBinarizer</code></li>
+</ul>
+<h3 id="eda">EDA</h3>
+<ul>
+<li>散点图密度查看方式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.plot(kind=<span class="string">"scatter"</span>, alpha=<span class="number">0.1</span>)</span><br></pre></td></tr></table></figure>
+<p><code>alpha</code> 是不透明度，密集的地方最终颜色会显得更深。</p>
+<ul>
+<li>对所有特征两两排列组合画散点图</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas.tools.plotting <span class="keyword">import</span> scatter_matrix</span><br><span class="line"></span><br><span class="line">attrs = [col1, col2, col3, col4]</span><br><span class="line">scatter_matrix(df[attrs], figsize=(width, height))</span><br></pre></td></tr></table></figure>
+<p>最终就会生成 4*4 的共 16 张图，分别是两两排列的散点图 12 张，另有 4 张是某个特征的直方图（直方图还可以换成 KDE（核密度估计）图，使用参数 <code>diagonal=&quot;kde&quot;</code>.</p>
+<h3 id="模型训练与预测">模型训练与预测</h3>
+<h4 id="统一的-api：">统一的 API：</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.somewhere <span class="keyword">import</span> MODEL</span><br><span class="line"></span><br><span class="line">model = MODEL()</span><br><span class="line">model.fit(TRAIN_FEATURES, TRAIN_LABELS)</span><br><span class="line">model.predict(TEST_FEATURES)</span><br></pre></td></tr></table></figure>
+<h4 id="网格搜索">网格搜索</h4>
+<p>通过 <code>GridSearchCV</code> 来进行超参数的调整，以得到最好的超参数。</p>
+<!-- TODO: P75 GridSearch -->
+<h3 id="模型评估与验证">模型评估与验证</h3>
+<h4 id="k-fold-交叉验证">K-Fold 交叉验证</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score</span><br><span class="line"></span><br><span class="line">k=<span class="number">10</span></span><br><span class="line">scores = cross_val_score(MODEL_TRAINED, ALL_PREPROCESSED_VALIDATION_FEATURE,</span><br><span class="line">    ALL_VALIDATION_LABEL, scoring=<span class="string">"neg_mean_squared_error"</span>, cv=k)</span><br></pre></td></tr></table></figure>
+<p><code>scoring</code> 是损失函数的形式，可查 API 获得更多信息。</p>
+<h4 id="直接使用损失函数">直接使用损失函数</h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_squared_error</span><br><span class="line"></span><br><span class="line">mean_squared_error(LABELS, PREDICTIONS)</span><br></pre></td></tr></table></figure>
+<h3 id="保存与读取模型">保存与读取模型</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.externals <span class="keyword">import</span> joblib</span><br><span class="line"></span><br><span class="line"><span class="comment"># Saving</span></span><br><span class="line">joblib.dump(MODEL, <span class="string">"NAME.pkl"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Loading</span></span><br><span class="line">model = joblib.load(<span class="string">"NAME.pkl"</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">Reward</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99U7q.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99NBn.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Notes/">Notes</a>
+            
+              <a href="/tags/Coding/">Coding</a>
+            
+              <a href="/tags/Machine-Learning/">Machine Learning</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/02/27/Hands-on-machine-learning-Note1/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">机器学习实战 Notes-1</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/02/24/cleanCode-Note3/">
+        <span class="next-text nav-default">代码整洁之道 Notes-3</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2275576474" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-customdefinedconnect"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

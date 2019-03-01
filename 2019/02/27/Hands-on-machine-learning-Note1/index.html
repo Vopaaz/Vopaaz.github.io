@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="机器学习实战 Notes-1">
+
+
+
+
+  <meta name="keywords" content="Notes, Coding, Machine Learning, Orin Ful Vopaaz">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="http://yoursite.com/2019/02/27/Hands-on-machine-learning-Note1/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 机器学习实战 Notes-1 - Orin Ful Vopaaz </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          机器学习实战 Notes-1
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-27
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#端到端的机器学习项目"><span class="toc-text">端到端的机器学习项目</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义转换器"><span class="toc-text">自定义转换器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用pipeline来进行数据预处理"><span class="toc-text">使用Pipeline来进行数据预处理</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>这篇以及之后的笔记，都记录《机器学习实战》一书中新学到的技术和内容。</p>
+<a id="more"></a>
+<h2 id="端到端的机器学习项目">端到端的机器学习项目</h2>
+<h3 id="自定义转换器">自定义转换器</h3>
+<p><span id="CombinedAttributesAdder"> </span></p>
+<p>让自定义的转换器与 sklearn API 一致化并且无缝连接。</p>
+<p>必须要有三个方法：<code>fit()</code>, <code>transform()</code>, <code>fit_transform()</code>.</p>
+<p>建议添加 <code>TransformerMixin</code>, <code>BaseEstimator</code> 作为基类，前者帮助直接得到 <code>fit_transform()</code>, 后者得到两个调整超参数的方法 <code>get_params()</code>, <code>set_params()</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.base <span class="keyword">import</span> BaseEstimator, TransformerMixin</span><br><span class="line"></span><br><span class="line">rooms_ix, bedrooms_ix, population_ix, household_ix =<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CombinedAttributesAdder</span><span class="params">(BaseEstimator, TransformerMixin)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, add_bedrooms_per_room = True)</span>:</span> <span class="comment"># no *args or **kargs</span></span><br><span class="line">    self.add_bedrooms_per_room =add_bedrooms_per_room</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, X, y=None)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self <span class="comment"># nothing else to do</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">transform</span><span class="params">(self, X, y=None)</span>:</span></span><br><span class="line">    rooms_per_household = X[:, rooms_ix] / X[:, household_ix]</span><br><span class="line">    population_per_household = X[:,population_ix] / X[:,household_ix]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> self.add_bedrooms_per_room:</span><br><span class="line">      bedrooms_per_room = X[:,bedrooms_ix] / X[:,rooms_ix]</span><br><span class="line">    <span class="keyword">return</span> np.c_[X, rooms_per_household, population_per_household, bedrooms_per_room]</span><br><span class="line">    <span class="comment"># np.c_ 是 numpy 横向连接两个矩阵的函数</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      <span class="keyword">return</span> np.c_[X, rooms_per_household, population_per_household]</span><br><span class="line"></span><br><span class="line">attr_adder = CombinedAttributesAdder(add_bedrooms_per_room=<span class="keyword">False</span>)</span><br><span class="line">housing_extra_attribs = attr_adder.transform(housing.values)</span><br></pre></td></tr></table></figure>
+<h3 id="使用pipeline来进行数据预处理">使用<code>Pipeline</code>来进行数据预处理</h3>
+<p>如果数据预处理存在多个前置步骤，可以通过 <code>Pipeline</code> 来完成，这样做可以减少代码量，避免错误，也显得更加清晰。</p>
+<p>例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer, StandardScaler</span><br><span class="line"></span><br><span class="line">num_pipeline = Pipeline([</span><br><span class="line">  (<span class="string">"imputer"</span>, Imputer(strategy=<span class="string">"median"</span>)), <span class="comment"># Class dealing with NULL value</span></span><br><span class="line">  (<span class="string">"attribs_adder"</span>, CombinedAttributesAdder()), <span class="comment"># User-defined feature adder</span></span><br><span class="line">  (<span class="string">"std_scaler"</span>, StandardScaler())</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">DATA_AFTER = num_pipeline.fit_transform(ORIGINAL_DATA)</span><br></pre></td></tr></table></figure>
+<p>这样即可直接完成三个预处理工作。</p>
+<p><code>Pipeline.fit_transform()</code> 的工作原理是，依次调用各个转换器的 <code>fit_transform()</code> 方法。要注意的是，<code>sklearn</code> 的 API 输出的是 numpy 矩阵，而非 pandas DataFrame, 因此第二个转换器 <code>CombinedAttributesAdder</code> 的定义中不能使用 <code>df[NEWCOL] = df[COL1] + df[COL2]</code> 等依赖于 DataFrame 的列名的语句，参考<a href="#CombinedAttributesAdder">代码</a>中是直接通过 numpy 的行列<strong>数字</strong>进行取数操作的。</p>
+<p>API <a href="https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html" target="_blank" rel="noopener">在此</a>。</p>
+<p>有时在实际问题中，对于一个 DataFrame 中不同的列，要经过不同的预处理。这里可以使用多个 <code>Pipeline</code>, 并且最后再将其通过 <code>FeatureUnion</code> 组合起来：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> FeatureUnion</span><br><span class="line"></span><br><span class="line">num_attribs = [<span class="string">"attr1"</span>, <span class="string">"attr2"</span>, <span class="string">"attr3"</span>]</span><br><span class="line">cat_attribs = [<span class="string">"attr4"</span>, <span class="string">"attr5"</span>]</span><br><span class="line"></span><br><span class="line">num_pipeline = Pipeline([</span><br><span class="line">  (<span class="string">"selector"</span>, DataFrameSelector(num_attribs)), <span class="comment"># User-defined, using column name to select feature from DataFrame</span></span><br><span class="line">  <span class="comment"># Other transformers here</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">cat_pipeline = Pipeline([</span><br><span class="line">  <span class="comment"># Another set of transformers</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">full_pipeline = FeatureUnion(transformer_list=[</span><br><span class="line">  (<span class="string">"num_pipeline"</span>, num_pipeline),</span><br><span class="line">  (<span class="string">"cat_pipeline"</span>, cat_pipeline)</span><br><span class="line">]) <span class="comment"># Run both pipelines, and horizentally connect the returned numpy matrix.</span></span><br><span class="line"></span><br><span class="line">DATA_PREPARED = full_pipeline.fit_transform(RAW_DATA)</span><br></pre></td></tr></table></figure>
+<p>这种形式非常重要，不然简直看不懂预处理时的代码。</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+  <div class="post-reward">
+    <input type="checkbox" name="reward" id="reward" hidden>
+    <label class="reward-button" for="reward">Reward</label>
+    <div class="qr-code">
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99U7q.png" title="wechat">
+        </label>
+      
+      
+        <label class="qr-code-image" for="reward">
+          <img class="image" src="https://s2.ax1x.com/2019/01/18/k99NBn.png" title="alipay">
+        </label>
+      
+    </div>
+  </div>
+
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Notes/">Notes</a>
+            
+              <a href="/tags/Coding/">Coding</a>
+            
+              <a href="/tags/Machine-Learning/">Machine Learning</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2019/02/27/Hands-on-machine-learning-Review/">
+        <span class="next-text nav-default">机器学习实战 Review Notes</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+        
+          <a href="https://weibo.com/u/2275576474" class="iconfont icon-weibo" title="weibo"></a>
+        
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-customdefinedconnect"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
