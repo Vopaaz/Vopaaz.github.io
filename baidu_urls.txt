@@ -1,1 +1,13 @@
 https://vopaaz.github.io/2019/02/27/Hands-on-machine-learning-Note1/
+https://vopaaz.github.io/2019/02/27/Hands-on-machine-learning-Review/
+https://vopaaz.github.io/2019/02/24/cleanCode-Note3/
+https://vopaaz.github.io/2019/02/24/LaTeX-Cookbook/
+https://vopaaz.github.io/2019/01/17/cleanCode-Note2/
+https://vopaaz.github.io/2019/01/16/CNKI-2-BibTeX/
+https://vopaaz.github.io/2019/01/15/change-tag-case-in-Hexo/
+https://vopaaz.github.io/2019/01/12/cleanCode-Note1/
+https://vopaaz.github.io/2019/01/11/CheatSheet-share/
+https://vopaaz.github.io/2019/01/05/DSA-summary/
+https://vopaaz.github.io/2019/01/01/JupyterNotebook-in-Hexo/
+https://vopaaz.github.io/2019/01/01/axis-in-pandas/
+https://vopaaz.github.io/2018/12/31/2018-Year-End-Summary/
