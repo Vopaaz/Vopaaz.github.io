@@ -1,3 +1,3 @@
-https://vopaaz.github.io/2019/02/27/Hands-on-machine-learning-Note1/
+https://vopaaz.github.io/2019/02/27/Hands-on-machine-learning-Note/
 https://vopaaz.github.io/2019/02/27/Hands-on-machine-learning-Review/
 https://vopaaz.github.io/2019/02/24/cleanCode-Note3/
