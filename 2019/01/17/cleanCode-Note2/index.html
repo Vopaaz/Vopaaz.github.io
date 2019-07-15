@@ -310,7 +310,7 @@
 <p>除此之外，这段代码也进行了一连串的调用，应当对其进行切分变为三行，使得每一行只有一个方法调用，以增加可读性。</p>
 <p>另一种可能性是 Options, ScratchDir, AbsolutePath 分别都只是数据结构而不是对象，这样的话如上一节所说，就不应当提供函数。以下的写法是可以的：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String outputDir = ctxt.options.scratchDir.absolutePath</span><br></pre></td></tr></table></figure>
-<p>当然，最好的方法应当是将在这里做的事情封装成 C 能够调用的对象（也即 ctxt）的方法。需要注意的是，<strong>对于对象，应该要求它做点什么，而不是给出它的内部情形。</strong> 例如在我们得到了绝对路径之后是要创建一个流，那么直接：</p>
+<p>当然，最好的方法应当是将在这里做的事情封装成 C 能够调用的对象（也即 ctxt）的方法。需要注意的是：对于对象，应该要求它做点什么，而不是给出它的内部情形。例如在我们得到了绝对路径之后是要创建一个流，那么直接：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName)</span><br></pre></td></tr></table></figure>
 <h3 id="数据传送对象">数据传送对象</h3>
 <p>DTO (Data Transfer Objects), 一个只有公共变量，没有函数的类。用它来作为数据传送的对象。</p>
