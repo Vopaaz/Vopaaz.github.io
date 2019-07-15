@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="前端学习笔记 -1- html/css 拾遗/小技巧">
+
+
+
+
+  <meta name="keywords" content="Coding, Frontend, Orin Ful Vopaaz">
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://vopaaz.github.io/2019/07/06/FrontEnd-Learn-1/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+  <script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 前端学习笔记 -1- html/css 拾遗/小技巧 - Orin Ful Vopaaz </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            Home
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            Archives
+          
+        </li>
+      </a>
+    
+      <a href="/tags">
+        <li class="mobile-menu-item">
+          
+          
+            Tags
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            About
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              Home
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              Archives
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            
+            
+              Tags
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              About
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          前端学习笔记 -1- html/css 拾遗/小技巧
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-07-06
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-text">html</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表单"><span class="toc-text">表单</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#css"><span class="toc-text">css</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#css-继承"><span class="toc-text">css 继承</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#覆盖优先级"><span class="toc-text">覆盖优先级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒子模型"><span class="toc-text">盒子模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#杂"><span class="toc-text">杂</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>之前零零散散学了一些散装的 html/css/javascript, 然后在计系原大作业里手动强撸了一个<a href="https://github.com/Vopaaz/File-Allocation-Simulator" target="_blank" rel="noopener">桌面应用</a>。写的时候就感觉特别不爽，DOM 的操作语法无比繁琐，javascript 的各种事件、异步机制等等都没弄懂。</p>
+<a id="more"></a>
+<p>网上找了很多教程之后发现 <a href="https://www.freecodecamp.cn/" target="_blank" rel="noopener">https://www.freecodecamp.cn/</a> 这个网站似乎还挺靠谱的，那么趁着这个假期，以及下个学期交换可能轻松一些，好好学习一些前端知识。毕竟做出一个真正能用的应用永远是最爽的事情。</p>
+<p>这个部分先记录一下以前学到过又遗忘的/没学到过的小点。</p>
+<h2 id="html">html</h2>
+<h3 id="列表">列表</h3>
+<ul>
+<li>无序列表：unordered list, 因此标签名为 <code>ul</code></li>
+<li>有序列表：ordered list, 因此标签名为 <code>ol</code></li>
+<li>内含元素（每个 item）的标签名为 <code>li</code>.</li>
+</ul>
+<h3 id="表单">表单</h3>
+<p>Html 表单中的 <code>&lt;input&gt;</code> 标签：</p>
+<ul>
+<li>是自关闭域</li>
+<li><code>type=&quot;text&quot;</code> 时，是文本框，采用 <code>placeholder</code> 属性可以指定文本框内的占位字符。</li>
+<li><code>required</code> 属性（没有 <code>=&quot;xxx&quot;</code> 这样，直接写 <code>&lt;input type=&quot;text&quot; required /&gt;</code> 即可）要求这个字段必须填写才能提交</li>
+<li><code>type=&quot;radio&quot;</code> 时，是单选框</li>
+<li><code>type=&quot;checkboxes&quot;</code> 时，是复选框</li>
+<li><code>checked</code> 属性（同样不需要 <code>=&quot;xxx&quot;</code>）可以让这个单选/复选框默认被选中</li>
+</ul>
+<p>区别于以前学到的 <code>&lt;label&gt;</code> 与 <code>&lt;input&gt;</code> 标签完全分开，并且用 <code>for</code> 属性指定对应的 <code>&lt;input&gt;</code> 是哪个输入域（绑定的是 <code>input</code> 标签的 <code>id</code> 属性），例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"male"</span>&gt;</span>Male<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">id</span>=<span class="string">"male"</span> /&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"female"</span>&gt;</span>Female<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> <span class="attr">id</span>=<span class="string">"female"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下：</p>
+<p><label for="male">Male</label>
+<input type="radio" name="sex" id="male"><br>
+<label for="female">Female</label>
+<input type="radio" name="sex" id="female"></p>
+<p>这里提供了另一种写法，即在 <code>&lt;input&gt;</code> 标签外面嵌套 <code>label</code> 标签，这样就可以直接指定 <code>label</code> 指示的是哪个 <code>input</code> 输入域，例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span> Male <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"ratio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> /&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">label</span>&gt;</span> Female <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"ratio"</span> <span class="attr">name</span>=<span class="string">"sex"</span> /&gt;</span> <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果完全一样：</p>
+<p><label> Male <input type="radio" name="sex"> </label> <br>
+<label> Female <input type="radio" name="sex"> </label></p>
+<h2 id="css">css</h2>
+<h3 id="css-继承">css 继承</h3>
+<p>html 元素的 css 样式可以向下继承，即子元素会具有父元素的属性。</p>
+<p>例如当对 body 设置了 <code>color</code> 和 <code>font-family</code> 等属性时，如果不进行其他设置，页面上的所有文字都会采用这种颜色和字体。</p>
+<h4 id="覆盖优先级">覆盖优先级</h4>
+<ul>
+<li>根据引入方式：内联属性（例如 <code>&lt;h1 style=&quot;color: white;&quot;&gt;</code>） &gt; 写在 <code>.html</code> 文件内的 <code>style</code> 标签内 &gt; 写在外部文件 (css 等) 中</li>
+<li>同种引入方式，后写的覆盖先写的</li>
+<li>多个选择器指定一个元素时，会牵扯到权重计算（但是感觉基本用不到），直接记忆：id 选择器 (<code>#id</code>) &gt; 类选择器 (<code>.class</code>) &gt; 元素选择器 (<code>tag</code>)</li>
+</ul>
+<p>还有一类忽视以上所有规则，即在样式声明后面加上 <code>!important</code>，就强制执行这种样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.pink-text</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: pink <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="盒子模型">盒子模型</h3>
+<p>在 Html 中，块级元素是最主要的元素，而任意一个块级元素都可以用盒子模型 (box model) 来阐释说明。最重要要记忆的三个概念是 <code>Padding</code>, <code>Margin</code>, <code>Border</code>.</p>
+<p>首先是一张示意图，提供一个直观的认识：</p>
+<div align="center">
+<img src="https://s2.ax1x.com/2019/07/06/Z0hpge.jpg" width="450">
+</div>
+<p>感觉 <code>padding</code> 和 <code>margin</code> 还挺容易搞混的，暂时也没有特别好的办法，只能硬背。</p>
+<p>在写 css 对其进行设置的时候，不熟悉时可以用属性名来控制上下左右四个方向的这些值：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.some-class</span>&#123;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">padding-right</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">padding-left</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更简洁的写法如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.some-class</span>&#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">40px</span> <span class="number">30px</span> <span class="number">20px</span> <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>记忆的方法是：从上开始，按顺时针方向绕一圈，也就是“上右下左”的顺序。</p>
+<h3 id="杂">杂</h3>
+<p>通过 <code>border-radious: 50%;</code> 可以达到将一张图片设置成圆形/椭圆的效果（取决于原始图片长宽比）。随便挑一张图片展示一下：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://s2.ax1x.com/2019/01/02/FIcK2R.png"</span> <span class="attr">style</span>=<span class="string">"border-radius: 50%;"</span> <span class="attr">width</span>=<span class="string">"300"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<div align="center">
+<img src="https://s2.ax1x.com/2019/01/02/FIcK2R.png" style="border-radius: 50%;" width="300">
+</div>
+<p>css 选择器中，类选择器的前缀是 <code>.</code>, <code>id</code> 选择器的前缀是 <code>#</code>.</p>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+          <div class="post-tags">
+            
+              <a href="/tags/Coding/">Coding</a>
+            
+              <a href="/tags/Frontend/">Frontend</a>
+            
+          </div>
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/07/15/FrontEnd-Learn-2/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">前端学习笔记 -2- Bootstrap</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/02/27/Hands-on-machine-learning-Note/">
+        <span class="next-text nav-default">机器学习实战 Notes</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+        
+          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2018 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
