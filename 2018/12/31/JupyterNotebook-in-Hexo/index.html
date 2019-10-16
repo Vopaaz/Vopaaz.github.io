@@ -17,12 +17,12 @@
 
 
 
-  <meta name="description" content="Pandas 中 axis 含义探索">
+  <meta name="description" content="Hexo 中引用 Jupyter Notebook">
 
 
 
 
-  <meta name="keywords" content="Coding, Python, Pandas, Orin Ful Vopaaz">
+  <meta name="keywords" content="Hexo, Jupyter Notebook, Orin Ful Vopaaz">
 
 
 
@@ -42,7 +42,7 @@
 
 
 
-<link rel="canonical" href="https://vopaaz.github.io/2019/01/01/axis-in-pandas/">
+<link rel="canonical" href="https://vopaaz.github.io/2018/12/31/JupyterNotebook-in-Hexo/">
 
 
 
@@ -100,7 +100,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> Pandas 中 axis 含义探索 - Orin Ful Vopaaz </title>
+    <title> Hexo 中引用 Jupyter Notebook - Orin Ful Vopaaz </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -216,13 +216,13 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          Pandas 中 axis 含义探索
+          Hexo 中引用 Jupyter Notebook
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2019-01-01
+          2018-12-31
         </span>
         
         
@@ -234,7 +234,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">Contents</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先进行一下枚举式的探索"><span class="toc-text">先进行一下枚举式的探索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#捣鼓了一上午之后终于找到了比较好的解决办法"><span class="toc-text">捣鼓了一上午之后终于找到了比较好的解决办法。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下面开始引用-notebook-的技术总结-x"><span class="toc-text">下面开始引用 Notebook 的技术总结【x</span></a></li></ol>
     </div>
   </div>
 
@@ -242,47 +242,33 @@
 
     <div class="post-content">
       
-        <p>在做助研的过程中经常碰到 pandas 各种函数的 axis 参数写错…
-每次都要调整很麻烦，网上也没有找到一篇能讲明白的资料，因此这里打算自己好好进行一下梳理。</p>
+        <p>乱捣鼓事情真的是…充满 bug 并且在解决 bug 的时候会出现船新的 bug…</p>
+<p>在写<a href="/2019/01/01/axis-in-pandas">《Pandas中axis含义探索》</a>这篇文章的时候，用的是 Jupyter Notebook 来写代码并且导出，但是发现引用的时候出现了严重的问题:</p>
 <a id="more"></a>
-<h2 id="先进行一下枚举式的探索">先进行一下枚举式的探索</h2>
-<iframe src="/htmls/axis研究.html" width="100%" height="750" frameborder="0" allowfullscreen></iframe>
-<p><span id="sum"></span></p>
-<h2 id="总结">总结</h2>
-<p>这里列一张表格简单总结一下：</p>
-
-
-<table>
-  <tr>
-    <th></th>
-    <th>axis=0</th>
-    <th>axis=1</th>
-  </tr>
-  <tr>
-    <td>sum</td>
-    <td>对列求和，返回一行数据</td>
-    <td>对行求和，返回一列数据</td>
-  </tr>
-  <tr>
-    <td>concat</td>
-    <td>堆积行，列的数量不变</td>
-    <td>堆积列，行的数量不变</td>
-  </tr>
-  <tr>
-    <td>drop/dropna</td>
-    <td>删除一行</td>
-    <td>删除一列</td>
-  </tr>
-  <tr>
-    <td>apply</td>
-    <td>抽取每一列迭代</td>
-    <td>抽取每一行迭代</td>
-  </tr>
-</table>
-
-
-<p>好了那么问题就在于到底怎么把这个玩意给记下来了…</p>
-<p>感觉好像暂时找不到规律…如果能找到再更新。</p>
+<p>直接复制黏贴 Jupyter 生成的 Markdown 文件中代码到 Hexo _posts 下面的.md文件中，渲染成的表格极其丑陋。</p>
+<p>【啊对这里要说的是仅限于使用了pandas生成的表格会渲染丑陋，其他方便表现还不错。</p>
+<h2 id="捣鼓了一上午之后终于找到了比较好的解决办法">捣鼓了一上午之后终于找到了比较好的解决办法。</h2>
+<ol>
+<li>在 Jupyter Notebook 中导出 .md 文件</li>
+<li>利用 VSCode 中 Markdown Preview Enhanced 插件的渲染器导出成 html 文件，注意采用 “cdn host” 模式</li>
+<li>将 html 文件放入资源文件夹</li>
+<li>在 html 的开头加上这样三行：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>在 /_posts/title.md 中利用  {% iframe path_to.html default 2000 %}  来引入 html 文件</li>
+</ol>
+<p>最终实现效果还算比较好看吧。</p>
+<h2 id="下面开始引用-notebook-的技术总结-x">下面开始引用 Notebook 的技术总结【x</h2>
+<ol>
+<li>直接用 Jupyter Notebook 导出的 html 会使得字体变得非常丑陋，所以要导出成 .md 再用 VSCode 转换成 .html</li>
+<li>如果不进行 (4) 的步骤，html 文件会被渲染上主站标题等等</li>
+<li>步骤 (5) 中的长和宽可以根据 iframe 的具体大小适当调节</li>
+<li>其他需要引用 markdown 文件等情况也可以使用这个方法，但是注意一定要在导出时使用 “cdn host” 模式，不然数学公式等无法正确显示</li>
+</ol>
+<p>引用 Notebook 的技术总结完毕【x</p>
+<p>——————</p>
+<p>解决问题的过程中看了很多资料…但是独立应用都不能起到最好的效果。这里的办法基本算是独创。尤其希望后面能写个自动化完成上面这些步骤的脚本那就更好啦，还是要继续学习。</p>
 
       
     </div>
@@ -302,11 +288,9 @@
         
           <div class="post-tags">
             
-              <a href="/tags/Coding/">Coding</a>
+              <a href="/tags/Hexo/">Hexo</a>
             
-              <a href="/tags/Python/">Python</a>
-            
-              <a href="/tags/Pandas/">Pandas</a>
+              <a href="/tags/Jupyter-Notebook/">Jupyter Notebook</a>
             
           </div>
         
@@ -314,15 +298,15 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2019/01/01/JupyterNotebook-in-Hexo/">
+      <a class="prev" href="/2019/01/05/DSA-summary/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">Hexo 中引用 Jupyter Notebook</span>
+        <span class="prev-text nav-default">数据结构自学报告【划去】期末整理</span>
         <span class="prev-text nav-mobile">Prev</span>
       </a>
     
     
-      <a class="next" href="/2018/12/31/2018-Year-End-Summary/">
-        <span class="next-text nav-default">2018 Year-End Summary</span>
+      <a class="next" href="/2018/12/31/axis-in-pandas/">
+        <span class="next-text nav-default">Pandas 中 axis 含义探索</span>
         <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
