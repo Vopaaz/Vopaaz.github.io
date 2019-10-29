@@ -17,10 +17,12 @@
 
 
 
-  <meta name="description" content="Personal blog of Vopaaz">
+  <meta name="description" content="字节跳动 - 大数据研发实习生面试复盘">
 
 
 
+
+  <meta name="keywords" content="Interview, Big Data, Orin Ful Vopaaz">
 
 
 
@@ -40,7 +42,7 @@
 
 
 
-<link rel="canonical" href="https://vopaaz.github.io/">
+<link rel="canonical" href="https://vopaaz.github.io/2019/10/29/interview-bytedance-big-data/">
 
 
 
@@ -98,7 +100,7 @@
   window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> Orin Ful Vopaaz </title>
+    <title> 字节跳动 - 大数据研发实习生面试复盘 - Orin Ful Vopaaz </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -210,15 +212,11 @@
           <div id="content" class="content">
             
   
-  <section id="posts" class="posts">
-    
-      
-        
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2019/10/29/interview-bytedance-big-data/">字节跳动 - 大数据研发实习生面试复盘</a>
+          字节跳动 - 大数据研发实习生面试复盘
         
       </h1>
 
@@ -233,15 +231,18 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">一面</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念类题目"><span class="toc-text">概念类题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编程题"><span class="toc-text">编程题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-join"><span class="toc-text">SQL join</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sql-query"><span class="toc-text">SQL query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#有序数组中数字出现次数"><span class="toc-text">有序数组中数字出现次数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#naive-方法"><span class="toc-text">Naive 方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#naive-方法改进"><span class="toc-text">Naive 方法改进</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二分查找"><span class="toc-text">二分查找</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        
-        
-
-        
-          <h1>一面</h1>
+        <h1>一面</h1>
 <h2 id="概念类题目">概念类题目</h2>
 <p>以下 * 号的回答表示没有经过核对，是自己当时的回答。</p>
 <ol>
@@ -391,449 +392,60 @@
 如果找到了，从找到的位置开始，向两边采用上面的 Naive 改进方法进行搜索。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 前面有个二分查找...强烈怀疑有 corner case 写的不对但是面试官没有怼</span></span><br><span class="line"><span class="comment"># 另一个要注意判断，如果二分查找没有找到，说明应当返回 0</span></span><br><span class="line"><span class="comment"># 以下代码是假设找到了 k 元素的 index 是 i</span></span><br><span class="line"></span><br><span class="line">acc = <span class="number">1</span> <span class="comment"># 不是 0, 因为二分查找找到的 k 本身计数 1</span></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(arr)): <span class="comment"># j 从 1 开始，因为如果是 0 就会重新扫描一次</span></span><br><span class="line">    <span class="keyword">if</span> i+j &gt;= len(arr): <span class="comment"># 如果没有这个条件，arr[i+j] 就可能溢出</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> arr[i+j] == k:</span><br><span class="line">        acc += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span> <span class="comment"># 这是 Naive 改方法的优化</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, len(arr)):</span><br><span class="line">    <span class="keyword">if</span> i-j &lt; <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> arr[i-j] == k:</span><br><span class="line">        acc += <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">print(acc)</span><br></pre></td></tr></table></figure>
 
-        
       
     </div>
 
     
+      
+      
 
-    
 
-  </article>
 
       
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/10/29/interview-hotstar/">Hotstar 广告算法实习生面试复盘</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-10-29
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
       
-        
-        
-          
-        
+    
 
+    
+      <footer class="post-footer">
         
-          <h1>一面</h1>
-<h2 id="初始题目">初始题目</h2>
-<p>有一个 Todo-list, 里面有多个 task, 每个 task 有一个优先级顺序。
-可以进行的操作是点击任意一个 task, 效果是它会被排列到 list 的顶端。
-问一共要进行多少次点击操作，才能将这个 Todo-list 里的 task 按照优先级整理成有序。
-这里指的并不是大 O 表示的数量级复杂度，而是给定一个特殊的 Todo-list, 问需要操作的次数。</p>
-          <div class="read-more">
-            <a href="/2019/10/29/interview-hotstar/" class="read-more-link">Read more..</a>
+          <div class="post-tags">
+            
+              <a href="/tags/Interview/">Interview</a>
+            
+              <a href="/tags/Big-Data/">Big Data</a>
+            
           </div>
         
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/08/03/FrontEnd-Learn-3/">前端学习笔记 -3- jQuery</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-08-03
-        </span>
         
         
-      </div>
-    </header>
-
+  <nav class="post-nav">
     
     
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>虽然现在前端是框架时代了，但是对于 jQuery 还是有一定的了解比较好。因此这部分课程不跳过。</p>
-          <div class="read-more">
-            <a href="/2019/08/03/FrontEnd-Learn-3/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/07/15/FrontEnd-Learn-2/">前端学习笔记 -2- Bootstrap</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-07-15
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>Bootstrap 是一个响应式设计的框架，可以支持根据不同大小 or 形状的页面（例如手机和电脑）来调整 html 元素的设置。</p>
-          <div class="read-more">
-            <a href="/2019/07/15/FrontEnd-Learn-2/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/07/06/FrontEnd-Learn-1/">前端学习笔记 -1- html/css 拾遗/小技巧</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-07-06
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>之前零零散散学了一些散装的 html/css/javascript, 然后在计系原大作业里手动强撸了一个<a href="https://github.com/Vopaaz/File-Allocation-Simulator" target="_blank" rel="noopener">桌面应用</a>。写的时候就感觉特别不爽，DOM 的操作语法无比繁琐，javascript 的各种事件、异步机制等等都没弄懂。</p>
-          <div class="read-more">
-            <a href="/2019/07/06/FrontEnd-Learn-1/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/02/27/Hands-on-machine-learning-Note/">机器学习实战 Notes</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-02-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>这篇笔记记录《机器学习实战》一书中新学到的技术和内容。</p>
-          <div class="read-more">
-            <a href="/2019/02/27/Hands-on-machine-learning-Note/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/02/27/Hands-on-machine-learning-Review/">机器学习实战 Review Notes</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-02-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>在学校数据科学导论的基础上进行的阅读，只记录一些之前没有意识到或者不会的重点。</p>
-<p>学到完全没接触过的部分之后会另外开一篇博客进行记录。</p>
-          <div class="read-more">
-            <a href="/2019/02/27/Hands-on-machine-learning-Review/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/02/24/cleanCode-Note3/">代码整洁之道 Notes-3</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-02-24
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="错误处理">错误处理</h2>
-<p><strong>错误处理绝对不能弄乱代码逻辑。</strong></p>
-<p>先在代码中写 <code>try-catch-finally</code> 语句，它在代码块中定义了一个稳定的范围，无论在 <code>try</code> 部分发生了什么，<code>catch</code> 都将其维持在一个可持续的状态。</p>
-          <div class="read-more">
-            <a href="/2019/02/24/cleanCode-Note3/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/02/24/LaTeX-Cookbook/">My LaTeX Cookbook</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-02-24
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <p>整理目前有用到过的 LaTeX 常用命令，以便于查找。
-曾经是放在 Evernote 里面的，可惜它对于代码块复制黏贴后的格式支持实在有点差…</p>
-          <div class="read-more">
-            <a href="/2019/02/24/LaTeX-Cookbook/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-        
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2019/01/17/cleanCode-Note2/">代码整洁之道 Notes-2</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2019-01-17
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-
-    <div class="post-content">
-      
-        
-        
-          
-        
-
-        
-          <h2 id="写在前面：-google-style-guide">写在前面： Google Style Guide</h2>
-<p>这两天刷知乎的时候看到了 Google 有自己的 Style Guide, 和 clean code 的主题也很相关，在这里留下链接留待以后学习。【这种以后学习啥的话怎么感觉天天在说【逃x】</p>
-          <div class="read-more">
-            <a href="/2019/01/17/cleanCode-Note2/" class="read-more-link">Read more..</a>
-          </div>
-        
-      
-    </div>
-
-    
-
-    
-
-  </article>
-
-      
-      
-  <nav class="pagination">
-    
-    
-      <a class="next" href="/page/2/">
-        <span class="next-text">Next</span>
+      <a class="next" href="/2019/10/29/interview-hotstar/">
+        <span class="next-text nav-default">Hotstar 广告算法实习生面试复盘</span>
+        <span class="prev-text nav-mobile">Next</span>
         <i class="iconfont icon-right"></i>
       </a>
     
   </nav>
 
 
+      </footer>
     
-  </section>
+
+  </article>
+
 
           </div>
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    
+  </div>
+
 
         </div>
       </main>
@@ -919,6 +531,25 @@
     </div>
 
     
+  
+  
+
+  
+   <script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script>
+
+
 
 
     
