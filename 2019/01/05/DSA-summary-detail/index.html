@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><meta name="generator" content="Hexo 3.8.0">
-    
-<meta charset="UTF-8">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -15,50 +13,16 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
+<meta name="description" content="数据结构整理 - 详细内容"><meta name="keywords" content="Study, Orin Ful Vopaaz"><link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+<link rel="canonical" href="https://vopaaz.github.io/2019/01/05/DSA-summary-detail/">
 
-
-  <meta name="description" content="Personal blog of Vopaaz">
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz">
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
-
-
-
-<link rel="canonical" href="https://vopaaz.github.io/htmls/DSA-summary-detail.html">
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
-
-
-
-
-  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
-
-
-
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
 
-
-
-  
-  <script id="baidu_analytics">
+<script id="baidu_analytics">
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -66,12 +30,7 @@
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(hm, s);
     })();
-  </script>
-
-
-
-
-  <script id="baidu_push">
+  </script><script id="baidu_push">
 (function(){
     var bp = document.createElement('script');
     var curProtocol = window.location.protocol.split(':')[0];
@@ -85,20 +44,11 @@
     s.parentNode.insertBefore(bp, s);
 })();
 </script>
-
-
-
-
-
-
-
-
-
 <script>
-  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":true};
 </script>
 
-    <title>  - Orin Ful Vopaaz </title>
+    <title>数据结构整理 - 详细内容 - Orin Ful Vopaaz</title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -113,292 +63,67 @@
 </div>
 
 <nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    
-      <a href="/">
-        <li class="mobile-menu-item">
-          
-          
-            Home
-          
-        </li>
-      </a>
-    
-      <a href="/archives/">
-        <li class="mobile-menu-item">
-          
-          
-            Archives
-          
-        </li>
-      </a>
-    
-      <a href="/tags">
-        <li class="mobile-menu-item">
-          
-          
-            Tags
-          
-        </li>
-      </a>
-    
-      <a href="/about">
-        <li class="mobile-menu-item">
-          
-          
-            About
-          
-        </li>
-      </a>
-    
-  </ul>
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
 </nav>
-
-    <div class="container" id="mobile-panel">
+<div class="container" id="mobile-panel">
       <header id="header" class="header"><div class="logo-wrapper">
   <a href="/." class="logo">Orin Ful Vopaaz</a>
 </div>
 
-<nav class="site-navbar">
-  
-    <ul id="menu" class="menu">
-      
-        <li class="menu-item">
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
           <a class="menu-item-link" href="/">
-            
-            
-              Home
-            
-          </a>
+            Home
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/archives/">
-            
-            
-              Archives
-            
-          </a>
+            Archives
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/tags">
-            
-            
-              Tags
-            
-          </a>
+            Tags
+            </a>
         </li>
-      
-        <li class="menu-item">
+      <li class="menu-item">
           <a class="menu-item-link" href="/about">
-            
-            
-              About
-            
-          </a>
+            About
+            </a>
         </li>
-      
-    </ul>
-  
-</nav>
-
-      </header>
+      </ul></nav>
+</header>
 
       <main id="main" class="main">
         <div class="content-wrapper">
-          <div id="content" class="content">
-            
-  <article class="post">
-    <div class="post-content">
-      <p><a href="https://vopaaz.github.io/" target="_self"> 回到主页 </a> <a href="https://vopaaz.github.io/2019/01/05/DSA-summary/" target="_self"> 回到文章 </a></p>
-<p>————</p>
-<h1>Table of Contents</h1>
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-<!-- code_chunk_output -->
-<ul>
-<li><a href="#table-of-contents">Table of Contents</a></li>
-<li><a href="#basis-of-algorithm-analysis">Basis of Algorithm Analysis</a>
-<ul>
-<li><a href="#rules-of-on-syntax">Rules of O(n) Syntax</a></li>
-<li><a href="#general-rules-for-algorithm-analysis">General Rules for Algorithm Analysis</a></li>
-</ul>
-</li>
-<li><a href="#primary-examples-of-algorithm">Primary Examples of Algorithm</a>
-<ul>
-<li><a href="#fibonacci-sequence">Fibonacci Sequence</a></li>
-<li><a href="#maximum-subsequence-sum-problem">Maximum Subsequence Sum Problem</a>
-<ul>
-<li><a href="#exhaustive-strategy">Exhaustive Strategy</a></li>
-<li><a href="#optimized-exhaustive-strategy">Optimized Exhaustive Strategy</a></li>
-<li><a href="#divide-and-conquer">Divide-and-Conquer</a></li>
-<li><a href="#the-best-algorithm">The Best Algorithm</a></li>
-</ul>
-</li>
-<li><a href="#binary-search">Binary Search</a></li>
-</ul>
-</li>
-<li><a href="#abstract-data-type-adt">Abstract Data Type (ADT)</a>
-<ul>
-<li><a href="#list">List</a>
-<ul>
-<li><a href="#array-implementation">Array Implementation</a></li>
-<li><a href="#linked-list">Linked List</a></li>
-<li><a href="#doubly-linked-list">Doubly Linked List</a></li>
-<li><a href="#circularly-linked-list">Circularly Linked List</a></li>
-</ul>
-</li>
-<li><a href="#stack">Stack</a>
-<ul>
-<li><a href="#linked-list-implementation">Linked List Implementation</a></li>
-<li><a href="#array-implementation-1">Array Implementation</a></li>
-<li><a href="#application-maze-solving">Application: Maze Solving</a></li>
-</ul>
-</li>
-<li><a href="#queue">Queue</a>
-<ul>
-<li><a href="#circular-array-implementation">Circular Array Implementation</a></li>
-<li><a href="#application-maze-solving---floodfill-algorithm">Application: Maze Solving - FloodFill Algorithm</a></li>
-</ul>
-</li>
-<li><a href="#binary-trees">Binary Trees</a>
-<ul>
-<li><a href="#tree-traversal">Tree Traversal</a></li>
-<li><a href="#threaded-binary-tree">Threaded Binary Tree</a></li>
-<li><a href="#binary-search-tree">Binary Search Tree</a></li>
-</ul>
-</li>
-<li><a href="#avl-tree">AVL Tree</a>
-<ul>
-<li><a href="#insertion-and-rotation">Insertion and Rotation</a>
-<ul>
-<li><a href="#single-rotation">Single Rotation</a></li>
-<li><a href="#double-rotation">Double Rotation</a></li>
-</ul>
-</li>
-<li><a href="#deletion">Deletion</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#sorting">Sorting</a>
-<ul>
-<li><a href="#bst-based-sorting">BST-Based Sorting</a></li>
-<li><a href="#naive-strategy---straight-selection-sort">Naive Strategy - Straight Selection Sort</a></li>
-<li><a href="#insertion-sort">Insertion Sort</a>
-<ul>
-<li><a href="#lower-bound-for-simple-sorting-algorithms">Lower Bound for Simple Sorting Algorithms</a></li>
-<li><a href="#binary-insertion-sort">Binary Insertion Sort</a></li>
-</ul>
-</li>
-<li><a href="#bubble-sort">Bubble Sort</a></li>
-<li><a href="#shell-sort">Shell Sort</a></li>
-<li><a href="#merge-sort">Merge Sort</a></li>
-<li><a href="#quick-sort">Quick Sort</a>
-<ul>
-<li><a href="#basic-algorithm">Basic Algorithm</a></li>
-<li><a href="#median-of-three-partitioning">Median-of-Three Partitioning</a>
-<ul>
-<li><a href="#improving-median-of-three">Improving Median-of-Three</a></li>
-<li><a href="#improving-small-arrays-issue">Improving Small Arrays Issue</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#table-sort">Table Sort</a></li>
-<li><a href="#bucket-sort">Bucket Sort</a></li>
-<li><a href="#radix-sort">Radix Sort</a></li>
-<li><a href="#external-sorting">External Sorting</a></li>
-<li><a href="#stability">Stability</a></li>
-</ul>
-</li>
-<li><a href="#hashing">Hashing</a>
-<ul>
-<li><a href="#hash-table-and-hash-function">Hash Table and Hash Function</a></li>
-<li><a href="#collision-resolution">Collision resolution</a>
-<ul>
-<li><a href="#separate-chaining">Separate Chaining</a></li>
-<li><a href="#open-addressing">Open Addressing</a>
-<ul>
-<li><a href="#linear-probing">Linear Probing</a></li>
-<li><a href="#quadratic-probing">Quadratic Probing</a></li>
-<li><a href="#double-hashing">Double Hashing</a></li>
-</ul>
-</li>
-<li><a href="#rehashing">Rehashing</a></li>
-<li><a href="#public-overflow-cache">Public Overflow Cache</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#graph-algorithms">Graph Algorithms</a>
-<ul>
-<li><a href="#definitions">Definitions</a></li>
-<li><a href="#representation">Representation</a>
-<ul>
-<li><a href="#adjacency-matrix">Adjacency Matrix</a></li>
-<li><a href="#adjacency-list">Adjacency List</a></li>
-<li><a href="#degrees">Degrees</a></li>
-</ul>
-</li>
-<li><a href="#topological-sort">Topological Sort</a>
-<ul>
-<li><a href="#preliminary-implementation">Preliminary Implementation</a></li>
-<li><a href="#optimization-strategy">Optimization Strategy</a></li>
-</ul>
-</li>
-<li><a href="#shortest-path-algorithms">Shortest-Path Algorithms</a>
-<ul>
-<li><a href="#unweighted-shortest-path">Unweighted Shortest Path</a></li>
-<li><a href="#dijkstras-algorithm-for-weighted-graph">Dijkstra’s Algorithm for Weighted Graph</a></li>
-<li><a href="#critical-path-analysis">Critical Path Analysis</a>
-<ul>
-<li><a href="#representation-1">Representation</a></li>
-<li><a href="#earliest-completion-time">Earliest Completion Time</a></li>
-<li><a href="#latest-completion-time">Latest Completion Time</a></li>
-<li><a href="#slack-time">Slack Time</a></li>
-<li><a href="#brief-summary">Brief Summary</a></li>
-</ul>
-</li>
-<li><a href="#all-pairs-shortest-path">All-Pairs Shortest Path</a>
-<ul>
-<li><a href="#executing-v-times-dijkstra">Executing |V| times Dijkstra</a></li>
-<li><a href="#simple-algorithm">Simple Algorithm</a>
-<ul>
-<li><a href="#optimizations">Optimizations</a>
-<ul>
-<li><a href="#path-storage">Path Storage</a></li>
-<li><a href="#hopping-recursion">Hopping Recursion</a></li>
-<li><a href="#local-updating">Local Updating</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#floyd-warshall-alogrithm">Floyd-Warshall Alogrithm</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#network-flow-problem">Network Flow Problem</a>
-<ul>
-<li><a href="#simple-algorithm-1">Simple Algorithm</a></li>
-<li><a href="#modification">Modification</a></li>
-</ul>
-</li>
-<li><a href="#minimum-spanning-tree">Minimum Spanning Tree</a>
-<ul>
-<li><a href="#prims-algorithm">Prim’s Algorithm</a></li>
-<li><a href="#kruskals-algorithm">Kruskal’s Algorithm</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#appendix-table-of-complexity-of-all-algorithms">Appendix: Table of Complexity of ALL algorithms</a></li>
-<li><a href="#list-of-some-topics-not-involved">List of Some Topics not Involved</a></li>
-<li><a href="#references">References</a></li>
-</ul>
-<!-- /code_chunk_output -->
-<h1>Basis of Algorithm Analysis</h1>
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">数据结构整理 - 详细内容
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-05
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Basis of Algorithm Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rules-of-o-n-syntax"><span class="toc-text">Rules of O(n) Syntax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#general-rules-for-algorithm-analysis"><span class="toc-text">General Rules for Algorithm Analysis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Primary Examples of Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#fibonacci-sequence"><span class="toc-text">Fibonacci Sequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maximum-subsequence-sum-problem"><span class="toc-text">Maximum Subsequence Sum Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#exhaustive-strategy"><span class="toc-text">Exhaustive Strategy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimized-exhaustive-strategy"><span class="toc-text">Optimized Exhaustive Strategy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#divide-and-conquer"><span class="toc-text">Divide-and-Conquer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-best-algorithm"><span class="toc-text">The Best Algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#binary-search"><span class="toc-text">Binary Search</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Abstract Data Type (ADT)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#array-implementation"><span class="toc-text">Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linked-list"><span class="toc-text">Linked List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doubly-linked-list"><span class="toc-text">Doubly Linked List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#circularly-linked-list"><span class="toc-text">Circularly Linked List</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack"><span class="toc-text">Stack</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linked-list-implementation"><span class="toc-text">Linked List Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-implementation-v2"><span class="toc-text">Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#application-maze-solving"><span class="toc-text">Application: Maze Solving</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue"><span class="toc-text">Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#circular-array-implementation"><span class="toc-text">Circular Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#application-maze-solving-floodfill-algorithm"><span class="toc-text">Application: Maze Solving - FloodFill Algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#binary-trees"><span class="toc-text">Binary Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree-traversal"><span class="toc-text">Tree Traversal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#threaded-binary-tree"><span class="toc-text">Threaded Binary Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#binary-search-tree"><span class="toc-text">Binary Search Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#avl-tree"><span class="toc-text">AVL Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#insertion-and-rotation"><span class="toc-text">Insertion and Rotation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#single-rotation"><span class="toc-text">Single Rotation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#double-rotation"><span class="toc-text">Double Rotation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deletion"><span class="toc-text">Deletion</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Sorting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bst-based-sorting"><span class="toc-text">BST-Based Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#naive-strategy-straight-selection-sort"><span class="toc-text">Naive Strategy - Straight Selection Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insertion-sort"><span class="toc-text">Insertion Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lower-bound-for-simple-sorting-algorithms"><span class="toc-text">Lower Bound for Simple Sorting Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#binary-insertion-sort"><span class="toc-text">Binary Insertion Sort</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bubble-sort"><span class="toc-text">Bubble Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell-sort"><span class="toc-text">Shell Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#merge-sort"><span class="toc-text">Merge Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quick-sort"><span class="toc-text">Quick Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-algorithm"><span class="toc-text">Basic Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#median-of-three-partitioning"><span class="toc-text">Median-of-Three Partitioning</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#improving-median-of-three"><span class="toc-text">Improving Median-of-Three</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#improving-small-arrays-issue"><span class="toc-text">Improving Small Arrays Issue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#table-sort"><span class="toc-text">Table Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bucket-sort"><span class="toc-text">Bucket Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#radix-sort"><span class="toc-text">Radix Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#external-sorting"><span class="toc-text">External Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stability"><span class="toc-text">Stability</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Hashing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hash-table-and-hash-function"><span class="toc-text">Hash Table and Hash Function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collision-resolution"><span class="toc-text">Collision resolution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#separate-chaining"><span class="toc-text">Separate Chaining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open-addressing"><span class="toc-text">Open Addressing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linear-probing"><span class="toc-text">Linear Probing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quadratic-probing"><span class="toc-text">Quadratic Probing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#double-hashing"><span class="toc-text">Double Hashing</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rehashing"><span class="toc-text">Rehashing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#public-overflow-cache"><span class="toc-text">Public Overflow Cache</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Graph Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#definitions"><span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#representation"><span class="toc-text">Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-matrix"><span class="toc-text">Adjacency Matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-list"><span class="toc-text">Adjacency List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#degrees"><span class="toc-text">Degrees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#topological-sort"><span class="toc-text">Topological Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#preliminary-implementation"><span class="toc-text">Preliminary Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimization-strategy"><span class="toc-text">Optimization Strategy</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shortest-path-algorithms"><span class="toc-text">Shortest-Path Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#unweighted-shortest-path"><span class="toc-text">Unweighted Shortest Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dijkstra-s-algorithm-for-weighted-graph"><span class="toc-text">Dijkstra’s Algorithm for Weighted Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#critical-path-analysis"><span class="toc-text">Critical Path Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#representation-v2"><span class="toc-text">Representation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#earliest-completion-time"><span class="toc-text">Earliest Completion Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#latest-completion-time"><span class="toc-text">Latest Completion Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slack-time"><span class="toc-text">Slack Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#brief-summary"><span class="toc-text">Brief Summary</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#all-pairs-shortest-path"><span class="toc-text">All-Pairs Shortest Path</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#executing-v-times-dijkstra"><span class="toc-text">Executing |V| times Dijkstra</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#simple-algorithm"><span class="toc-text">Simple Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#optimizations"><span class="toc-text">Optimizations</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#path-storage"><span class="toc-text">Path Storage</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#hopping-recursion"><span class="toc-text">Hopping Recursion</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#local-updating"><span class="toc-text">Local Updating</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#floyd-warshall-alogrithm"><span class="toc-text">Floyd-Warshall Alogrithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-flow-problem"><span class="toc-text">Network Flow Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simple-algorithm-v2"><span class="toc-text">Simple Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modification"><span class="toc-text">Modification</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#minimum-spanning-tree"><span class="toc-text">Minimum Spanning Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prim-s-algorithm"><span class="toc-text">Prim’s Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kruskal-s-algorithm"><span class="toc-text">Kruskal’s Algorithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Appendix: Table of Complexity of ALL algorithms</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">List of Some Topics not Involved</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><h1>Basis of Algorithm Analysis</h1>
 <h2 id="rules-of-o-n-syntax">Rules of O(n) Syntax</h2>
 <ol>
 <li>Definition: $T(N) = O(f(N))$ if there are positive constants $c$ and $n_0$ such that $T(N) \leq c\times f(N)$ when $N \geq n_0$. Use the tightest one in the course. e.g. $2N^2 = O(N^2)$
@@ -1290,13 +1015,12 @@ $\operatorname{Slack}&lt;v,w&gt; = LC_v - EC_v$</p>
 <li>4 和 5: 将 5 加入 $S_1$ 中</li>
 </ul>
 <h1>Appendix: Table of Complexity of ALL algorithms</h1>
-<p>由于 $\LaTeX$ 公式语法和 $\text{Markdown}$ 渲染器对于 “|” 符号的转义冲突，<strong>表格中图论部分的 $|V|$ 和 $|E|$ 分别被渲染为 $|V|$,  $|E|$, 请自行脑内转义。</strong></p>
 <table>
 <thead>
 <tr>
 <th>大类</th>
 <th>项目</th>
-<th>Average/Precise/Unstated</th>
+<th>Mean/Precise/Unstated</th>
 <th>Worst</th>
 <th>Best</th>
 </tr>
@@ -1952,82 +1676,35 @@ Detail of the worst case efficiency of Quick Sort:</p>
 </li>
 <li>Social Network Analysis</li>
 </ul>
-<h1>References</h1>
-<ul>
-<li>Course Slides of Prof. Wei</li>
-<li><a href="https://www.cnblogs.com/cherryljr/p/6669489.html" target="_blank" rel="noopener">https://www.cnblogs.com/cherryljr/p/6669489.html</a></li>
-<li><a href="https://blog.csdn.net/gdut2015go/article/details/46548769" target="_blank" rel="noopener">https://blog.csdn.net/gdut2015go/article/details/46548769</a></li>
-</ul>
-<p>If there is any infringement/error, please <a href="mailto:liyifan945@163.com" target="_self">contact me</a>, modification or deletion will be implemented immediately.</p>
-<p>————</p>
-<p><a href="https://vopaaz.github.io/" target="_self"> 回到主页 </a> <a href="https://vopaaz.github.io/2019/01/05/DSA-summary/" target="_self"> 回到文章 </a></p>
 
-    </div>
-  </article>
-
-          </div>
-          
-  <div class="comments" id="comments">
-    
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Study/">Study</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2019/01/11/CheatSheet-share/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">概统 & 公司金融 Cheat Sheet</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2019/01/05/DSA-summary/">
+        <span class="next-text nav-default">数据结构自学报告【划去】期末整理</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
         <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
       </div>  
-    
-  </div>
-
-
-        </div>
+    </div></div>
       </main>
 
-      <footer id="footer" class="footer">
-
-  <div class="social-links">
-    
-      
-        
-          <a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        
-          <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
-        
-      
-    
-      
-    
-      
-        
-          <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-
-    
-  </div>
-
-
-
-<div class="copyright">
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        </div><div class="copyright">
   <span class="power-by">
     Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
   </span>
@@ -2037,34 +1714,18 @@ Detail of the worst case efficiency of Quick Sort:</p>
     <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
   </span>
 
-  <span class="copyright-year">
-    
-    &copy; 
-     
-      2018 - 
-    
-    2020
-
-    <span class="heart">
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>
     <span class="author">Vopaaz</span>
   </span>
 </div>
-
-      </footer>
+</footer>
 
       <div class="back-to-top" id="back-to-top">
         <i class="iconfont icon-up"></i>
       </div>
-    </div>
-
-    
-  
-  
-
-  
-   <script type="text/javascript">
+    </div><script type="text/javascript">
 	(function(d, s) {
        var j, e = d.getElementsByTagName(s)[0];
 
@@ -2076,45 +1737,9 @@ Detail of the worst case efficiency of Quick Sort:</p>
 
        e.parentNode.insertBefore(j, e);
    })(document, 'script');
-  </script>
-
-
-
-
-    
-  
-
-
-
-  
-  
-
-
-
-
-
-  
-    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
-  
-
-  
-    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
-  
-
-
-    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
-
-  </body>
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+</body>
 </html>

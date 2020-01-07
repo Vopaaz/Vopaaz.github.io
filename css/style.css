@@ -383,7 +383,7 @@ body {
   body.hide-top {
     border-top: 3px solid transparent; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   body {
     border-top: 0; } }
 
@@ -427,9 +427,9 @@ h6 {
 
 .container {
   margin: 0 auto;
-  width: 800px; }
+  width: 875px; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   .container {
     width: 100%;
     box-shadow: -1px -5px 5px #cacaca; } }
@@ -462,8 +462,8 @@ h6 {
     float: left; }
     .header .logo-wrapper .logo {
       font-size: 45px;
-      font-family: Garamond, "Chancery", cursive, LiSu, sans-serif; }
-  @media screen and (max-width: 800px) {
+      font-family: "Garamond", "Chancery", cursive, LiSu, sans-serif; }
+  @media screen and (max-width: 875px) {
     .header .logo-wrapper {
       display: none; } }
   .header .site-navbar {
@@ -502,11 +502,11 @@ h6 {
           left: 0; }
       .header .site-navbar .menu .menu-item-link {
         font-size: 18px; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 875px) {
     .header .site-navbar {
       display: none; } }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   .header {
     padding: 50px 0 0;
     text-align: center; } }
@@ -573,12 +573,12 @@ h6 {
         content: '·'; }
   .post .post-toc {
     position: absolute;
-    width: 200px;
-    margin-left: 785px;
+    width: 215px;
+    margin-left: 860px;
     padding: 10px;
     font-family: Athelas, STHeiti, Microsoft Yahei, serif;
     border-radius: 5px;
-    background: rgba(236, 236, 236, 0.2);
+    background: rgba(236, 236, 236, 0.6);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     word-wrap: break-word;
     box-sizing: border-box; }
@@ -599,7 +599,7 @@ h6 {
           padding-left: 15px; }
       .post .post-toc .post-toc-content .toc-link.active {
         color: #5096b9; }
-  @media screen and (max-width: 1185px) {
+  @media screen and (max-width: 1290px) {
     .post .post-toc {
       display: none; } }
   .post .post-content h1 {
@@ -817,6 +817,12 @@ h6 {
       content: " · Go"; }
     .post .post-content .highlight.go figcaption + table::after {
       display: none; }
+    .post .post-content .highlight.kotlin > table::after {
+      content: "Kotlin"; }
+    .post .post-content .highlight.kotlin > figcaption > span::after {
+      content: " · Kotlin"; }
+    .post .post-content .highlight.kotlin figcaption + table::after {
+      display: none; }
     .post .post-content .highlight figcaption {
       position: absolute;
       top: 0;
@@ -977,7 +983,7 @@ h6 {
           transform: translateX(4px); }
       .post .post-footer .post-nav .nav-mobile {
         display: none; }
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 875px) {
     .post .post-footer .post-nav .nav-default {
       display: none; }
     .post .post-footer .post-nav .nav-mobile {
@@ -1074,7 +1080,7 @@ h6 {
       .archive .archive-post:hover .archive-post-title .archive-post-link {
         color: #3d7a99; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   .archive {
     margin-left: auto;
     margin-right: auto; }
@@ -1281,7 +1287,7 @@ h6 {
     .mobile-navbar .mobile-header-logo .logo {
       font-size: 22px;
       line-height: 50px;
-      font-family: Garamond, "Chancery", cursive, LiSu, sans-serif; }
+      font-family: "Garamond", "Chancery", cursive, LiSu, sans-serif; }
   .mobile-navbar .mobile-navbar-icon {
     color: #5096b9;
     height: 50px;
@@ -1380,7 +1386,7 @@ h6 {
       .mobile-menu .mobile-menu-list a:hover {
         color: #5096b9; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   .mobile-navbar {
     display: block; } }
 
@@ -1396,17 +1402,10 @@ h6 {
   .back-to-top:hover {
     transform: translateY(-5px); }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 875px) {
   .back-to-top {
     display: none !important; } }
 
-#nprogress .bar {
-  background: #5096b9;
-  height: 3px; }
-
-#nprogress .peg {
-  box-shadow: 0 0 10px #5096b9, 0 0 5px #5096b9; }
-
-#nprogress .spinner-icon {
-  border-top-color: #5096b9;
-  border-left-color: #5096b9; }
+.mjx-chtml:focus {
+  padding: 1px 0;
+  outline: none; }
