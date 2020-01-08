@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Spark groupByKey/ReduceByKey 比较与性能调优"><meta name="keywords" content="Coding, Big Data, Spark, Orin Ful Vopaaz"><link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+<link rel="canonical" href="https://vopaaz.github.io/2020/01/08/Spark-shuffle-optimization/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+<script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":true};
+</script>
+
+    <title>Spark groupByKey/ReduceByKey 比较与性能调优 - Orin Ful Vopaaz</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Spark groupByKey/ReduceByKey 比较与性能调优
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-08
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题的提出"><span class="toc-text">问题的提出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#都是宽依赖？"><span class="toc-text">都是宽依赖？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#预聚合"><span class="toc-text">预聚合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后记"><span class="toc-text">后记</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>今天在公司读到了美团技术团队讲 Spark 优化的两篇文章，<a href="https://tech.meituan.com/2016/04/29/spark-tuning-basic.html" target="_blank" rel="noopener">基础篇</a>和<a href="https://tech.meituan.com/2016/05/12/spark-tuning-pro.html" target="_blank" rel="noopener">高级篇</a>。收获很多，更重要的是解决了一个上学期在做 Spark 项目的时候遇到的一个疑惑。</p>
+<a id="more"></a>
+<h2 id="问题的提出">问题的提出</h2>
+<p>当时由于对 Spark 编程还不太熟悉，我写下了如下的代码:</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">rdd</span><br><span class="line">    .groupByKey()</span><br><span class="line">    .map(x=&gt;&#123;</span><br><span class="line">        (</span><br><span class="line">            x._1,</span><br><span class="line">            x._2.reduce(someFunc)</span><br><span class="line">        )</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<p>除了看起来很蠢之外，更糟糕的是它导致了内存溢出。而将其重写为运用 <code>reduceByKey</code> 的形式后，内存溢出的问题就解决了。</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rdd.reduceByKey(someFunc)</span><br></pre></td></tr></table></figure>
+<h2 id="都是宽依赖？">都是宽依赖？</h2>
+<p>当时没有特别在意，而后来了解了 Spark <a href="https://github.com/rohgar/scala-spark-4/wiki/Wide-vs-Narrow-Dependencies" target="_blank" rel="noopener">宽窄依赖</a>和 shuffle 相关的知识之后，这个疑惑更深了。</p>
+<p>简单来说，宽依赖指的就是子 RDD 的一个 partition 依赖父 RDD 的所有 partition, 因此每个 partition 中的数据都会被广播到每个其他 partition (称为 shuffle)，每个节点都需要大量内存来存放整个数据集，集群之间网络通信也消耗大量资源。
+窄依赖则相反，子 RDD 的一个 partition 只依赖父 RDD 的一个 partition, 因此实际上在每个节点内部完成计算即可。</p>
+<p>显然宽依赖很可能造成内存溢出。然而问题在于，<code>groupByKey</code> 和 <code>reduceByKey</code> 都是宽依赖算子，虽然前者的实现不够优雅<s>非常愚蠢</s>，但是为什么前者导致 OOM, 后者则没有？</p>
+<h2 id="预聚合">预聚合</h2>
+<p>造成这种情况的原因是，<code>reduceByKey</code> 实际上会在每个 partition 上对数据进行预聚合（因为 <code>reduce</code> 算子可以直接在每个 partition 上根据 key 直接先计算一波），再将结果按照 key shuffle 计算最终结果。见下图：</p>
+<p><img src="https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/a6c7d4c4.png" alt="reduceByKey"></p>
+<p>相反，由于 <code>groupByKey</code> 没有任何算子可供预聚合计算，所有数据都会进入 shuffle 中，如下图所示。</p>
+<p><img src="https://awps-assets.meituan.net/mit-x/blog-images-bundle-2016/5ebe0848.png" alt="groupByKey"></p>
+<p>这样就导致了 OOM.</p>
+<h2 id="后记">后记</h2>
+<p>在之前的两篇文章中还介绍了其他 Spark 性能优化的技巧，有空应该多翻翻，应当在工作中多注意。</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Coding/">Coding</a>
+            <a href="/tags/Big-Data/">Big Data</a>
+            <a href="/tags/Spark/">Spark</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2019/10/29/interview-bytedance-big-data/">
+        <span class="next-text nav-default">字节跳动 - 大数据研发实习生面试复盘</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+</body>
+</html>

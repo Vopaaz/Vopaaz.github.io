@@ -375,7 +375,7 @@ body {
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.7;
+  line-height: 1.55;
   color: #555555;
   background: #fefefe;
   scroll-behavior: smooth;
@@ -410,19 +410,19 @@ h2 {
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 h4 {
-  font-size: 16px;
+  font-size: 20px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 h5 {
-  font-size: 14px;
+  font-size: 19px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 h6 {
-  font-size: 14px;
+  font-size: 18px;
   font-family: Athelas, STHeiti, Microsoft Yahei, serif; }
 
 .container {
