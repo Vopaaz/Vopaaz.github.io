@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Makefile 学习"><meta name="keywords" content="Coding, C, Orin Ful Vopaaz"><link rel="alternate" href="/atom.xml" title="Orin Ful Vopaaz"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.10.2">
+<link rel="canonical" href="https://vopaaz.github.io/2020/01/17/makefile-learning/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css"><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+<script id="baidu_analytics">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?ccdd32f965f534d8d415b33c289c3ceb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true,"latex":true};
+</script>
+
+    <title>Makefile 学习 - Orin Ful Vopaaz</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">Makefile 学习
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-01-17
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#项目背景"><span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译与链接分离"><span class="toc-text">编译与链接分离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#makefile-修改"><span class="toc-text">Makefile 修改</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>以前写 C 的时候没有彻底搞懂过 gcc 的编译链接以及如何写 Makefile,
+由于项目比较小就直接将所有 <code>.c</code> 文件全部作为 gcc 的参数。
+这样做的缺陷是，一个小改动，项目就要整体编译，速度很慢。
+今天仔细学习一下有关内容。</p>
+<a id="more"></a>
+<h2 id="项目背景">项目背景</h2>
+<p><a href="https://github.com/Vopaaz/V-Shell" target="_blank" rel="noopener">V-Shell</a> 是当时计算机系统原理的大作业之一，用 C 实现了一个简单的 shell. 目录结构十分简单，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">📦V-Shell</span><br><span class="line"> ┣ 📂src</span><br><span class="line"> ┃ ┣ 📂util</span><br><span class="line"> ┃ ┃ ┣ 📜config.h</span><br><span class="line"> ┃ ┃ ┣ 📜debug.c</span><br><span class="line"> ┃ ┃ ┣ 📜dir.c</span><br><span class="line"> ┃ ┃ ┣ 📜execute.c</span><br><span class="line"> ┃ ┃ ┣ 📜input.c</span><br><span class="line"> ┃ ┃ ┣ 📜signalHandling.c</span><br><span class="line"> ┃ ┗ 📜vshell.c</span><br><span class="line"> ┣ 📜.gitignore</span><br><span class="line"> ┣ 📜Makefile</span><br><span class="line"> ┗ 📜README.md</span><br></pre></td></tr></table></figure>
+<p><code>util</code> 目录下的 <code>.c</code> 文件均有相对应的 <code>.h</code> 头文件，这里不再列出。组件之间的依赖如图：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> +----------+ config +----------+</span><br><span class="line"> v                              v</span><br><span class="line">dir                           debug +-------+</span><br><span class="line"> +                              +           v</span><br><span class="line"> +----------&gt; execute &lt;---------+         input        signalHandling</span><br></pre></td></tr></table></figure>
+<p>最后，<code>vshell.c</code>, 也就是 <code>main</code> 函数所在的文件，依赖以上的所有文件。</p>
+<p>在写这个大作业时编写的 Makefile, 是本文开头所说直接将所有 <code>.c</code> 文件全部作为 gcc 的参数：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CC = gcc</span><br><span class="line">target = vsh.exe</span><br><span class="line"></span><br><span class="line">src_main = src/vshell.c</span><br><span class="line">src_util = <span class="variable">$(<span class="built_in">wildcard</span> ./src/util/*.c)</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$(target)</span>: <span class="variable">$(src_main)</span> <span class="variable">$(src_util)</span></span><br><span class="line">        <span class="variable">$(CC)</span> -o <span class="variable">$@</span> <span class="variable">$^</span></span><br></pre></td></tr></table></figure>
+<p>Makefile 的基本 syntax 如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">target: dependencies</span></span><br><span class="line">    command</span><br></pre></td></tr></table></figure>
+<p>当一个 target 不存在或者 outdated, <code>make</code> 就会运行 command 来 build 这个 target.</p>
+<p>其他的变量定义、路径通配符等语法都比较直观不再赘述。两个比较特殊的语法如下：</p>
+<ul>
+<li><code>$@</code>: 表示 <code>target</code></li>
+<li><code>$^</code>: 表示所有的 <code>dependencies</code></li>
+</ul>
+<h2 id="编译与链接分离">编译与链接分离</h2>
+<p>直接用 <code>gcc FILENAME</code> 编译不包含 <code>main</code> 函数的文件会报错。
+因此在编译一个小的模块时，应当加上 <strong><code>-c</code></strong> 这个选项，它将会创建一个 <code>.o</code> 文件，这个文件在用于在后续的编译过程中可以直接作为 <code>gcc</code> 的参数进行链接。</p>
+<p>另外，<code>-Wall</code> 这个参数可以在编译中打印出所有的 Warning messages, 因此也建议加上。</p>
+<p><a href="https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html#zz-1.7" target="_blank" rel="noopener">这个网站</a>对于 gcc 的编译、链接等过程做了详细介绍，这里不再赘述。</p>
+<h2 id="makefile-修改">Makefile 修改</h2>
+<p>有了 <code>-c</code> 选项之后，可以根据依赖将 Makefile 重构如下：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">CC = gcc</span><br><span class="line">target = vsh.exe</span><br><span class="line"></span><br><span class="line">src_main = src/vshell.c</span><br><span class="line">obj_src = <span class="variable">$(<span class="built_in">wildcard</span> ./src/util/*.c)</span></span><br><span class="line">obj_util = $(obj_src:.c=.o)</span><br><span class="line">config = ./src/util/config.h</span><br><span class="line"></span><br><span class="line"><span class="variable">$(target)</span>: <span class="variable">$(src_main)</span> <span class="variable">$(obj_util)</span></span><br><span class="line">	<span class="variable">$(CC)</span> -o <span class="variable">$@</span> <span class="variable">$^</span></span><br><span class="line"></span><br><span class="line"><span class="section">%.o: %.c <span class="variable">$(config)</span></span></span><br><span class="line">	<span class="variable">$(CC)</span> -c -o <span class="variable">$@</span> <span class="variable">$&lt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: clean</span></span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">	rm -f ./**/*.o</span><br></pre></td></tr></table></figure>
+<p>其中 <code>%.o: %.c</code> 一句的意思为，对所有 <code>.o</code> 文件，其依赖都是对应的 <code>.c</code> 文件再加上配置文件。
+因此在每个源代码文件修改后，就只会重新编译对应的 .o 文件，而不需要对所有源码重新编译。</p>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Coding/">Coding</a>
+            <a href="/tags/C/">C</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2020/01/08/Spark-shuffle-optimization/">
+        <span class="next-text nav-default">Spark groupByKey/reduceByKey 比较与性能调优</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"><div id="lv-container" data-id="city" data-uid="MTAyMC80MjE4Mi8xODcyOQ==">
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>  
+    </div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:liyifan945@163.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://github.com/Vopaaz" class="iconfont icon-github" title="github"></a>
+        <a href="https://www.zhihu.com/people/vopaaz-51" class="iconfont icon-zhihu" title="zhihu"></a>
+        </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2018 - 2020<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript">
+	(function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+  </script><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+</body>
+</html>
