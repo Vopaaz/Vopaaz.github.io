@@ -1,0 +1,707 @@
+% Cheat sheet for corporate finance
+% By Vopaaz
+\documentclass{article}
+\usepackage{geometry}
+\geometry{a4paper, top = 0.25 cm, bottom = 0.25 cm, left = 0.2 cm, right = 0.2 cm}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip ,topsep=0pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip ,topsep=0pt}
+\usepackage{framed}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{verbatim}
+\usepackage[lining]{ebgaramond}
+
+
+\newcommand{\properframed}[1]{
+	{
+		\centering
+		\vspace{-2 ex}
+		\begin{framed}
+			\vspace{-1.5 ex}
+			#1
+			\vspace{-1.5 ex}
+		\end{framed}
+		\vspace{-2 ex}
+	}
+}
+
+\newcommand{\bigtitle}[1]{
+	\noindent
+	\textbf{#1}
+}
+
+\newcommand{\smalltitle}[1]{
+	\noindent
+	\textbf{\textit{#1}}
+}
+
+%\renewcommand{\baselinestretch}{0.96}
+
+
+\begin{document}
+\twocolumn
+
+
+\bigtitle{CFFA}
+
+Cash flow from assets (Free cash flows to the firm, FCFF)
+= Operating cash flow - Changes in net working capital - Net capital spending
+
+Operating cash flow = EBIT $\times$ (1 - Tax rate) + Depreciation
+
+\properframed{
+Also, OCF = (Sales - Costs) $\times$ (1 - T) + Depreciation $\times$ T
+}
+
+Changes in net working capital = Ending net working capital - Beginning net working capital
+
+Net working capital = Current assets - Current liabilities
+\textit{(Current debt should be excluded from current liabilities)}
+
+Net capital spending = Ending net fixed assets - Beginning net fixed assets + Depreciation
+
+
+Cash flow to creditors = Interest - Net new Long-term Debt
+
+Cash flow to Stockholders = Dividends - (Ending common stock - Beginning common stock)
+
+Common stock = Total equity - Retained earnings
+
+CFFA = Cash flow to creditors + Cash flow to stockholders 
+
+\textit{
+$\star$ this seems not to be always right because of the difference between the method applied to calculate OCF.
+}
+
+
+
+
+\bigtitle{Ratios}
+
+Account Payable Turnover = Goods purchased / Account payable
+
+Book Value per Share = Total Equity / Shares Outstanding
+
+Capital Intensity Ratio = 1 / Total Asset Turnover
+
+Cash Coverage = (EBIT + Depreciation) / Interest
+
+Cash Ratio = Cash / Current Liabilities
+
+Current Ratio = Current Assets / Current Liabilities
+
+Days' Sales in Inventory = 365 / Inventory Turnover
+
+Days' Sales in Receivables = 365 / Receivables Turnover
+
+Days to pay payables = Account Payable / Goods Purchased $\times$ 365
+
+Debt-equity ratio = Total Debt / Total Equity
+
+Equity Multiplier = Total Assets / Total Equity
+
+Fixed Asset Turnover = Sales / Net fixed assets
+
+Interst Coverage (Times Interest Earned) = EBIT / Interest
+
+Inventory Turnover = COGS / Inventory
+
+Market-to-Book Ratio = Market Value per share / Book Value per share
+
+PEG = PE ratio / (Earnings Growth Rate $\times$ 100)
+
+Price-Book Ratio = Price per share / Assets per share
+
+Price-Earnings ratio (PE ratio) = Price per share / Earnings per share
+
+Price-Sales Ratio = Price per share / Sales per share
+
+Profit Margin = Net Income / Sales
+
+Quick Ratio = (Current Assets - Inventory) / Current Liabilities
+
+Receivables Turnover = Sales / Accounts Reveivable
+
+\vspace{-2.5 ex}
+\begin{framed}
+	\vspace{-1.5 ex}
+	\noindent
+	\hspace{0.5 em}Return on Assets (ROA) = Net Income / Total Assets
+	
+	\noindent
+	\hspace{0.5 em}Return on Equity (ROE) = Net Income / Total Equity
+	\vspace{-1.5 ex}
+\end{framed}
+\vspace{-2.5 ex}
+
+Times interest earning ratio = EBIT / Interest
+
+Total Asset Turnover = Sales / Total Assets
+
+Total Debt Ratio = Total Liabilities / Total Assets
+
+
+\smalltitle{Dupont Analysis}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\linewidth]{dupont.png}
+	\label{fig:dupont}
+	\vspace{-2em}
+\end{figure}
+
+\bigtitle{Calculating Interest}
+
+Future Value: $FV = PV(1+r)^{t}$
+
+Future value interest factor (FVIF) = $(1+r)^{t}$
+
+Present Value: $PV = \frac{FV}{(1+r)^{t}}$
+
+Present value interest factor (PVIF, or discount factor) = $1/(1+r)^{t}$
+
+Discount rate: $r = (\frac{FV}{PV})^{\frac{1}{t}}-1$
+
+Number of Periods: $\frac{\ln(FV)-\ln(PV)}{\ln(1+r)}$
+
+
+
+PV of annuity: $PVA = \frac{C[1-\frac{1}{(1+r)^{T}}]}{r}$
+
+FV of annuity: $FVA = C[\frac{(1+r)^{T}-1}{r}]$
+
+
+Annuity due (Annuity paid at the beginning of each period): Annuity due value = Ordinary annuity value $\times$ (1+r)
+
+Pay by Installment: Use the fomula of PV of annuity
+
+
+Perpetuities (Infinite Annuity): $PV = \frac{C}{r}$
+
+Growing Annuity: $PV = C\times [\frac{1-(\frac{1+g}{1+r})^{t}}{r-g}]$
+
+Growing Perpetuity: $PV = \frac{C}{r-g}$
+
+\properframed{
+
+\textit{'r' is the market interest rate, 'g' is the growing rate of annuity payment, 'C' is the first payment in the \textbf{next} period, PV is the value \textbf{now}, 1 period before the first payment.}
+}
+
+FV of Growing Perpetuity: First, calculate the PV with the fomula given above, and then $FV = PV\times(1+r)^{t}$
+
+\properframed{
+Annual percentage rate (APR) and Effective annual rate (EAR):
+$EAR = (1+\frac{APR}{m})^{m}-1$
+
+$\star$ Monthly interest rate = APR / 12
+}
+
+Statement: 
+
+\textit{"xx percent compounded monthly", xx is APR, monthly interest rate is xx/12.}
+
+\textit{"yy percent per month", yy is the monthly interest rate, APR is 12 $\times$ yy"}
+
+The Rule of 72: For the rates between 5\% - 20\%, the time it takes to double your money is given approximately by 72/r.
+
+
+\smalltitle{Loans}
+
+\begin{itemize}
+	\item Pure Discount Loans: No interest, all the principal is repaid at the end of the period.
+	\item Interest-only Loans: Pay interest during the period and repay all the principal at the end of the period.
+	\item Amortized Loans: Pay both interest and principal during the period, the interest is calculated dynamically according to the principal paid.
+\end{itemize}
+
+Two ways to repay the Amortized Loans:
+
+Equivalent Amount of Principal: Equal repayment of principal every period. Calculate the repayment of principal by simple division first, and iteratively calculate next year's interest.
+
+Equivalent Amount of Principal and Interest: Equals a PVA, use the present formula.
+
+
+
+
+
+\bigtitle{Bond}
+
+Bond price = $\frac{C}{r}\times(1-\frac{1}{(1+r)^{T}})+F\times\frac{1}{(1+r)^{T}}$
+
+\textit{F: Face value, C: Coupon payment = coupon rate $\times$ Face value, T: Maturity, Bond price: market value, r: Discount rate (Yield to maturity)}
+
+Yield to Maturity (YTM): simply equal the interest rate.
+
+
+
+Current Yield = Annual Coupon Payment / Market Price
+
+For a discount bond: 
+coupon rate $<$ current yield $<$ YTM, bond price $<$ par value
+
+Nominal rate of investment: $R = \frac{(X_1 - X_0)}{X_0} $
+
+Inflation rate : $h = \frac{(P_1 - P_0)}{P_0}$
+
+Real rate of investment: $r = \frac{X_1/X_0}{P_1/P_0} - 1 = \frac{1+R}{1+h} -1$
+
+\textit{Can be approximately calculated as $ r = R - h$}
+
+\textit{Present value of the investment: $X_0$, future value: $X_1$. Current price level: $P_0$, future price level: $P_1$}
+
+\smalltitle{Bond Risks}
+
+\begin{itemize}
+	\item Interest rate risk: the risk that arises from fluctuating interest rates.
+	
+	Duration: the weighted average of the time till all payments (coupons and principal) are received.
+
+	LONGER duration (effective maturity), or LOWER coupon rate means GREATER interest rate risk.
+	
+	\item Default risk: the risk that the issuer of a bond may default.
+	
+	\item Liquidity risk: Investors demand a liquidity premium on illiquid bonds.
+\end{itemize}
+
+
+\smalltitle{Yield Curve}
+
+A line that plots the yield, at a set point in time, of bonds having equal credit quality, but differing maturity dates.  
+Shows the relationship between (annualized) bond yield (or market interest rate) and the time to maturity.
+
+The components: Real rate - always flat, Inflation premium -change freely, Interest rate risk premium - always increasing.
+
+Different shapes: 
+\begin{itemize}
+	\item Upward Sloping: precedes an economy upturn
+	\item Downward Sloping: harbinger of recession
+	\item Flat: signals an economy slowdown
+	\item Humped
+\end{itemize}
+
+
+
+\bigtitle{Long-term financial planning and growth}
+
+In the predicted balance sheet, if Assets $>$ Liabilities + Equities, external financing (EFN) is needed.
+
+EFN = Assets - (Liabilitites + Equities)
+
+\textit{The following b = 1 - Dividend paid/Net income, called retention rate. b $\in$ (0,1).}
+
+Internal growth rate: $g = \frac{1}{1-ROA\times b} - 1$
+
+\textit{The maximum growth rate that can be achieved with no external financing, assuming every item increases at the same rate as sales}
+
+Sustainable growth rate: $g = \frac{1}{1-ROE\times b} - 1$
+
+\textit{The maximum growth rate that firm can achieve if the firm chooses debt financing only and avoid equity financing, maintaining a constant debt-equity ratio}
+
+
+
+\bigtitle{Investment Criteria}
+
+Net present value: NPV = PV(inflow) - PV(outflow)
+
+Equivalent annual cost: EAC = $PV_{costs}/\sum_{t=1}^{T}\frac{1}{(1+r)^t}$ 
+
+\textit{This is usually a negative number, representing a cash outflow.}
+
+The payback rule: Payback is the length of time taken to recover the initial investment.
+
+Average Accounting Return: AAR = Average Net Income / Average Book Value of Investment
+
+\textit{Caution: Payback and AAR do \textbf{NOT} consider time value.}
+
+Internal Rate of Return (IRR): 
+
+Solve the equation -  $\sum_{t=0}^{T}\frac{CF_t}{(1+IRR)^t}=0$
+
+\textit{$CF_t$ is the cash flow of each period, with signs}
+
+Profitability Index (aka. Benefit-cost Ratio):
+
+\noindent
+PI = PV(future cash flows after initial investment) / Initial cost
+
+\textit{$\star$ The threshold is 1.}
+
+
+
+
+\bigtitle{WARNINGS and self-test problem findings}
+
+
+Three types of financial management decisions:
+	\begin{itemize}
+		\item Capital budgeting (Where to spend money)
+		\item Capital structure (Where to get money)
+		\item Working capital management
+	\end{itemize}
+
+Disadvantage of corporate form of organization: double taxation (dividends)
+	
+Advantage: limited liability, ability to raise capital, ease of transferability
+	
+The goal that should always motivate the actions of a firm's financial manager: To maximize the current market value (share price) of the equity of the firm (whether it's publicly traded or not).
+	
+Agent Problem: The shareholders own the corporation. They elect the directors, who appoint the firm's management. The separation of ownership and control of the corporation is the cause of agency problem. The manager may act in his own interest rather than maximizing the market value of the corporation.
+
+The biggest difference between Operating Cash Flow and Net Income is that it does not consider Depreciation and Interest Expense.
+
+Reason: Depreciation is the adjustment of the book value rather than real cash flow. Interest Expense is financing activity rather than operating activity.
+
+$\star$ Current Debt is excluded from Working Capital.
+
+The best method of measuring a company comprehensively is ROE.
+
+When calculating internal/sustainable growth rate, it is complicated to calculate ROE/ROA, so it is likely that you write them directly as answers. DO NOT forget to calculate $\frac{1}{ROX-b}-1$.
+
+To calculate the FV of a growing annuity, use the given formula to calculate the PV of all the cash flow, and then $\times (1+r)^t$ to get the FV.
+
+Timeline is effective when analyzing the cash flow when calculating compounded discounted cash flows.
+
+Balloon payment: the last big payment in an installment. To calculate it, calculate the balloon payment day value of all the projected annuity payment after that.
+
+$\star$ The formulas of all the annuity payments apply to ordinary annuity, which means that the first payment occurs at the next time point after the base date for discounting.
+
+$\star$ Remember that the it is APR/12 rather than APR that is the monthly discount rate.
+
+Ceteris paribus, Treasury bond has larger \textit{interest rate risk} than corporate bond, because the \textit{default risk} of treasury bond is lower thus coupon rate is lower. Lower coupon rate means greater interest rate risk.
+
+Mind that there are different types of risk.
+
+The answer of the question about calculating periods may not be integer.
+
+The determinate factors of sustainabe growth rate: ROE/b/debt-equity ratio. They can be changed by:
+\begin{itemize}
+	\item Profit margin: increase the internal funding ability
+	\item Dividend policy: affect 'b'
+	\item Financing policy: change debt-equity ratio
+	\item Total asset turnover: increase the ability of assets to generate sales
+\end{itemize}
+
+Negative EFN means surplus. Internal growth rate $>$ Actual growth rate
+
+$\star$ When preparing pro forma, make sure which accounts grow with sales and which stay unchanged. 
+
+$\star$ Generally, when the table is complex enough, Net Income does not grow at the growth rate of the sales. For example, Interest Paid does not vary with the change of sales.
+
+\color{red}
+$\star$ When encountered some value with the percentage symbol, remember to DIVIDE BY 100 when inputting them into the calculator.
+\color{black}
+
+Payback period means how long can the initial investment be repayed, without discounting.
+
+When calculating AAR, Average Net Income is an \textit{average} value. 
+
+If asked "Using the IRR rule, should the company accept the project?" while there are two IRRs, the answer is:
+
+When there are multiple IRRs, the IRR decision rule is ambiguous. Both IRRs are correct, that is, both interest rates make the NPV of the project equal to zero. If we are evaluating whether or not to accept this project, we would not want to use the IRR to make our decision.
+
+The disadvantage of PI: hardly work for investment that has different scale.
+
+$\star$ If the decision of NPV method is different from others, refer to the NPV method and ignoring the others.
+
+\clearpage
+
+
+\bigtitle{Making Capital Investment Decisions}
+
+When valuing a project, compute its CFFA. Mind that the initial $\Delta$NWC will be recovered in the last period.
+The initial net capital spending will also be recovered the after-tax salvage value.
+
+MACRS Depreciation Table (all in percentage):
+
+
+\begin{table}[htb]
+	\vspace{-1em}
+	\centering
+	\begin{tabular}{cccc}
+		Year & Three-Year & Five-Year & Seven-Year \\\hline
+		1    & 33.33      & 20.00     & 14.29      \\
+		2    & 44.45      & 32.00     & 24.49      \\
+		3    & 14.81      & 19.2      & 17.49      \\
+		4    & 7.41       & 11.52     & 12.49      \\
+		5    &            & 11.52     & 8.93       \\
+		6    &            & 5.76      & 8.92       \\
+		7    &            &           & 8.93       \\
+		8    &            &           & 4.46      
+	\end{tabular}
+\vspace{-1em}
+\end{table}
+
+
+
+After-tax salvage value = Market Value - Tax Rate $\times$ (Market Value - Book Value)
+
+\bigtitle{Project Analysis and Evaluation}
+
+Whatever the tax rate is:
+
+Accounting break-even: $ Q = (FC + D)/(P-v) $
+
+\noindent
+\textit{Q: breakeven quantity, FC: fixed cost, D: depreciation, P: price per unit, v: variable cost per unit. This can be applied to any tax rate.}
+
+When a project is at the point of accounting break-even:
+
+\vspace{-2.85ex}
+\begin{multicols}{2}
+\begin{itemize}
+	\item OCF = Depreciation
+	\item Payback = Life of project
+	\item IRR = 0
+	\item NPV $<$ 0
+\end{itemize}
+\end{multicols}
+\vspace{-2.85ex}
+
+Financial break-even: $Q = (OCF^*+ FC)/(P – v)$
+
+\textit{$ OCF^* $: OCF level that results in a zero NPV. This only applies to zero tax rate.}
+
+When a project is at the point of financial break-even:
+
+\begin{itemize}
+	\item Discounted payback = Life of the project
+	\item IRR = Required rate of return
+	\item NPV = 0
+\end{itemize}
+
+Degree of Operating Leverage (DOL) = $\frac{\Delta OCF/OCF}{\Delta Q/Q}$
+
+If tax rate = 0, $DOL = 1+\frac{FC}{OCF}$
+
+Considering tax, $DOL = 1+\frac{FC\times(1-T)-T\times D}{OCF}$
+
+\bigtitle{Risk and return}
+
+Expected return: $E(R) = \sum \limits_{i=1}^{n}p_iR_i$
+
+\noindent
+$
+\begin{aligned}
+	Stock\ return_{t+1}  &= \frac{Dividend_{t+1}}{Stock\ price_t} + \frac{Stock\ price_{t+1}-Stock\ price_{t}}{Stock\ price_t}\\
+	&= Dividend\ Yield + Capital\ Gains\ Rate
+\end{aligned}
+$
+
+\noindent
+$
+\begin{aligned}
+Bond\ return_{t+1}  &= \frac{Coupon_{t+1}}{Bond\ price_t} + \frac{Bond\ price_{t+1}-Bond\ price_{t}}{Bond\ price_t}\\
+&= Coupon\ Yield + Capital\ Gains\ Rate
+\end{aligned}
+$
+
+Average return:
+
+Arithmetic mean = $(R_1+\cdots + R_T)/T$, overly optimistic for long horizons.
+
+Geometric mean = $[(1+R_1)\times \cdots \times (1+R_T)]^{1/T}-1$, overly pessimistic for short horizons.
+
+Geometric average $\leq$ arithmetic average.
+
+Blume's formula: an unbiased estimate
+
+$R(T) = \frac{T-1}{N-1}\times Geometric\ average + \frac{N-T}{N-1} \times Arithmetic\ average$.
+N: calculated geometric and arithmetic return average from N years of data, T: form a T-year average return forecast, R(T), $T<N$.
+
+Variance: $\sigma^2 = \sum \limits_{i=1}^{n}p_i(R_i-E(R))^2$, 
+sd: $\sigma = \sqrt{\sigma^2}$
+
+Using historical data:
+
+Variance: $\sigma^2 = \frac{\sum \limits_{t=1}^{T}[(R_t-\bar{R})^2]}{T-1},where\ \bar{R} = \frac{\sum \limits_{t=1}^{T}R_t}{T}$
+
+Risk Premium: $\bar{R} - R_{\mathit{f}}$, $R_\mathit{f}$ is return rate of treasury bill which is considered risk-free.
+
+\smalltitle{Portfolio}
+
+Portfolio weights: the percentages a portfolio’s total value invested in each of the assets in the portfolio, must add up to 1.
+
+Negative portfolio weight means that you borrow stock shares and sell them in the market, and buy back the shares of the stock and give them back to the lender later, called "short sell".
+
+Expected return on portfolio, $E(R_p)$:
+
+$E(R_p) = \sum \limits_{j=1}^mw_jE(R_j)$, where $w_j$ is weight of the asset.
+
+Variance: $\sigma_P^2 = \sum p_i[R_i-E(R_p)]^2$, 
+SD: $\sigma_P = \sqrt{\sigma_P^2}$
+
+Variance mesures total risk.
+
+
+
+\smalltitle{Types of Risk}
+
+Systematic risk: having more different investments will NOT reduce the risk. Market-Wide News.
+
+Unsystematic risk: having more different investments CAN reduce the risk. Firm Specific News.
+
+Diversification: the averaging of independent risks in a large portfolio
+
+\smalltitle{Capital Asset Pricing Model (CAPM)}
+
+Beta coefficient: a measure of systematic risk.
+
+Define the beta of a market as a portfolio is 1, the beta of a risk-free asset is 0.
+
+Portfolio betas = $\beta_{portfolio} = \sum _{i=1}^nw_i\beta_i$
+
+Reward-to-risk ratio of portfolio A: $\frac{E(R_A)-R_f}{\beta_A}$
+
+Capital Asset Pricing Model: 
+$E(R_A) = R_f+\beta_A\times [E(R_M)-R_f]$
+
+Using the formula to depict the Security Market Line(SML), axis\_x = $\beta$, axis\_y = $E(R_A)$.
+
+\textit{M is the market, $R_f$ is the risk-free return.}
+
+\bigtitle{Cost of capital}
+
+\smalltitle{Cost of Equity: $R_E$}
+
+SML (CAPM) Approach:
+$R_E = R_f + \beta_E \left[E(R_M)-R_f\right]$
+
+Risk free rate $R_f$: the rate for 10/20 yr Treasury bonds.
+
+Market portfolio's expected return: $E(R_M)$: the historical returns of several popular market indices, e.g. S\&P 500.
+
+% $\beta$ for public companies: not required.
+
+$\beta$ for private companies: 
+
+$\beta_E = \beta_A + \left[(1-t)\frac{D}{E}\right]\beta_A$ = Business risk + [Financial risk]
+
+\textit{$\beta_E$: Equity Beta; $\beta_A$: Asset Beta; t: tax rate; D: debt; E: equity}
+
+Approach: 1. Find comparable companies' equity beta. 2. Find the underlying asset beta, and average them. 3. Use the average asset beta to estimate the company's equity beta.
+
+Another method: see the part of stock valuation Methods - Dividend discount model - case 2
+
+\smalltitle{Cost of Debt(before tax): $R_D$}
+
+Method 1, YTM:
+
+If there is little risk the firm will default, $R_D = YTM_{year}$. Use the bond price formula to calculate $r$.
+
+If there is a significant risk that the firm will default, $r_D$ = YTM - Prob(default)$\times$Expected Loss Rate.
+
+Method 2, CAPM:
+
+$R_D$ = risk-free rate + $\beta \times$ market risk premium.
+
+Cost of Debt after tax = $R_D(1-T_C)$
+
+\smalltitle{Cost of Preferred Stock}
+
+$R_P=D/P_0$, where D is the fixed dividend, $P_0$ is the current price per share.
+
+\smalltitle{Weighted Average Cost of Capital (WACC)}
+
+\textit{E: market value of equity = outstanding shares $\times$ price per share; D: market value of debt = outstanding bonds $\times$ \textbf{market} bond price P: market value of preferred stock; V: market value of the firm = D + E + P.}
+
+$\text{WACC} = E/V \times R_E + D/V \times R_D (1-T_C) + P/V \times R_P$
+
+\smalltitle{Divisional and Project Costs of Capital}
+
+Pure Play Approach: Find companies that specialize in the product or service that we are considering. Compute their beta and take an average. Use the beta along with the CAPM to find the cost of capital for a project.
+
+Subjective Approach: If the project is riskier than the firm, use a number greater than the company's WACC, e.g. WACC + 5\%, and vise versa.
+
+The calculated number is the project's discount rate. Decide whether to accept the project by NPV under this rate.
+
+\bigtitle{Financial Leverage and Capital Structure}
+
+MM Proposition II: $R_E = R_U + \frac{D}{E}(R_U-R_D)$
+
+\textit{E: value of equity of levered firm, D: value of debt of levered firm, $R_E$: cost of equity of levered firm, $R_U$: cost of capital of unlevered firm, $R_D$: cost of debt of levered firm.}
+
+In terms of beta:
+$\beta _ { E } = \beta _ { U } + \frac { D } { E } \left( \beta _ { U } - \beta _ { D } \right)$
+
+\textit{$\beta_U$: Unlevered Beta (beta of the firm's assets), $\beta_E$: Levered Beta, $\beta_D$: Debt Beta}
+
+EPS = Earnings / Number of Shares
+
+
+
+\smalltitle{Tax shield}
+
+Interest Tax Shield = Corporate Tax Rate $\times$ Interest Payments
+
+Consider tax shield as a perpetuity, $PV(\text{Interest tax shield}) = T_C \times D$, \textit{$T_C$: marginal tax rate, $D$: total debt}
+
+MM Proposition I: $V_L = V_U + PV(\text{Interest tax shield})$
+
+\textit{$V_L$: value of the levered firm, $V_U$: value of the unlevered firm}
+
+MM Proposition II with taxes:
+
+$R _ { E } = R _ { U } + \frac { D } { E } \left( R _ { U } - R _ { D } \right) \left( 1 - T _ { c } \right)$
+
+Another result is: $ { R } _   { WACC }  = R _ { U } \left[ 1 - T _ { C } (  D  /   V ) \right]$
+
+\textit{$R_{\text{WACC}}$: WACC of levered firm with taxes}
+
+\bigtitle{Stock Valuation Methods}
+
+\smalltitle{FCFF}
+
+PV(Equity) = PV(Firm) - MV(Debt)
+
+Stock price = PV(Equity) / Number of shares outstanding
+
+\smalltitle{Dividend discount model}
+
+\textit{D: Dividends, $D_1$ is the payment at the end of the next period; r: discount rate, g: dividend growth rate}
+
+General formula: $P _ { 0 } = \sum _ { t = 1 } ^ { \infty } \frac { D _ { t } } { ( 1 + r ) ^ { t } }$
+
+Case 1, Constant dividend: $P_0 = \frac{D}{r}$
+
+Case 2, Constant growth dividend: $P_0 = \frac{D_1}{r-g} $
+
+\noindent
+This implies another way to estimate cost of equity: $R_E = \frac{D_1}{P_0}+g$
+
+Case 3, Nonconstant growth:
+Assume dividends will grow at different rates over some finite length of time, and then will grow at constant.
+
+$P_0 = \sum \limits_{t=1}^{T} \frac{D_t}{(1+r)^t} + \frac{P_T}{(1+r)^T}$,
+$P_T = \frac{D_{T+1}}{r-g}$
+
+Dividend growth rate $g = b \times ROI$, Retention ratio $\times$ Return on new investment
+
+\smalltitle{Valuation multiples}
+
+Price-Earnings ratio (PE ratio) = Price per share / Earnings per share
+
+Forward P/E: $P_0/EPS_1$ (using expected EPS over the coming 12 months) is used in practice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

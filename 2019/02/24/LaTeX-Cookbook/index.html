@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="My LaTeX Cookbook"><meta name="keywords" content="LaTeX, Orin Ful Vopaaz"><link rel="alternate" href="/default" title="Orin Ful Vopaaz"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="https://vopaaz.github.io/2019/02/24/LaTeX-Cookbook/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>My LaTeX Cookbook - Orin Ful Vopaaz</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">My LaTeX Cookbook
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-24
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#表格"><span class="toc-text">表格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改表格行高"><span class="toc-text">修改表格行高</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格过长-需要延伸多页"><span class="toc-text">表格过长，需要延伸多页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#控制表格某一格宽度"><span class="toc-text">控制表格某一格宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表格中文字过长-需要换行"><span class="toc-text">表格中文字过长，需要换行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片"><span class="toc-text">图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多图片并列"><span class="toc-text">多图片并列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#超大图片-tikz"><span class="toc-text">超大图片 (tikz)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标题与-toc"><span class="toc-text">标题与 TOC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#中文"><span class="toc-text">中文</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#general"><span class="toc-text">General</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#miscellaneous"><span class="toc-text">Miscellaneous</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#中文字体与字号设置"><span class="toc-text">中文字体与字号设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用罗马字母"><span class="toc-text">使用罗马字母</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多列-enumerate-itemize-列表"><span class="toc-text">多列 enumerate/itemize 列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将正文中未-cite-的文献添加到文末-reference-中"><span class="toc-text">将正文中未 \cite{} 的文献添加到文末 Reference 中</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用方框将部分内容框起进行强调"><span class="toc-text">用方框将部分内容框起进行强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码排版"><span class="toc-text">代码排版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调整部分区域字体"><span class="toc-text">调整部分区域字体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#英文文章所有段落不缩进并通过隔行分段"><span class="toc-text">英文文章所有段落不缩进并通过隔行分段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义计数器设置"><span class="toc-text">自定义计数器设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#波浪号与反斜杠打法"><span class="toc-text">波浪号与反斜杠打法</span></a></li></ol></li></ol>
+    </div>
+  </div><div class="post-content"><p>整理目前有用到过的 LaTeX 常用命令，以便于查找。
+曾经是放在 Evernote 里面的，可惜它对于代码块复制黏贴后的格式支持实在有点差…</p>
+<a id="more"></a>
+<h2 id="表格">表格</h2>
+<h3 id="修改表格行高">修改表格行高</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;array&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">renewcommand</span></span><span class="tag">\<span class="name">arraystretch</span><span class="string">&#123;1.75&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="表格过长-需要延伸多页">表格过长，需要延伸多页</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;longtable&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% No \table environment on the outside</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;longtable&#125;</span><span class="string">[c]</span><span class="string">&#123;cccc&#125;</span></span></span><br><span class="line">1 &amp; 2 &amp; 3 &amp; 4 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">hline</span></span></span><br><span class="line">5 &amp; 6 &amp; 7 &amp; 8 <span class="tag">\<span class="name">\</span></span></span><br><span class="line"><span class="tag">\<span class="name">caption</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">label</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;longtable&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% caption and label in the \longtable environment, with a "\\" at the end of the last line of the table body.</span></span><br></pre></td></tr></table></figure>
+<p>注意 <code>longtable</code> 环境不支持 <code>\centerline{}</code>, 如果表格仍然过宽，可以使用以下方式横置页面。</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;pdflscape&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;landscape&#125;</span></span></span><br><span class="line"><span class="comment">% TABLE</span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;landscape&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="控制表格某一格宽度">控制表格某一格宽度</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;longtable&#125;</span><span class="string">[c]</span><span class="string">&#123;p&#123;35em&#125;</span></span>ccc&#125;</span><br></pre></td></tr></table></figure>
+<p>尚未实验这种做法是否能用在 <code>tabular</code> 环境中，并且似乎这样控制大小之后，只能够左对齐。</p>
+<h3 id="表格中文字过长-需要换行">表格中文字过长，需要换行</h3>
+<p>在表格内部再加入一个 <code>tabular</code> 环境，此时的 <code>cols</code> 需要写成 <code>{@{}l@{}}</code>, 其中 <code>l</code> 可以换成 <code>c</code>, <code>r</code>.
+两个 <code>@{}</code> 的作用是消去不需要的空格。</p>
+<p>例如</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;table&#125;</span><span class="string">[h]</span></span></span><br><span class="line">    <span class="tag">\<span class="name">centering</span></span></span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123;|l|l|&#125;</span></span></span><br><span class="line">		<span class="tag">\<span class="name">hline</span></span></span><br><span class="line">        short 1 &amp; <span class="tag">\<span class="name">begin</span><span class="string">&#123;tabular&#125;</span><span class="string">&#123;@&#123;&#125;</span></span>l@&#123;&#125;&#125; This is a very long text.<span class="tag">\<span class="name">\</span></span> You can split into several lines<span class="tag">\<span class="name">\</span></span> like this. <span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span> <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">hline</span></span></span><br><span class="line">        short 2 &amp; short 3 <span class="tag">\<span class="name">\</span></span><span class="tag">\<span class="name">hline</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;tabular&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;table&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>效果为</p>
+<p><img src="https://s2.ax1x.com/2019/10/30/Kf7mlt.png" alt="效果"></p>
+<h2 id="图片">图片</h2>
+<h3 id="多图片并列">多图片并列</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;figure&#125;</span><span class="string">[htb]</span></span></span><br><span class="line"><span class="tag">\<span class="name">centering</span></span></span><br><span class="line">    <span class="tag">\<span class="name">begin</span><span class="string">&#123;minipage&#125;</span><span class="string">[t]</span><span class="string">&#123;0.32\textwidth&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">centering</span></span></span><br><span class="line">        <span class="tag">\<span class="name">includegraphics</span><span class="string">[width=\textwidth]</span><span class="string">&#123;path1.png&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;minipage&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">begin</span><span class="string">&#123;minipage&#125;</span><span class="string">[t]</span><span class="string">&#123;0.32\textwidth&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">centering</span></span></span><br><span class="line">        <span class="tag">\<span class="name">includegraphics</span><span class="string">[width=\textwidth]</span><span class="string">&#123;path2.png&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;minipage&#125;</span></span></span><br><span class="line">     <span class="tag">\<span class="name">begin</span><span class="string">&#123;minipage&#125;</span><span class="string">[t]</span><span class="string">&#123;0.32\textwidth&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">centering</span></span></span><br><span class="line">        <span class="tag">\<span class="name">includegraphics</span><span class="string">[width=\textwidth]</span><span class="string">&#123;path3.png&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">end</span><span class="string">&#123;minipage&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">caption</span><span class="string">&#123;Mutual Caption&#125;</span></span> <span class="comment">% If put inside minipage, then its independent caption for each figure</span></span><br><span class="line">    <span class="tag">\<span class="name">label</span><span class="string">&#123;&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;figure&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>注意以上代码如果添加空行似乎会失效，无法并列而是回到上下排列。</p>
+<h3 id="超大图片-tikz">超大图片 (tikz)</h3>
+<p>对于超过一页 A4 大小的超大图片，需要在文档中间更改 <code>geometry</code> 才能放下，找了很多资料都没有成功。以下是一个暂时的解决方案：</p>
+<p>新建一个 <code>.tex</code> 文件，利用 <code>\documentclass[border=1cm]{standalone}</code> 单独编译为一个 PDF 文件。</p>
+<p>在主文件中，使用如下操作：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackege</span><span class="string">&#123;pdfpages&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">% In the body where you want to place the picture</span></span><br><span class="line"><span class="tag">\<span class="name">includepdf</span><span class="string">[fitpaper=true]</span><span class="string">&#123;path/to/standalone.pdf&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="标题与-toc">标题与 TOC</h2>
+<h3 id="中文">中文</h3>
+<ul>
+<li>调整中文文章标题格式</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">documentclass</span><span class="string">[UTF8]</span><span class="string">&#123;ctexart&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">CTEXsetup</span><span class="string">[name = &#123;,、&#125;, number = &#123;\chinese&#123;section&#125;&#125;, format += &#123;\flushleft\heiti&#125;]</span><span class="string">&#123;section&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">CTEXsetup</span><span class="string">[number = &#123;(\chinese&#123;subsection&#125;)&#125;, format += &#123;\flushleft\normalfont\kaishu&#125;]</span><span class="string">&#123;subsection&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>以上代码将格式调整如下：</p>
+<p><img src="https://s2.ax1x.com/2019/02/25/k5l6oR.png" alt="示例"></p>
+<p>这里 <code>\CTEXsetup</code> 的具体用法为：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">CTEXsetup</span><span class="string">[OPTIONS]</span><span class="string">&#123;NAME&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>NAME: <code>part</code>, <code>chapter</code>, <code>section</code>, <code>subsection</code>, etc.</p>
+<p>OPTIONS:</p>
+<ul>
+<li><code>name</code>: 在章节编号前后插入指定的文本，用逗号分隔，即：<code>name={前,后}</code></li>
+<li><code>number</code>: 章节编号的数字样式</li>
+<li><code>format</code>: 标题的全局格式，包括字体大小、对齐方式等</li>
+<li><code>nameformat</code>: 章节名（包含编号）的格式</li>
+<li><code>numberformat</code>: 章节编号的格式（通常置空）</li>
+<li><code>aftername</code>: 章节名和标题之间的格式变换【？？这啥</li>
+<li><code>titleformat</code>: 标题内容的格式</li>
+<li><code>beforeskip</code>: 标题与上方文本的间距</li>
+<li><code>afterskip</code>: 标题与下方文本的间距</li>
+<li><code>indent</code>: 标题的缩进距离</li>
+</ul>
+<p>通常而言中间几个 “format” 并不需要操作，通常控制的都还是整个整体，包括标题和章节名的格式。</p>
+<p>设置其他中文标题名字：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">CTEXoptions</span><span class="string">[OPTIONS]</span></span></span><br></pre></td></tr></table></figure>
+<p>OPTIONS:</p>
+<ul>
+<li><code>contentsname</code></li>
+<li><code>listfigurename</code></li>
+<li><code>listtablename</code></li>
+<li><code>figurename</code></li>
+<li><code>tablename</code></li>
+<li><code>abstractname</code></li>
+<li><code>indexname</code></li>
+<li><code>bibname</code></li>
+</ul>
+<h3 id="general">General</h3>
+<ul>
+<li>插图与表格目录</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">listoffigures</span></span></span><br><span class="line"><span class="tag">\<span class="name">listoftables</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>将插图和表格目录包含在 <code>\tableofcontents</code> 中</li>
+</ul>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">[nottoc]</span><span class="string">&#123;tocbibind&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<h3 id="中文字体与字号设置">中文字体与字号设置</h3>
+<p>字体：</p>
+<ul>
+<li><code>\songti</code></li>
+<li><code>\heiti</code></li>
+<li><code>\fangsong</code></li>
+<li><code>\kaishu</code></li>
+<li><code>\lishu</code></li>
+<li><code>\youyuan</code></li>
+</ul>
+<p>字号：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">zihao</span><span class="string">&#123;NUMBER&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>NUMBER:</p>
+<ul>
+<li>‘0’: 初</li>
+<li>‘1’-‘8’： 一至八</li>
+<li>‘-’: 小</li>
+</ul>
+<p>示例：</p>
+<ul>
+<li>-0: 小初</li>
+<li>4: 四号</li>
+<li>-6: 小六</li>
+</ul>
+<h3 id="使用罗马字母">使用罗马字母</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">makeatletter</span></span></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span><span class="string">&#123;\rmnum&#125;</span><span class="string">[1]</span><span class="string">&#123;\romannumeral #1&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span><span class="string">&#123;\Rmnum&#125;</span><span class="string">[1]</span><span class="string">&#123;\expandafter\@slowromancap\romannumeral #1@&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">makeatother</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="多列-enumerate-itemize-列表">多列 <code>enumerate</code>/<code>itemize</code> 列表</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;multicol&#125;</span></span> <span class="comment">%多列enumerate列表</span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;multicols&#125;</span><span class="string">&#123;2&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> a</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> b</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> c</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> d</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> e</span><br><span class="line">    <span class="tag">\<span class="name">item</span></span> f</span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;enumerate&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;multicols&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="将正文中未-cite-的文献添加到文末-reference-中">将正文中未 <code>\cite{}</code> 的文献添加到文末 Reference 中</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">nocite</span><span class="string">&#123;KEY&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p><code>KEY</code> 为 ‘<code>*</code>’ 时代表加入所有 BibTeX 文件中的条目</p>
+<h3 id="用方框将部分内容框起进行强调">用方框将部分内容框起进行强调</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;framed&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span><span class="string">&#123;\properframed&#125;</span><span class="string">[1]</span><span class="string">&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">    &#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">        \centering</span></span></span><br><span class="line"><span class="tag"><span class="string">        \vspace&#123;-2 ex&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">begin</span><span class="string">&#123;framed&#125;</span></span></span><br><span class="line">            <span class="tag">\<span class="name">vspace</span><span class="string">&#123;-1.5 ex&#125;</span></span></span><br><span class="line">            #1</span><br><span class="line">            <span class="tag">\<span class="name">vspace</span><span class="string">&#123;-1.5 ex&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">end</span><span class="string">&#123;framed&#125;</span></span></span><br><span class="line">        <span class="tag">\<span class="name">vspace</span><span class="string">&#123;-2 ex&#125;</span></span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里定义了一个新的命令方便框出较短内容进行强调，主要依赖的是 <code>framed</code> 宏包。</p>
+<h3 id="代码排版">代码排版</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;minted&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">usemintedstyle</span><span class="string">&#123;pastie&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">newcommand</span><span class="string">&#123;\pyinline&#125;</span><span class="string">[1]</span><span class="string">&#123;</span></span></span><br><span class="line"><span class="tag"><span class="string">	\mintinline&#123;python&#125;</span><span class="string">&#123;#1&#125;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">newenvironment</span><span class="string">&#123;py&#125;</span><span class="string">&#123;% Caution:</span></span></span><br><span class="line"><span class="tag"><span class="string">	\vspace&#123;-1ex&#125;</span></span></span><br><span class="line">	<span class="tag">\<span class="name">VerbatimEnvironment</span></span></span><br><span class="line">	<span class="tag">\<span class="name">begin</span><span class="string">&#123;minted&#125;</span><span class="string">[xleftmargin=1em,breaklines,linenos]</span><span class="string">&#123;python&#125;</span></span><span class="comment">% Do NOT delete these comment syntax</span></span><br><span class="line">	&#125;<span class="comment">% Otherwise there will be error when compiling</span></span><br><span class="line">	&#123;<span class="comment">%</span></span><br><span class="line">	<span class="tag">\<span class="name">end</span><span class="string">&#123;minted&#125;</span></span><span class="comment">%</span></span><br><span class="line">	<span class="tag">\<span class="name">vspace</span><span class="string">&#123;-1.5ex&#125;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% When including source file</span></span><br><span class="line"><span class="tag">\<span class="name">inputminted</span><span class="string">[xleftmargin=1em,breaklines,linenos]</span><span class="string">&#123;python&#125;</span><span class="string">&#123;path/to/src.py&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>基于 <code>minted</code> 宏包，进行了针对 Python 的外部封装，其他语言同理。</p>
+<p>此时编译时需要添加 <code>--shell-escape</code> 选项，并且需要先安装 Python 并且 <code>pip install pygments</code>.</p>
+<h3 id="调整部分区域字体">调整部分区域字体</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;fontspec&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">newfontfamily</span></span><span class="tag">\<span class="name">ARG</span><span class="string">&#123;FONTNAME&#125;</span></span></span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;document&#125;</span></span></span><br><span class="line"></span><br><span class="line">Main font text.</span><br><span class="line"></span><br><span class="line">&#123;<span class="tag">\<span class="name">ARG</span></span></span><br><span class="line">Text in FONTNAME font.</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Main font text.</span><br><span class="line"></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;document&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="英文文章所有段落不缩进并通过隔行分段">英文文章所有段落不缩进并通过隔行分段</h3>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">usepackage</span><span class="string">&#123;parskip&#125;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="自定义计数器设置">自定义计数器设置</h3>
+<p>新建一个计数器</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">newcounter</span><span class="string">&#123;COUNTER&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>设置一个 <code>COUNTER-A</code>, 在 <code>COUNTER-B</code> 步进时自动清零（用例例如两层嵌套的列表，当外层列表计数器步进时，内部计数器也需要步进）</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">newcounter</span><span class="string">&#123;COUNTER-A&#125;</span><span class="string">[COUNTER-B]</span></span></span><br></pre></td></tr></table></figure>
+<p>将计数器步进 1/任意数字</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">stepcounter</span><span class="string">&#123;COUNTNER&#125;</span></span></span><br><span class="line"><span class="tag">\<span class="name">addtocounter</span><span class="string">&#123;COUNTER&#125;</span><span class="string">&#123;SOME-NUMBER&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>直接给计数器设置一个数字</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">setcounter</span><span class="string">&#123;COUNTER&#125;</span><span class="string">&#123;SOME-NUMBER&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>输出计数器的数字</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">arabic</span><span class="string">&#123;COUNTER&#125;</span></span></span><br></pre></td></tr></table></figure>
+<p>以上命令会输出数字格式的计数器数字。还有其他命令可以选择：</p>
+<ul>
+<li><code>\alph</code>: a, b, c…</li>
+<li><code>\Alph</code>: A, B, C…</li>
+<li><code>\roman</code>: 小写罗马数字</li>
+<li><code>\Roman</code>: 大写罗马数字</li>
+</ul>
+<h3 id="波浪号与反斜杠打法">波浪号与反斜杠打法</h3>
+<ul>
+<li>波浪号：<code>\textasciitilde</code></li>
+<li>反斜杠：<code>\textbackslash</code></li>
+</ul>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/LaTeX/">LaTeX</a>
+            </div>
+        
+        <nav class="post-nav"><a class="next" href="/2019/01/11/CheatSheet-share/">
+        <span class="next-text nav-default">概统 & 公司金融 Cheat Sheet</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

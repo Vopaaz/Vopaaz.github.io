@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="数据结构整理 - 详细内容"><meta name="keywords" content="Study, Orin Ful Vopaaz"><link rel="alternate" href="/default" title="Orin Ful Vopaaz"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0">
+<link rel="canonical" href="https://vopaaz.github.io/2019/01/05/DSA-summary-detail/">
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0">
+
+<script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":false};
+</script>
+
+    <title>数据结构整理 - 详细内容 - Orin Ful Vopaaz</title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Orin Ful Vopaaz</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Orin Ful Vopaaz</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/tags/">
+            Tags
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title">数据结构整理 - 详细内容
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-05
+        </span></div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Basis of Algorithm Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rules-of-o-n-syntax"><span class="toc-text">Rules of O(n) Syntax</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#general-rules-for-algorithm-analysis"><span class="toc-text">General Rules for Algorithm Analysis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Primary Examples of Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#fibonacci-sequence"><span class="toc-text">Fibonacci Sequence</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#maximum-subsequence-sum-problem"><span class="toc-text">Maximum Subsequence Sum Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#exhaustive-strategy"><span class="toc-text">Exhaustive Strategy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimized-exhaustive-strategy"><span class="toc-text">Optimized Exhaustive Strategy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#divide-and-conquer"><span class="toc-text">Divide-and-Conquer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-best-algorithm"><span class="toc-text">The Best Algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#binary-search"><span class="toc-text">Binary Search</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Abstract Data Type (ADT)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-text">List</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#array-implementation"><span class="toc-text">Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linked-list"><span class="toc-text">Linked List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doubly-linked-list"><span class="toc-text">Doubly Linked List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#circularly-linked-list"><span class="toc-text">Circularly Linked List</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stack"><span class="toc-text">Stack</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#linked-list-implementation"><span class="toc-text">Linked List Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#array-implementation-v2"><span class="toc-text">Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#application-maze-solving"><span class="toc-text">Application: Maze Solving</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queue"><span class="toc-text">Queue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#circular-array-implementation"><span class="toc-text">Circular Array Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#application-maze-solving-floodfill-algorithm"><span class="toc-text">Application: Maze Solving - FloodFill Algorithm</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#binary-trees"><span class="toc-text">Binary Trees</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tree-traversal"><span class="toc-text">Tree Traversal</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#threaded-binary-tree"><span class="toc-text">Threaded Binary Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#binary-search-tree"><span class="toc-text">Binary Search Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#avl-tree"><span class="toc-text">AVL Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#insertion-and-rotation"><span class="toc-text">Insertion and Rotation</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#single-rotation"><span class="toc-text">Single Rotation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#double-rotation"><span class="toc-text">Double Rotation</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deletion"><span class="toc-text">Deletion</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Sorting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#bst-based-sorting"><span class="toc-text">BST-Based Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#naive-strategy-straight-selection-sort"><span class="toc-text">Naive Strategy - Straight Selection Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#insertion-sort"><span class="toc-text">Insertion Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lower-bound-for-simple-sorting-algorithms"><span class="toc-text">Lower Bound for Simple Sorting Algorithms</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#binary-insertion-sort"><span class="toc-text">Binary Insertion Sort</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bubble-sort"><span class="toc-text">Bubble Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shell-sort"><span class="toc-text">Shell Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#merge-sort"><span class="toc-text">Merge Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#quick-sort"><span class="toc-text">Quick Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#basic-algorithm"><span class="toc-text">Basic Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#median-of-three-partitioning"><span class="toc-text">Median-of-Three Partitioning</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#improving-median-of-three"><span class="toc-text">Improving Median-of-Three</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#improving-small-arrays-issue"><span class="toc-text">Improving Small Arrays Issue</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#table-sort"><span class="toc-text">Table Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bucket-sort"><span class="toc-text">Bucket Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#radix-sort"><span class="toc-text">Radix Sort</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#external-sorting"><span class="toc-text">External Sorting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#stability"><span class="toc-text">Stability</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Hashing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#hash-table-and-hash-function"><span class="toc-text">Hash Table and Hash Function</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#collision-resolution"><span class="toc-text">Collision resolution</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#separate-chaining"><span class="toc-text">Separate Chaining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#open-addressing"><span class="toc-text">Open Addressing</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#linear-probing"><span class="toc-text">Linear Probing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quadratic-probing"><span class="toc-text">Quadratic Probing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#double-hashing"><span class="toc-text">Double Hashing</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rehashing"><span class="toc-text">Rehashing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#public-overflow-cache"><span class="toc-text">Public Overflow Cache</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Graph Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#definitions"><span class="toc-text">Definitions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#representation"><span class="toc-text">Representation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-matrix"><span class="toc-text">Adjacency Matrix</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#adjacency-list"><span class="toc-text">Adjacency List</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#degrees"><span class="toc-text">Degrees</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#topological-sort"><span class="toc-text">Topological Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#preliminary-implementation"><span class="toc-text">Preliminary Implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#optimization-strategy"><span class="toc-text">Optimization Strategy</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shortest-path-algorithms"><span class="toc-text">Shortest-Path Algorithms</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#unweighted-shortest-path"><span class="toc-text">Unweighted Shortest Path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dijkstra-s-algorithm-for-weighted-graph"><span class="toc-text">Dijkstra’s Algorithm for Weighted Graph</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#critical-path-analysis"><span class="toc-text">Critical Path Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#representation-v2"><span class="toc-text">Representation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#earliest-completion-time"><span class="toc-text">Earliest Completion Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#latest-completion-time"><span class="toc-text">Latest Completion Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#slack-time"><span class="toc-text">Slack Time</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#brief-summary"><span class="toc-text">Brief Summary</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#all-pairs-shortest-path"><span class="toc-text">All-Pairs Shortest Path</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#executing-v-times-dijkstra"><span class="toc-text">Executing |V| times Dijkstra</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#simple-algorithm"><span class="toc-text">Simple Algorithm</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#optimizations"><span class="toc-text">Optimizations</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#path-storage"><span class="toc-text">Path Storage</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#hopping-recursion"><span class="toc-text">Hopping Recursion</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#local-updating"><span class="toc-text">Local Updating</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#floyd-warshall-alogrithm"><span class="toc-text">Floyd-Warshall Alogrithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#network-flow-problem"><span class="toc-text">Network Flow Problem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simple-algorithm-v2"><span class="toc-text">Simple Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modification"><span class="toc-text">Modification</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#minimum-spanning-tree"><span class="toc-text">Minimum Spanning Tree</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#prim-s-algorithm"><span class="toc-text">Prim’s Algorithm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kruskal-s-algorithm"><span class="toc-text">Kruskal’s Algorithm</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">Appendix: Table of Complexity of ALL algorithms</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-text">List of Some Topics not Involved</span></a></li></ol>
+    </div>
+  </div><div class="post-content"><p>请先阅读<a href="/2019/01/05/DSA-summary/">说明</a>。</p>
+<a id="more"></a>
+<h1>Basis of Algorithm Analysis</h1>
+<h2 id="rules-of-o-n-syntax">Rules of O(n) Syntax</h2>
+<ol>
+<li>Definition: $T(N) = O(f(N))$ if there are positive constants $c$ and $n_0$ such that $T(N) \leq c\times f(N)$ when $N \geq n_0$. Use the tightest one in the course. e.g. $2N^2 = O(N^2)$
+<br></li>
+<li>If $T_1(N) = O(f(N))$ and $T_2(N) = O(g(N))$, then
+<ol>
+<li>$T_1(N) + T_2(N) = \max(O(f(N)),O(g(N)))$</li>
+<li>$T_1(N) \times T_2(N) = O(f(N)\times g(N))$
+<br></li>
+</ol>
+</li>
+<li>如果 $T(N)$ 是 k 阶多项式, $T(N) = O(N^k)$
+<br></li>
+<li>$\log^k(N) = O(N)$ for any constant $k$.</li>
+</ol>
+<p>以下复杂度依次递增：</p>
+<p>$2/N &lt; 1 &lt; N^{1/2} &lt; N &lt; N\log(\log(N)) &lt; N\log(N)$</p>
+<p>$= N\log(N^2) &lt; N\log^2N &lt; N^{1.5} &lt; N^2 &lt; N^2\log(N) &lt; N^3 &lt; 2^{N/2} &lt; 2^N$</p>
+<h2 id="general-rules-for-algorithm-analysis">General Rules for Algorithm Analysis</h2>
+<ol>
+<li>For loops: Number of statements $\times$ number of iterations</li>
+<li>Nested loops: Number of statements $\times$ loop1 $\times$ loop2 …</li>
+<li>Consecutive statements: Add them all.</li>
+<li>If/else statement: $\max(\text{if statement, else statement})$</li>
+</ol>
+<p>如果有函数调用，先计算被调用函数的复杂度。</p>
+<h1>Primary Examples of Algorithm</h1>
+<h2 id="fibonacci-sequence">Fibonacci Sequence</h2>
+<p>递归法：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FIB</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> FIB(n<span class="number">-1</span>)+FIB(n<span class="number">-2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>迭代法</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">FIB</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> prev1 = <span class="number">1</span>, prev2 = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> curr = <span class="number">2</span>, temp;</span><br><span class="line">    <span class="keyword">while</span>(curr &lt; n)&#123;</span><br><span class="line">        temp = prev1 + prev2;</span><br><span class="line">        prev1 = prev2;</span><br><span class="line">        prev2 = temp;</span><br><span class="line">        curr ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prev2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>迭代法数列形式</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> * <span class="title">FIB_arr_loop</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Fib_arr[<span class="number">1000</span>] = &#123;<span class="number">1</span>,<span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">        Fib_arr[i] = Fib_arr[i<span class="number">-1</span>] + Fib[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Fib_arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="maximum-subsequence-sum-problem">Maximum Subsequence Sum Problem</h2>
+<h3 id="exhaustive-strategy">Exhaustive Strategy</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> max = a[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; n; j++)&#123;</span><br><span class="line">        <span class="comment">// Sum a[i] to a[j] and update max;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="optimized-exhaustive-strategy">Optimized Exhaustive Strategy</h3>
+<p>穷举法中，可以有 $\sum \limits_{k=i}^j a[k] = \sum \limits_{k=i}^{j-1} a[k] + a[j]$</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> max = a[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">    <span class="keyword">int</span> this_sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = i; j &lt; n; j++)&#123;</span><br><span class="line">        this_sum += a[j];</span><br><span class="line">        max = max &gt; this_sum ? max : this_sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="divide-and-conquer">Divide-and-Conquer</h3>
+<p>思路：最大子串和只存在三种可能</p>
+<ol>
+<li>只存在于左边一半中</li>
+<li>只存在于右边一半中</li>
+<li>它穿过了中间，存在于左右两半中</li>
+</ol>
+<p>解决方案：</p>
+<ol>
+<li>Base case: 左半/右半只有 1 个或 0 个元素。</li>
+<li>对于任何 N &gt; 1 元素的序列，将其划分为两半。</li>
+<li>计算左半/右半的最大和，和跨过中间的子串的最大和。
+<ul>
+<li>跨过中间的子串的最大和算法：</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> LeftBorderSum = <span class="number">0</span>, RightBorderSum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> MaxLeftBorderSum, MAXRightBorderSum;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = center; i &gt;= left; i--)&#123;</span><br><span class="line">    LeftBorderSum += A[i];</span><br><span class="line">    <span class="comment">// Update MaxLeftBorderSum</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = center; i &lt;= left; i++)&#123;</span><br><span class="line">    RightBorderSum += A[i];</span><br><span class="line">    <span class="comment">// Update MaxRightBorderSum</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> MaxLeftBorderSum + MaxRightBorderSum;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在以上三种情况中选择最大的，就是此串的最大子串和。</li>
+</ol>
+<h3 id="the-best-algorithm">The Best Algorithm</h3>
+<p>思路：如果一个子串的和 &lt; 0，那它一定不是最后的最大子串和的前缀。因此只需要扫描一遍数组，如果某一段的和为负数，就直接将其忽略，从下一个元素开始计算。（同时更新全局最大子串和）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> this_sum = <span class="number">0</span>, max_sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>, best_i = <span class="number">0</span>, best_j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">    this_sum += a[j];</span><br><span class="line">    <span class="keyword">if</span>(this_sum &gt; max_sum)&#123;</span><br><span class="line">        max_sum = this_sum;</span><br><span class="line">        best_i = i;</span><br><span class="line">        best_j = j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(this_sum &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        i = j + <span class="number">1</span>;</span><br><span class="line">        this_sum = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> max_sum;</span><br></pre></td></tr></table></figure>
+<h2 id="binary-search">Binary Search</h2>
+<p>适用于已经排序的数组。</p>
+<ol>
+<li>比较数组中间元素与目标的大小</li>
+<li>如果中间元素较大，就在左子串中寻找；如果中间元素较小，就在右子串中寻找。（假设升序，降序亦然）</li>
+</ol>
+<h1>Abstract Data Type (ADT)</h1>
+<h2 id="list">List</h2>
+<h3 id="array-implementation">Array Implementation</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> number;</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">double</span> score;</span><br><span class="line">&#125; Array_List[<span class="number">20</span>];</span><br></pre></td></tr></table></figure>
+<p>优势：</p>
+<ul>
+<li>易于理解</li>
+<li>易于实现</li>
+<li>易于随机访问
+<ul>
+<li>访问任意元素复杂度 O(1)</li>
+<li>更新任意元素复杂度 O(1)</li>
+</ul>
+</li>
+</ul>
+<p>劣势：</p>
+<ul>
+<li>浪费空间</li>
+<li>难以重新组织元素
+<ul>
+<li>插入元素复杂度 O(n)</li>
+<li>删除元素复杂度 O(n)</li>
+</ul>
+</li>
+</ul>
+<h3 id="linked-list">Linked List</h3>
+<p>优势：</p>
+<ul>
+<li>易于更新元素（插入/删除）</li>
+<li>不需要提前分配空间</li>
+</ul>
+<p>劣势：</p>
+<ul>
+<li>难以实现</li>
+<li>无法实现随机访问</li>
+<li>需要额外的空间分配给指针</li>
+</ul>
+<h3 id="doubly-linked-list">Doubly Linked List</h3>
+<p>在链表的基础上为每一个节点增加一个指向前序节点的指针。</p>
+<p>Costs:</p>
+<ul>
+<li>增加了空间需求</li>
+<li>增加了插入和删除时需要处理的指针数量</li>
+</ul>
+<p>Benefits:</p>
+<ul>
+<li>将删除元素的时间复杂度降为 O(1)</li>
+<li>简化反向遍历</li>
+</ul>
+<h3 id="circularly-linked-list">Circularly Linked List</h3>
+<p>将链表首尾相连。</p>
+<h2 id="stack">Stack</h2>
+<p>Definition: a list with the restriction that insertions and deletions can be performed only at the top. The base of a stack is not allowed to operate directly.</p>
+<p>LIFO, last in first out.</p>
+<p>Fundamental operations:</p>
+<ul>
+<li>Top: get the value of the top cell</li>
+<li>Push: insert on the top</li>
+<li>Pop: delete the top</li>
+</ul>
+<h3 id="linked-list-implementation">Linked List Implementation</h3>
+<p>基础的链表实现，将 header 所指的对象认为是 top，所有的操作只能够对 header 所指向的 node 进行。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> element;</span><br><span class="line">    PtrToNode next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> * <span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> PtrToNode Stack;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Asserting s is not empty.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Top</span><span class="params">(Stack s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s-&gt;next-&gt;element;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">int</span> x, Stack s)</span></span>&#123;</span><br><span class="line">    PtrToNode tmp;</span><br><span class="line">    <span class="comment">// malloc space for tmp and fill in the element x</span></span><br><span class="line">    tmp-&gt;next = s-&gt;next;</span><br><span class="line">    s-&gt;next = tmp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pop</span><span class="params">(Stack s)</span></span>&#123;</span><br><span class="line">    PtrToNode first = s-&gt;next;</span><br><span class="line">    s-&gt;next = s-&gt;next-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(first);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，置空 Stack 是通过反复调用 Pop 完成的。</p>
+<h3 id="array-implementation-v2">Array Implementation</h3>
+<p>实现方法：</p>
+<ol>
+<li>声明一个数组 stack[MaxSize]</li>
+<li>声明 int TopOfStack 作为 cursor</li>
+<li>TopOfStack == -1 表示堆栈是空的</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">StackRecord</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> capacity;</span><br><span class="line">    <span class="keyword">int</span> top;</span><br><span class="line">    <span class="keyword">int</span> * <span class="built_in">array</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">StackRecord</span> * <span class="title">Stack</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Asserting s is neither full nor empty.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Top</span><span class="params">(Stack s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s-&gt;<span class="built_in">array</span>[s-&gt;top];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">int</span> x, Stack s)</span></span>&#123;</span><br><span class="line">    s-&gt;top ++;</span><br><span class="line">    s-&gt;<span class="built_in">array</span>[s-&gt;top] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Pop</span><span class="params">(Stack s)</span></span>&#123;</span><br><span class="line">    s-&gt;top --;  <span class="comment">// No need to clean the top cell.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外，置空 Stack 只需要直接将 s-&gt;top = -1, 无需对数组进行任何操作。</p>
+<h3 id="application-maze-solving">Application: Maze Solving</h3>
+<p>解决方案：</p>
+<ol>
+<li>访问(1,1)，即 Push(1,1).</li>
+<li>对于访问到的每个位置，如果它就是出口，那么问题解决。如果不是，那就依次尝试访问上下左右四个紧邻的位置。</li>
+<li>如果被尝试访问的紧邻位置 P 满足以下两个条件就 Push§，否则跳过
+<ol>
+<li>不是墙</li>
+<li>（全局）从未被访问过</li>
+</ol>
+</li>
+<li>如果当前 Stack 顶部的位置 Q 的四个方向都被尝试过无法访问，那就 Pop(Q)，并尝试访问 Pop 后 Stack 顶部的位置的下一个方向。</li>
+<li>如果 Stack 最终为空，则没有可行路径。</li>
+</ol>
+<h2 id="queue">Queue</h2>
+<p>Fundamental operations:</p>
+<ul>
+<li>Enqueue: inserts an element at the rear of the list.</li>
+<li>Dequeue: deletes (and returns) the element at the front of the list.</li>
+</ul>
+<p>FIFO, first in first out.</p>
+<h3 id="circular-array-implementation">Circular Array Implementation</h3>
+<p>实现方法：</p>
+<ol>
+<li>声明一个数组 queue[MaxSize]</li>
+<li>声明 int front, rear, size 来记录信息</li>
+<li>将数组在逻辑上首尾相连</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">QueueRecord</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> capacity;</span><br><span class="line">    <span class="keyword">int</span> front;</span><br><span class="line">    <span class="keyword">int</span> rear;</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    <span class="keyword">int</span> * <span class="built_in">array</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QueueRecord</span> * <span class="title">Queue</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Asserting q is neither full nor empty.</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Succ</span><span class="params">(<span class="keyword">int</span> position, Queue q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(++position == q-&gt;capacity)&#123;</span><br><span class="line">        position = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Enqueue</span><span class="params">(<span class="keyword">int</span> x, Queue q)</span></span>&#123;</span><br><span class="line">    q-&gt;size++;</span><br><span class="line">    q-&gt;rear = Succ(q-&gt;rear,q);</span><br><span class="line">    q-&gt;<span class="built_in">array</span>[q-&gt;rear] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Dequeue</span><span class="params">(Queue q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = Front(q);</span><br><span class="line">    q-&gt;size--;</span><br><span class="line">    q-&gt;front = Succ(q-&gt;front,q);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="application-maze-solving-floodfill-algorithm">Application: Maze Solving - FloodFill Algorithm</h3>
+<p>洪水算法的本质是一个树形结构，通过逐步向外遍历迷宫的方式，使得存储信息的树上第 i 层上有所有第 i 步可以到达的节点。这个算法能够找到迷宫的最短路径。</p>
+<p>利用 Queue 来实现树的遍历与保存。</p>
+<p>Queue 中每个 cell 保存的信息：</p>
+<ul>
+<li>index: 这个 cell 在整个队列中的序号</li>
+<li>position: cell 中位置的坐标</li>
+<li>pre: 到达这个位置的前一步位置的 cell 所在队列中的序号</li>
+</ul>
+<p>注意此时的队列不是循环的，大小是 $m\times n$，Dequeue 之后不清除前面的信息，最后检索整个路径时需要回溯。</p>
+<p>解决方案：</p>
+<ol>
+<li>Enqueue 起点</li>
+<li>Dequeue 并且获得 Front，记为 P. 测试它可以走的各个方向上的位置，如果这个位置 Q 既没有被访问过，也不是墙，就 Enqueue(Q)，注意记录此时的 pre 为 P 的 index</li>
+<li>反复 2 直到：
+<ol>
+<li>找到终点，通过不断跟踪 pre 找到整条路径</li>
+<li>队列为空时仍然没有找到终点，则没有任何可能的路径</li>
+</ol>
+</li>
+</ol>
+<h2 id="binary-trees">Binary Trees</h2>
+<p>Definition: a tree in which a node can have 0, 1 or 2 children.</p>
+<p>二叉树的深度：</p>
+<ul>
+<li>Worst case: $N - 1$</li>
+<li>Best case: $O(\log(N))$</li>
+<li>Average case: $O(\log(N))$ ~ $O(N^{1/2})$</li>
+</ul>
+<p>Implementation:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span> * <span class="title">PtrToNode</span>;</span></span><br><span class="line"><span class="keyword">typedef</span> PtrToNode Tree;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> element;</span><br><span class="line">    Tree left;</span><br><span class="line">    Tree right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Height</span><span class="params">(Tree t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t == <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + max(Height(t-&gt;left),Height(t-&gt;right));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="tree-traversal">Tree Traversal</h3>
+<p>四种遍历树的方式：</p>
+<ul>
+<li>Inorder 中序遍历
+<ul>
+<li>Left sub-tree → (Node) Data → Right sub-tree</li>
+</ul>
+</li>
+<li>Postorder 后序遍历
+<ul>
+<li>Left sub-tree → Right sub-tree → (Node) Data</li>
+</ul>
+</li>
+<li>Preorder 后序遍历
+<ul>
+<li>(Node) Data → Left  sub-tree → Right sub-tree</li>
+</ul>
+</li>
+<li>Level-order 层次遍历
+<ul>
+<li>广度优先，先遍历所有 D 深度的节点，再遍历 D + 1 深度的节点</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Inorder</span><span class="params">(Tree t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        Inorder(t-&gt;left);</span><br><span class="line">        Visit(t-&gt;element);</span><br><span class="line">        Inorder(t-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Postorder and Preorder are similar.</p>
+<p>层次遍历需要使用一个队列来完成。</p>
+<p>解决方案：</p>
+<ol>
+<li>声明一个和节点数同样大小的 Queue, 以及游标 rear, front</li>
+<li>Enqueue 根节点</li>
+<li>Dequeue 并且获取 front, 访问 front 的元素，并且 Enqueue 此时 front 的所有子节点</li>
+<li>反复进行 (3) 直到队列为空为止</li>
+</ol>
+<h3 id="threaded-binary-tree">Threaded Binary Tree</h3>
+<p>想法：任意 N 个节点的树中都有 N+1 个空指针，将这些空指针指向其前驱或后继，以提高遍历的效率。需要创建额外的变量来表达某个指针是线索还是子节点。</p>
+<p>以中序线索二叉树（需要做中序遍历的二叉树）为例：
+实现方法：</p>
+<ul>
+<li>如果节点没有左子节点，让其左指针指向其中序访问时的前驱</li>
+<li>如果节点没有右子节点，让其右指针指向其中序访问时的后继</li>
+</ul>
+<p>例如对于下左二叉树，中序遍历的顺序为 B → D → C → A → E, 因此将其线索化为下右图
+<img src="https://s2.ax1x.com/2019/01/04/FTCMnA.png" width="300">    <img src="https://s2.ax1x.com/2019/01/04/FTCUXj.png" width="300"></p>
+<p>进行中序线索化时，需要一个全局变量来记录全局的前驱后继，以修改节点的空指针。</p>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<p>特性：</p>
+<ul>
+<li>每一个节点的值是不相同的。</li>
+<li>每个节点左子树上所有节点的值都小于该节点。</li>
+<li>每个节点右子树上所有节点的值都大于该节点。</li>
+</ul>
+<p>基本操作：</p>
+<ul>
+<li>MakeEmpty(): 采用后序遍历，free 每个节点</li>
+<li>Find(): 类似二分查找</li>
+<li>FindMin(): 找到整棵树最左侧的节点</li>
+<li>FindMax(): 找到整棵树最右侧的节点</li>
+<li>Insert(): 在树 t 中插入元素 x
+<ol>
+<li>Find(x,t)</li>
+<li>如果 x 被查找到，结束。（每个节点值不同，不能重复插入）</li>
+<li>否则，将 x 插入到查找过程中遍历的最后一个节点的子节点，注意比较大小。</li>
+</ol>
+<ul>
+<li>x 将永远被作为一个 leaf（没有后继节点）</li>
+</ul>
+</li>
+<li><span id="normalDelete"></span>Delete(): 在树 t 中删除元素 x
+<ol>
+<li>Find(x,t), 记为节点 P</li>
+<li>如果 P 是一个 leaf，直接删除</li>
+<li>如果 P 只有一个子节点 Q, 无论 Q 是左/右子节点，都直接将 P 的父节点指向 P 的指针指向 Q</li>
+<li>如果 P 有两个子节点 M, N （分别为左，右）:
+<ol>
+<li>将 P 上的元素<strong>替换</strong>为 N 和 N 的所有子节点中最小的元素 FindMin(N), 记为 O</li>
+<li>删除 O，此时 O 必然没有左子节点，因此化归到 (2) 或者 (3) 的情况</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+<p>当所有节点都只有一个子节点（除了最后一个节点）时，实际上成为了 List, 各种操作的复杂度会上升为 $O(N)$</p>
+<h2 id="avl-tree">AVL Tree</h2>
+<p>Definition: A Binary Search Tree with restriction: For every node in the tree, the height of its left and right sub-trees can differ by at most 1.</p>
+<ul>
+<li>The height of an empty tree is -1.</li>
+<li>The height of an one-node tree is 0.</li>
+</ul>
+<h3 id="insertion-and-rotation">Insertion and Rotation</h3>
+<p>在 BST 的插入节点操作之后，可能会使 AVL Tree 不再平衡，这里就需要引入旋转操作来保持平衡。</p>
+<p>某个节点 I (Imbalanced) 不满足平衡条件的四种情况：</p>
+<ol>
+<li>I 的左子节点 L 的左子树中插入了节点 X，&quot;/&quot;</li>
+<li>I 的左子节点 L 的右子树中插入了节点 X，&quot;&lt;&quot;</li>
+<li>I 的右子节点 R 的左子树中插入了节点 X，&quot;&gt;&quot;</li>
+<li>I 的右子节点 R 的右子树中插入了节点 X，&quot;\&quot;</li>
+</ol>
+<p>注意虽然插入某个节点 X 这一操作的“瞬间”会影响从 X 到根节点的所有节点，改变其左右子树高度差，但调整是<strong>从下向上</strong>回溯的。
+从插入的节点向上更新高度和高度差，将第一个不平衡的节点记为 I, I 本身会先进行旋转调整保持自身平衡，此时其高度不变，因此其所有父节点的左右子树高度差不变，不会发生旋转。</p>
+<p>另外，这里声明一个老师 PPT 上没有的“轴”的概念便于理解。它从图上看是每次旋转发生的轴，同时也是被调整的树完成调整后的根节点，记为 A(Axis).</p>
+<h4 id="single-rotation">Single Rotation</h4>
+<p>适用于 case 1 &amp; 4, 即&quot;/“和”\“的情况。这里仅以”/&quot;情况为例，另一侧为镜像。</p>
+<p>这张图表示得非常清楚，5 对应 I, 3 对应 L, 1 插入的位置是在 3 的左子树。此时 A == L.</p>
+<img src="https://s2.ax1x.com/2019/01/04/FTZzpq.png">
+<p>旋转时发生的事件：</p>
+<ol>
+<li><strong>I 的左指针指向 A 的右指针</strong></li>
+<li>A 的右指针指向 I</li>
+<li>【图中未显示】将原先 I 的父节点指向 I 的指针现在指向 A。
+<ul>
+<li>例如上图中原先 5 可能是 7 的左子节点，那么在旋转完成后，7 的左指针指向 3，并且 7 和以上级别的节点不需要进行调整，因为现在以 3 为根节点的子树的深度和插入前没有变化</li>
+<li>这个指针的说法很繁琐，可以用“<strong>返回 A</strong>”来代替。将事件看作：对于 I 的父节点 U(unaffected) 而言，其左子树(I)中发生的一切都是在黑箱中完成的，U 只需要接收黑箱输出的一个节点作为其左子节点即可，而“返回 A”就是这个黑箱输出 A.</li>
+</ul>
+</li>
+</ol>
+<p>另外，如果图中 2 和 4 不存在，即 3 的右节点是 NULL，1 直接是 3 的左节点，则以上描述的步骤仍然完全相同。</p>
+<h4 id="double-rotation">Double Rotation</h4>
+<p>适用于 case 2 &amp; 3, 即&quot;&lt;“和”&gt;“的情况。这里仅以”&lt;&quot;情况为例，另一侧为镜像。</p>
+<p>仍然注意 50 对应 I, 40 对应 L, 47 插入的位置是在 L 的右子树。这里 A 是 L 的右子节点。</p>
+<img src="https://s2.ax1x.com/2019/01/04/FTegg0.png">
+<p>旋转时发生的事件：</p>
+<ol>
+<li>对 A 进行向左的单旋转
+<ol>
+<li>L 的右指针指向 A 的左子节点（这里是 NULL）</li>
+<li>A 的左指针指向 L</li>
+<li>返回 A</li>
+</ol>
+</li>
+<li>对 A 再进行一次向右的单旋转
+<ol>
+<li>I 的左指针指向 A 的右子节点</li>
+<li>A 的右指针指向 I</li>
+<li>返回 A</li>
+</ol>
+</li>
+<li>最终返回 A</li>
+</ol>
+<p>双旋转就是两个方向的两次单旋转而已。</p>
+<ul>
+<li>case 2 - “左子节点右子树”，单旋转先向左再向右</li>
+<li>case 3 - “右子节点左子树”，单旋转先向右再向左</li>
+</ul>
+<h3 id="deletion">Deletion</h3>
+<p>这一部分在老师的 PPT 上完全没有提到，全部由自己的思考完成，可能有误。</p>
+<p>实现方案：</p>
+<ol>
+<li>首先进行<a href="#normalDelete">正常的删除操作</a>。</li>
+<li>从被删除的节点开始向上回溯检查是否存在不平衡，找到不平衡的节点。</li>
+<li>对于该不平衡的节点 I ，其不平衡的原因有两种情况（以下记 L 为 I 的左子树，R 为 I 的右子树：
+<ol>
+<li>类似于插入时四种情况：
+<ol>
+<li>L 的高度比 R 的右子树少 1，即&quot;\&quot;</li>
+<li>L 的高度比 R 的左子树少 1，即&quot;&gt;&quot;</li>
+<li>R 的高度比 L 的右子树少 1，即&quot;&lt;&quot;</li>
+<li>R 的高度比 L 的左子树少 1，即&quot;/&quot;</li>
+</ol>
+</li>
+<li>其中一方的两个子节点具有同样的高度：
+<ol>
+<li>L 的高度比 R 的两颗子树都少 1</li>
+<li>R 的高度比 L 的两颗子树都少 1</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>显然其中一半的状况是对称的，因此只讨论另一半状况。</p>
+<p><em>【灵魂画手上线】</em>
+<img src="https://s2.ax1x.com/2019/01/04/FT39js.png"></p>
+<p>假设 L 在删除前存在一个子节点，此时 I 是平衡的，删除的对象是 L 的子节点，此后产生不平衡。
+对于第一种和第二种情况，分别直接按照插入时对于 “&gt;” 和 &quot;\&quot;的处理方法，进行 Double Rotate 和 Single Rotate 就可以完成。
+对于第三种情况，检验发现直接以 R 为轴进行 Single Rotate，可以直接恢复平衡。</p>
+<img src="https://s2.ax1x.com/2019/01/04/FTG7jJ.png">
+<p>与插入不同的是，删除某一个节点引起的树的调整，可能让该树的高度减小，而并非如插入那样调整后能保证不变。因此一次删除可能会造成全局层面多颗子树的调整。</p>
+<p>代码实现：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">AvlTree <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> x, AvlTree t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Position tmp;</span><br><span class="line">	<span class="keyword">if</span> (t == <span class="literal">NULL</span>) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"Element not found.\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// Start locating x</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (x &lt; t-&gt;element) &#123;</span><br><span class="line">		t-&gt;left = Delete(x, t-&gt;left);</span><br><span class="line">		t-&gt;height = <span class="number">1</span> + MaxSubTreeHeight(t);    <span class="comment">// Remember to update the height.</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (x &gt; t-&gt;element) &#123;</span><br><span class="line">		t-&gt;right = Delete(x, t-&gt;right);</span><br><span class="line">		t-&gt;height = <span class="number">1</span> + MaxSubTreeHeight(t);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// Finish locating t, now t-&gt;element == x</span></span><br><span class="line">    <span class="comment">// Start processing the standard deleting procedure.</span></span><br><span class="line">		<span class="keyword">if</span> (t-&gt;left &amp;&amp; t-&gt;right) &#123;  <span class="comment">// Case when the element to be deleted has two nodes.</span></span><br><span class="line">			tmp = FindMin(t-&gt;right);</span><br><span class="line">			t-&gt;element = tmp-&gt;element;</span><br><span class="line">			t-&gt;right = Delete(t-&gt;element, t-&gt;right);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;  <span class="comment">// Case when the element to be deleted has one node.</span></span><br><span class="line">			tmp = t;</span><br><span class="line">			<span class="keyword">if</span> (t-&gt;left == <span class="literal">NULL</span>) &#123;</span><br><span class="line">				t = t-&gt;right;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (t-&gt;right == <span class="literal">NULL</span>) &#123;</span><br><span class="line">				t = t-&gt;left;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">free</span>(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">// Finish standard deleting procedure.</span></span><br><span class="line">    <span class="comment">// Start adjusting.</span></span><br><span class="line">	<span class="keyword">if</span> (t != <span class="literal">NULL</span> &amp;&amp; IntervalBetweenSubHeight(t) == <span class="number">2</span>) &#123;    <span class="comment">// If t is unbalanced</span></span><br><span class="line">		<span class="keyword">if</span> (Height(t-&gt;left) &gt; Height(t-&gt;right)) &#123;   <span class="comment">// If L is deeper than R, resembling "/" or "&lt;" in insertion case.</span></span><br><span class="line">			<span class="keyword">if</span> (t-&gt;left-&gt;left == <span class="literal">NULL</span> &amp;&amp; t-&gt;left-&gt;right != <span class="literal">NULL</span>) &#123;  <span class="comment">// Case "&lt;"</span></span><br><span class="line">				t = DoubleRotateWithLeft(t);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;  <span class="comment">// Case "/"</span></span><br><span class="line">				t = SingleRotateWithLeft(t);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;  <span class="comment">// If R is deeper than L, resembling "\" or "&gt;" in insertion case.</span></span><br><span class="line">			<span class="keyword">if</span> (t-&gt;right-&gt;right == <span class="literal">NULL</span> &amp;&amp; t-&gt;right-&gt;left != <span class="literal">NULL</span>) &#123;    <span class="comment">// Case "&gt;"</span></span><br><span class="line">				t = DoubleRotateWithRight(t);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;  <span class="comment">// Case "\"</span></span><br><span class="line">				t = SingleRotateWithRight(t);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (t != <span class="literal">NULL</span>) &#123;</span><br><span class="line">		t-&gt;height = <span class="number">1</span> + MaxSubTreeHeight(t);    <span class="comment">// Updating height.</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1>Sorting</h1>
+<p>对于 N 个元素进行排序，这些元素当前存储在大小为 N 的数列内部。</p>
+<ul>
+<li>Internal Sorting （内部排序）：数据量较小，可以直接读取到内存中进行处理</li>
+<li>Expernal Sorting （外部排序）：数据量过大，无法直接读取到内存中，需要与外部存储进行 I/O</li>
+</ul>
+<blockquote>
+<p>此部分的复杂度分析相对重要，见<a href="#appendix-table-of-complexity-of-all-algorithms">所有复杂度汇总表格</a></p>
+</blockquote>
+<h2 id="bst-based-sorting">BST-Based Sorting</h2>
+<p>步骤：</p>
+<ol>
+<li>用数据构造一颗 BST</li>
+<li>进行 Inorder 遍历并且输出</li>
+</ol>
+<h2 id="naive-strategy-straight-selection-sort">Naive Strategy - Straight Selection Sort</h2>
+<p>步骤：</p>
+<ol>
+<li>扫描整个数列，找到最小元素</li>
+<li>将其与数列的第一个元素进行交换</li>
+<li>对数组的剩余部分重复以上步骤</li>
+</ol>
+<h2 id="insertion-sort">Insertion Sort</h2>
+<ol>
+<li>总共扫描 N - 1 次</li>
+<li>对于第 $p$ 次扫描 ( $p \in [1,N-1]$ ), 将下标为 $p$ 的元素不断与其左侧元素比较，如果顺序错误就调换位置，直至到达合适的位置。</li>
+<li>扫描完成后数列下标为 $[0,p]$ 的部分是有序的。</li>
+</ol>
+<h3 id="lower-bound-for-simple-sorting-algorithms">Lower Bound for Simple Sorting Algorithms</h3>
+<p>所有基于对于相邻元素的查找和交换的排序算法，平均时间复杂度都至少为$O(N^2)$</p>
+<h3 id="binary-insertion-sort">Binary Insertion Sort</h3>
+<ol>
+<li>总共扫描 N - 1 次</li>
+<li>对于第 $p$ 次扫描 ( $p \in [1,N-1]$ ), 将下标为 $p$ 的元素在数组的 $[0,p-1]$ 范围内进行二分查找。当然查找该元素不会有结果，目的是确定需要插入的位置</li>
+<li>将下标为 $p$ 的元素不断与其左侧元素交换直至到达 (2) 中确定的位置</li>
+</ol>
+<h2 id="bubble-sort">Bubble Sort</h2>
+<ol>
+<li>总共扫描 N - 1 次</li>
+<li>对于第 $p$ 次扫描 ( $p \in [1,N-1]$ ), 扫描的范围是 $[0,-p]$</li>
+<li>每次扫描从左至右，对于相邻的两个元素检查顺序是否正确，并进行适当调换。</li>
+<li>扫描完成后，数列$[-p,-1]$的部分是有序的。</li>
+</ol>
+<p>这里数组的范围用了 Python 的表示方法，$[-i]$ 表示倒数第i个元素。</p>
+<h2 id="shell-sort">Shell Sort</h2>
+<ol>
+<li>定义一个递减的“增量序列” $h_k, h_{k-1}, \ldots, h_1$, 满足递减且 $h_1=1$</li>
+<li>总共进行 $k$ 次以下进程：
+<ol>
+<li>将整个数组按增量 $h_k$ 分为 $k$ 组，组内元素下标分别满足 $0 + i_1 × h_k, 1 + i_2 × h_k, \ldots, k - 1 + i_k × h_k$.</li>
+<li>对每一组内部的元素，在各自的位置上进行 Insertion Sort</li>
+<li>进程结束后，每组内是有序的</li>
+</ol>
+</li>
+<li>第 $k$ 次进程，即增量为 1 的进程结束后，整个数列是有序的</li>
+</ol>
+<h2 id="merge-sort">Merge Sort</h2>
+<p>对于两个已经排序的序列 A &amp; B, 可以各通过一次扫描将其合成为一个有序序列。</p>
+<ol>
+<li>声明一个大小为 A &amp; B 大小之和的数列 S，声明两个游标分别指向 A &amp; B 的首个元素。</li>
+<li>比较两个游标所指的元素，对较小的那个，放入 S 中，相应游标后移</li>
+<li>某个已知数组中元素被完全放置后，按顺序将另一个已知数组的元素放入</li>
+</ol>
+<img src="https://s2.ax1x.com/2019/01/04/FTB3Vg.png" style="max-width: 500px !important">
+<p>归并排序的具体步骤：</p>
+<ol>
+<li>将整个数列二分，对两个子数列分别递归地调用归并排序使其有序</li>
+<li>用前述方法将两个子数列进行单次归并得到一个有序数列并返回</li>
+<li>递归的 base case 是数列长度为 1，此时直接返回</li>
+</ol>
+<h2 id="quick-sort">Quick Sort</h2>
+<h3 id="basic-algorithm">Basic Algorithm</h3>
+<p>对数列 X 进行排序:</p>
+<ol>
+<li>如果 X 中的元素个数为 0 或 1，那就直接返回</li>
+<li>确定一个 X 中的元素 v, 称之为 pivot 基准点</li>
+<li>将 X 中除了 v 以外的元素分为比 v 小的部分 S 和比 v 大的部分 L</li>
+<li>对 S 和 L 递归地调用 Quick sort 使其有序，并按 S, v, L 顺序返回</li>
+</ol>
+<h3 id="median-of-three-partitioning">Median-of-Three Partitioning</h3>
+<p>将一个数列的首元素、末元素和中间元素的中位数作为 pivot.</p>
+<p>基础算法中第 2、3 步的具体实现：（注意以下的 left, right 都是左闭右闭的，即 arr[right] 也在要排序的数组中）</p>
+<ol>
+<li>确定是 arr[left], arr[right] 还是 arr[center] 是 pivot</li>
+<li>将 pivot 与 arr[right] 交换</li>
+<li>声明两个游标 i 和 j, 分别指向 arr[left] 和 arr[right-1]</li>
+<li>循环以下过程，直到 j &lt; i 为止（j &lt; i 时不进行判断和交换）
+<ol>
+<li>将 i 向右移动，直到锁定某个大于 pivot 的元素</li>
+<li>将 j 向左移动，直到锁定某个小于 pivot 的元素</li>
+<li>交换此时的 arr[i] &amp; arr[j]</li>
+</ol>
+</li>
+<li>将 arr[i] 和现在处于 arr[right] 的 pivot 交换</li>
+<li>交换完成后 arr[i] 是 pivot, 即 Basic Algorithm 中描述的 v, 而 S 和 L 分别是对应的左右部分</li>
+</ol>
+<h4 id="improving-median-of-three">Improving Median-of-Three</h4>
+<p>在寻找 median of three 的过程中，需要进行三次判断，此时就可以直接进行交换，直接使得交换后的数列中首元素 &lt; 中间元素 &lt; 末元素。</p>
+<p>则此时中间元素是 pivot，且已知首元素 &lt; pivot &lt; 末元素, 因此在上一段 (2) 步骤中可以改为将 pivot 与 arr[right-1] 交换。i 初始化为 left + 1, j 初始化为 right - 2.</p>
+<h4 id="improving-small-arrays-issue">Improving Small Arrays Issue</h4>
+<p>对于小数列，快速排序可能表现比插入排序要差。</p>
+<p>设置某个 cutoff 值，在快速排序递归到数列长度小于 cutoff 时，转而使用插入排序。</p>
+<p>Cutoff 通常被设置为 3.</p>
+<h2 id="table-sort">Table Sort</h2>
+<p>当某个数字只是一个 key, 连带还有很多其他数据，要根据这个 key 排序时，直接对所有的数据进行交换等是没有效率的。</p>
+<p>此时建立另一个数列 T 来储存记录的顺序。
+在排序之前，将 T 初始化为 T[i] = i. 排序完成的结果是 data[T[i]].key 从小到大有序。</p>
+<img src="https://s2.ax1x.com/2019/01/04/FTglSH.png">
+<p>排序的过程中应用前面的基础排序算法，将 arr[i] 在进行大小比较时用 data[T[i]].key 代替，交换时用 T[i] 代替。</p>
+<p>在完成了 T 的调整，使得 data[T[i]].key 有序之后，可以高效地对所有数据本身进行物理排序。</p>
+<p>要做到这一点，需要通过移动数据，使得数据的下标与 T “对齐”。可以证明表排序将会形成数个分离的组，各个组将会形成循环圈。按照循环圈的方向逆向转动一次就可以完成排序，如图所示。</p>
+<img src="https://s2.ax1x.com/2019/01/04/FT20UK.png">
+<p>开辟一个与数据大小相同的暂存空间，利用其对每一组循环圈进行交换，最终达成“下标与 T 对齐”, 此时 key 即有序。</p>
+<h2 id="bucket-sort">Bucket Sort</h2>
+<p>默认数组 arr 中都是自然数。</p>
+<ol>
+<li>需要外部信息（或进行一遍扫描），获取数列中最大元素的大小 m</li>
+<li>声明一个大小为 m + 1 的数组 count (可访问下标最大为 m), 并且其中元素全部初始化为 0.</li>
+<li>扫描 arr, 将 count[arr[i]] 置为 1.</li>
+<li>从左至右扫描 count, 将每个 count[k] == 1 的 k 输出，则输出记录就是排序完成的结果。</li>
+</ol>
+<p>注意如果 arr 中存在重复元素，只要将上面 (3) 修改为 count[arr[i]]++, 将 (4) 修改为将 k 输出 count[k] 次即可，这对于后面的基数排序是有重要作用的。</p>
+<h2 id="radix-sort">Radix Sort</h2>
+<ol>
+<li>获取数列中最高的位数 P，总共进行 P 次桶排序</li>
+<li>每一次桶排序中，只对于某一个数位进行排序，从右到左（从个位到高位），注意入桶和出桶时按照<s>某种玄妙的</s>顺序</li>
+</ol>
+<img src="https://s2.ax1x.com/2019/01/04/FTW7Bn.png" style="max-width: 450px !important;" align="middle">
+<p><span id="radixExp"></span></p>
+<p>在复杂度 $O(P(N+B))$ 中，P 是最高的位数，N 是元素数量，B 是桶的数量（也就是每一位上的最大值）。</p>
+<h2 id="external-sorting">External Sorting</h2>
+<p>对于不能够直接读入内存的大数据，对其进行分块，在每个小区块完成排序之后通过归并排序的方式，直接在硬盘上合并成大块。最后合并的过程涉及到大量的硬盘 I/O.</p>
+<h2 id="stability">Stability</h2>
+<p>当一个数组中存在重复的元素时，如果一个排序算法不会交换这两个元素的位置，那就称该算法为 stable, 否则为 unstable.</p>
+<p>Stable algorithms:</p>
+<ul>
+<li>Bubble</li>
+<li>Insert</li>
+<li>BST</li>
+<li>Merge</li>
+<li>Bucket</li>
+<li>Radix</li>
+</ul>
+<p>Unstable algorithms:</p>
+<ul>
+<li>Selection</li>
+<li>Shell</li>
+<li>Quick</li>
+<li>Pancake</li>
+</ul>
+<h1>Hashing</h1>
+<h2 id="hash-table-and-hash-function">Hash Table and Hash Function</h2>
+<p>哈希表是一个固定大小 TableSize 的数组，每个 key 通过哈希函数映射到 0 到 TableSize - 1 中的某个数 i ，将 key 存在 table[i] 中。</p>
+<p>理想情况下，哈希函数需要容易计算，并且能够保证两个不同的 key 映射到的 i 不同，也就是不产生碰撞。</p>
+<p>可能的哈希函数选择方法：</p>
+<ul>
+<li>如果 key 是正整数，i = mod(key, TableSize)
+<ul>
+<li>TableSize 经常被设置为质数</li>
+<li>如果 key 的分布均匀，可以得到较好的结果</li>
+<li>可能存在 key 的分布造成结果非常差</li>
+</ul>
+</li>
+<li>如果 key 是字符串
+<ol>
+<li>将所有字符的 ASCII 码相加，再对 TableSize 取模</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> index;</span><br><span class="line"></span><br><span class="line"><span class="function">index <span class="title">Hash</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * key, <span class="keyword">int</span> TableSize)</span></span>&#123;</span><br><span class="line">    index hashVal = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(*key != <span class="string">'\0'</span>)&#123;</span><br><span class="line">        hashVal += *key;</span><br><span class="line">        key++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> hashVal % TableSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>建立一种 27 进制的方法，令 TableSize = 10007, 假设所有的字符串都有至少三位</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">index <span class="title">Hash</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span> * key, <span class="keyword">int</span> TableSize)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (key[<span class="number">0</span>] + <span class="number">27</span>*key[<span class="number">1</span>] + <span class="number">729</span>*key[<span class="number">2</span>]) % TableSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="collision-resolution">Collision resolution</h2>
+<p>碰撞几乎是不可避免的，需要解决碰撞的策略。</p>
+<h3 id="separate-chaining">Separate Chaining</h3>
+<p>对于数列中的每一个 cell, 用一个链表来保存被哈希到这个值的所有 key.</p>
+<p>搜索某个元素时，首先通过哈希函数找到 i ，再用遍历链表的方式遍历 arr[i] 为头节点的链表。</p>
+<p><span id="scExp"></span></p>
+<p>Load factor 装填因子 $\lambda$ = number of elements / TableSize = average length of lists</p>
+<p>Ideal $\lambda$ should approach 1.</p>
+<p>$\lambda \ll 1$ means the table is not adequately utilized.
+$\lambda \gg 1$ means there are too many collisions.</p>
+<p>However, $\lambda = 1$ itself does not mean best efficiency.</p>
+<p>Disadvantage:</p>
+<ul>
+<li>Allocate new cells in memory</li>
+<li>Complex data structure</li>
+<li>No random accessibility advantage</li>
+</ul>
+<h3 id="open-addressing">Open Addressing</h3>
+<p>只能在 TableSize &gt;= Number of Elements 的时候使用。
+对某个将要插入的 x, 如果发生了碰撞，就对 $h_i(x) = (\operatorname{Hash}(x) + F(i)) \operatorname{mod} \text{TableSize}$, 其中 $F(0)=0$.</p>
+<h4 id="linear-probing">Linear Probing</h4>
+<p>$F(i)=i$. 即发生碰撞后，对其对应的哈希值 +1, +2,… 进行尝试。</p>
+<h4 id="quadratic-probing">Quadratic Probing</h4>
+<p>$F(i)=i^2$. 具体实现见代码块：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Position <span class="title">Find</span><span class="params">(<span class="keyword">int</span> key, HashTable h)</span> </span>&#123;</span><br><span class="line">    Position current;</span><br><span class="line">    current = Hash(key, h-&gt;TableSize);</span><br><span class="line">    <span class="keyword">while</span>(h-&gt;thecells[current].info != Empty &amp;&amp; h-&gt;thecells[current].element != key)&#123;   <span class="comment">// While collisioning.</span></span><br><span class="line">        current += <span class="number">2</span>*current <span class="number">-1</span>;    <span class="comment">// Explain after the code block.</span></span><br><span class="line">        <span class="keyword">if</span>(current &gt;= h-&gt;TableSize)&#123;</span><br><span class="line">            current = current % h-&gt;TableSize;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> current;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> key, HashTable H)</span></span>&#123;</span><br><span class="line">    Position pos = Find(key, H);</span><br><span class="line">    <span class="keyword">if</span>(H-&gt;thecells[pos].info != Legitimate)&#123;</span><br><span class="line">        H-&gt;thecells[pos].info = Legitimate;</span><br><span class="line">        H-&gt;thecells[pos].element = key;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Explaining this statement:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">current += <span class="number">2</span>*current <span class="number">-1</span></span><br></pre></td></tr></table></figure>
+<p>$F(i) = F(i-1) + 2 \times i - 1$ for $F(i) = i^2$. 即所用的 $F(i)$ 的<strong>递推性质</strong>。</p>
+<h4 id="double-hashing">Double Hashing</h4>
+<p>$F(i) = i \times \operatorname{Hash}_2(x)$, where $\operatorname{Hash}_2(x)$ can be arbitrarily defined.</p>
+<h3 id="rehashing">Rehashing</h3>
+<p>如果目前的哈希表已经太满了，就可能导致运行的时间大大超出期望的 $O(1)$.</p>
+<p>解决方案是建立另一张大约两倍大小的哈希表，并且将原哈希表中的所有元素存到新哈希表中。</p>
+<h3 id="public-overflow-cache">Public Overflow Cache</h3>
+<p>当碰撞发生时，将新元素放入另一个公共的 overflow table.</p>
+<p>只适用于碰撞元素数量相对较小时。</p>
+<h1>Graph Algorithms</h1>
+<h2 id="definitions">Definitions</h2>
+<p>A graph G = (V,E) consists of a set of vertices V and a set of edges E.</p>
+<p>Each edge is a pair $(v, w)$, where $(v, w) \in E$, and $v, w \in V$.</p>
+<p>If the pair is ordered, then the graph is directed, called digraph. Each edge is then denoted as $&lt;v, w&gt;$, where $&lt;v, w&gt; \in E$, and $v, w \in V$.</p>
+<p>Vertex w is adjacent to v iff. $(v, w) \in E$ or $&lt;v, w&gt; \in E$.</p>
+<p>Sometimes an edge can have weight, cost, distance, etc.</p>
+<p>Path in a graph is a sequence of vertices $w_1, w_2, \ldots, w_n$, such that $(w_i, w_{i+1} \in E)$ for $1 \leq i &lt; n$. The length of the path is $n - 1$.</p>
+<p>The edge from a vertex to itself is a loop.</p>
+<p>A cycle in a digraph is a path of length at least 1 such that $w_1 = w_n$. A diagraph without cycles is acyclic, called DAG.</p>
+<p>Connection:</p>
+<ul>
+<li>connected - in an undirected graph, if there is a path from each vertex to any other vertex.</li>
+<li>strongly connected - in a directed graph, there is a path from each vertex to any other vertex.</li>
+<li>weakly connected - in a non-strongly-connected directed graph, the underlying undirected graph is connected.</li>
+</ul>
+<p>In a digraph, for each edge $&lt;v,w&gt;$, $v$ is called the tail and $w$ is called the head.</p>
+<ul>
+<li>Indegree: number of edges with the vertex as head</li>
+<li>Outdegree: number of edges with the vertex as tail</li>
+<li>Degree: the number of edges linked to the vertex.
+<ul>
+<li>Degree = Indegree + Outdegree</li>
+<li>Number of edges = $\sum$ Indegree = $\sum$ Outdegree</li>
+</ul>
+</li>
+</ul>
+<h2 id="representation">Representation</h2>
+<h3 id="adjacency-matrix">Adjacency Matrix</h3>
+<p>一个方阵 matrix, 维度为 Vertex 的数量。</p>
+<ul>
+<li>有向图中， matrix[i][j] == 0 表示从 Vertex i 到 Vertex j 没有 Edge, 若为 1 表示有</li>
+<li>有权重的有向图中， matrix[i][j] 表示从 Vertex i 到 Vertex j 的权重，另外 matrix[i][j] == $\infty$ 也可以表示没有 Edge</li>
+</ul>
+<p>Let $|V|$ represents the number of vertices and $|E|$ represents the number of edges, the space requirement is $O(|V|^2)$</p>
+<p>If $|E|=O(|V|^2)$ then array implementation is appropriate, other wise the sparsity wastes space.</p>
+<h3 id="adjacency-list">Adjacency List</h3>
+<p>一个数组，数组的每个元素是一个链表，链表的头节点是数组下标对应的 Vertex, 后续的节点是这个 Vertex 的 directed edge 所指向的各个 Vertex.</p>
+<h3 id="degrees">Degrees</h3>
+<ul>
+<li>Calculate the indegree of vertex x:
+<ul>
+<li>Adjacenct Matrix: scan matrix[x][i]</li>
+<li>Adjacency List: scan the whole list</li>
+</ul>
+</li>
+<li>Calculate the outdegree of vertex x:
+<ul>
+<li>Adjacenct Matrix: scan matrix[i][x]</li>
+<li>Adjacency List: scan list[x] and find how many descendant nodes are there.</li>
+</ul>
+</li>
+</ul>
+<h2 id="topological-sort">Topological Sort</h2>
+<p>Definition: an ordering of vertices in a DAG, such that if there is a path from $v_i$ to $v_j$, then $v_j$ appears after $v_i$ in the ordering.</p>
+<p>Topological ordering is NOT possible for a digraph with cycle. The ordering is NOT necessarily unique.</p>
+<h3 id="preliminary-implementation">Preliminary Implementation</h3>
+<p>实现方案：</p>
+<ol>
+<li>如果当前的图不是空的，就找到任何 Indegree == 0 的节点 v，否则就结束</li>
+<li>输出 v, 并且将它和所有连接着它的 edge 从图中抹去，同时更新所有节点的 Indegree</li>
+<li>重复 (1) 和 (2) 直到没有节点为止</li>
+</ol>
+<h3 id="optimization-strategy">Optimization Strategy</h3>
+<p>每次循环中，重新扫描全图并且找到 Indegree 为 0 的节点是低效的。新的符合要求的节点必然与刚刚被消除的点相邻。</p>
+<p>利用 Queue 结构（Dequeue 后不清除记录，最终回溯整个队列获得排序）：</p>
+<ol>
+<li>扫描全图获得所有节点的 Indegree 并保存</li>
+<li>Enqueue 目前所有的 0-indegree vertex</li>
+<li>Dequeue 并获得 front, 将所有 front 连接着的 vertex 的 Indegree - 1</li>
+<li>找到新的 0-indegree vertex, Enqueue all of them</li>
+<li>循环直到结束</li>
+<li>Queue 中的记录就是拓扑排序的结果</li>
+</ol>
+<h2 id="shortest-path-algorithms">Shortest-Path Algorithms</h2>
+<p>两个术语：</p>
+<ul>
+<li>BFS - Breadth First Search 广度优先</li>
+<li>DFS - Depth First Search 深度优先</li>
+</ul>
+<h3 id="unweighted-shortest-path">Unweighted Shortest Path</h3>
+<p>思路：</p>
+<ol>
+<li>确定出发点 v</li>
+<li>找到所有从 v 出发一步能够到达的点，这些点的最短路径距离为 1</li>
+<li>将以上点作为基准，找到它们临近的点（v 除外），这些点的最短路径距离为 2</li>
+<li>循环以上过程直到整张图被遍历</li>
+</ol>
+<p>这是一种 BFS, 在过程中需要保存 3 个信息：</p>
+<ol>
+<li>到 s 的距离，dist</li>
+<li>到达这个点时作为基准的节点，path</li>
+<li>这个点是否已经被探测过了，known</li>
+</ol>
+<p>具体实现利用 Queue：</p>
+<ol>
+<li>Enqueue v, 其 dist = 1, path = -1 (to mark as the entrance)</li>
+<li>Dequeue 并且获取 front, 将所有 front 可以一步到达的，unknown 的点 Enqueue</li>
+<li>循环以上过程直到所有点 Known</li>
+</ol>
+<p>输出某个节点的路径时，根据 path 的值不断回溯。</p>
+<h3 id="dijkstra-s-algorithm-for-weighted-graph">Dijkstra’s Algorithm for Weighted Graph</h3>
+<p>Dijkstra’s Algorithm is a typical “Greedy Strategy”.</p>
+<p>思路：</p>
+<ol>
+<li>A graph $G = (V,E)$ can be divided into 2 parts, Known and Unknown</li>
+<li>Initially, Known = {starting vertex}, $U = V -$ Known</li>
+<li>For $v \in$ Known, the shortest path is denoted as $\operatorname{Dist}(v)$</li>
+<li>The set of edges crossing Known and Unknown is denoted as $E’ = {&lt;v,w&gt;|v\in \operatorname{Known}, w\in \operatorname{Unknown}, &lt;v,w&gt; \in E}$</li>
+<li>The edge $&lt;v’,w’&gt;$ that can achieve the smallest $\operatorname{Dist}(v) + \operatorname{cost}(v’,w’)$ among all pairs of $&lt;v,w&gt;$ in $E’$ is the shortest path to vertex $w’$</li>
+<li>Update Known and Unknown</li>
+<li>Loop until the end</li>
+</ol>
+<p>注意每一次循环的时候是遍历从已知部分到未知部分的所有节点对，用这对中已知节点的最短路径距离 + 两者之间的路径距离，得到未知节点从这条路到达的最短路径距离。每个未知节点在这一步中可能被包括在不同节点对中，有不同的路径距离值（通过不同的路径到达）。最终选取的是<strong>全局</strong>层面上，所有节点对给出的路径距离中最短的一个。</p>
+<h3 id="critical-path-analysis">Critical Path Analysis</h3>
+<h4 id="representation-v2">Representation</h4>
+<p>In an acyclic graph, each node represents an activity and the time it takes to complete it. The edges represent dependence relationships.</p>
+<p>The graph is known as an activity-node graph.</p>
+<p>Activity-Node Graph can be transformed into an Event-Node Graph.</p>
+<p>In an event-node graph, a node represents completion of an activity, whose incoming edge represents the activity.</p>
+<p>Dummy nodes and edges are involved to ensure the right dependencies.</p>
+<img src="https://img-blog.csdn.net/20150511211048164">
+<img src="https://img-blog.csdn.net/20150511211041126">
+<p>The edges that have 0 weight are dummy edges.</p>
+<p>Dummy edges 之后跟着的节点都是 dummy nodes. 或者从另一个角度看，dummy nodes 可以由多个 edge 到达，而表示事件结束的 node 只能由 1 个 edge 到达。</p>
+<h4 id="earliest-completion-time">Earliest Completion Time</h4>
+<p>The earliest time that a completion-node can be achieved.</p>
+<p>$EC_i$ 表示节点 i 的 earliest completion time.</p>
+<p>计算方法：</p>
+<ol>
+<li>$EC_1 = 0$</li>
+<li>$EC_w = \max(EC_v + c_{v,w})$ for all $&lt;v,w&gt; \in E$</li>
+</ol>
+<h4 id="latest-completion-time">Latest Completion Time</h4>
+<p>The latest completion time that each event can finish <strong>without</strong> affecting the final earliest completion time.</p>
+<p>$LC_i$ 表示节点 i 的 latest completion time.</p>
+<p>计算方法：</p>
+<ol>
+<li>计算终点的 earlist completion time $EC_n$</li>
+<li>$LC_v = \min(LC_w - c_{v,w})$, for all $&lt;v,w&gt;\in E$.</li>
+</ol>
+<p>从末尾节点进行倒推。</p>
+<h4 id="slack-time">Slack Time</h4>
+<p>The amount of slack time that each completion-edge can be delayed without delaying the overall completion.</p>
+<p>计算方法：
+$\operatorname{Slack}&lt;v,w&gt; = LC_v - EC_v$</p>
+<h4 id="brief-summary">Brief Summary</h4>
+<p>通过图片来更直观地理解：</p>
+<img src="https://s2.ax1x.com/2019/01/05/F7pzBn.png">
+<ul>
+<li>第一张图表示 Earliest Completion Time</li>
+<li>第二张图表示 Latest Completion Time</li>
+<li>两者之间的滑动（箭头）表示可以调整的空间，也即 Slack Time</li>
+</ul>
+<h3 id="all-pairs-shortest-path">All-Pairs Shortest Path</h3>
+<p>Definition: Given the non-negative directed graph, calculate the all-pairs shortest paths, from i to j for any pair &lt;i, j&gt; in V.</p>
+<h4 id="executing-v-times-dijkstra">Executing |V| times Dijkstra</h4>
+<p>Executing |V| times Dijkstra’s Algorithm, each of which starts from vertex 1, 2, …, |V|.</p>
+<h4 id="simple-algorithm">Simple Algorithm</h4>
+<p>用 Adjacency Matrix 来表示给定的图，记为$L^{(1)}$, 矩阵中的值定义如下：</p>
+<ul>
+<li>$L^{(1)}_{vw} = 0$ 表示 $v = w$</li>
+<li>$L^{(1)}_{vw} = \text{cost/distance value of edge} &lt;v,w&gt;$</li>
+<li>$L^{(1)}_{vw} = \infty$, 表示从 $v$ 到 $w$ 没有路径</li>
+</ul>
+<p>整体而言，$L^{(1)}_{vw}$ 表示了从 $v$ 到 $w$ 在 1 步范围内的情况。</p>
+<p>下一步，建立矩阵 $L^{(2)}$, $L^{(2)}_{vw}$ 表示从 $v$ 到 $w$ 两步之内能够达到的最短路径。</p>
+<p>建立的规则为：$L^{(2)}<em>{vw} = \min (L^{(1)}</em>{vw}, L^{(1)}<em>vx + L^{(1)}</em>{xw}), \forall x \in V$.</p>
+<p>具体而言，它表示从 $v$ 到 $w$ 时以节点 $x$ 作为桥梁，检查所有可能的 $x$ 找到最短路径。同时记录中介 $x$.</p>
+<p>递推地，建立矩阵 $L^{(k)}$, $L^{(k)}_{vw}$表示的是从 $v$ 到 $w$ 经过 k 步内的最短路径。其递推式完全同理。在记录中介节点时，如果中介节点也有它的中介节点，也一并记录。即每个位置记录路径的部分都是从 $v$ 到 $w$ 的所有中间节点。</p>
+<p>递推过程形象地表示如下，记上述的矩阵操作为 $\otimes$：</p>
+<img src="https://s2.ax1x.com/2019/01/05/F7a2ee.png">
+<p>以求 $C_{23}$ 为例，则取 $L_t$ 的 Row 2 和 $L_1$ 的 Columns 3 （注意下标是从 1 开始，为了和 PPT 一致）。对荧光笔划出的四对数，分别求和$a_{21}+b_{13}, \ldots, a_{24}+b_{43}$, 取这四个和中的最小值，即为 $C_{23}$ 的值，其余元素同理。</p>
+<p><span id="attribute"> </span>
+可以证明，当 $k \geq |V| -1$ 时，$L^{(k)} = L^{(|V|-1)}$. 因此迭代计算出 $L^{(|V|-1)}$ 就可以得到最终的 all-pairs shortest path.</p>
+<h5 id="optimizations">Optimizations</h5>
+<h6 id="path-storage">Path Storage</h6>
+<p>在存储路径时，不存储每个中间节点，而是只存储直接到达的中介节点。如果需要整条路径通过不断回溯获得。</p>
+<p>具体实现：</p>
+<ul>
+<li>通过一个同样维度的矩阵 $\operatorname{Path}[i][j]$, 来记录上述的直接到达的中间节点。</li>
+<li>$\operatorname{Path}[i][j] = -1$ 表示不需要中介</li>
+<li>回溯输出时，如果 $\operatorname{Path}[i][j] \neq -1$ ，则策略如下：
+<ol>
+<li>令 $\operatorname{Path}[i][j] = k$ 方便后续表示</li>
+<li>输出 $k$</li>
+<li>观察同一行的第 $k$ 列元素 $l$
+<ol>
+<li>若 $l = -1$, 则输出结束</li>
+<li>若 $l \neq -1$, 则说明这是更前序的一个中介，将 $k$ 更新为 $l$，重复上一级 (2) 步骤</li>
+</ol>
+</li>
+<li>以上方法输出的是逆序的路径，若需要正序路径则将其反转即可</li>
+</ol>
+</li>
+</ul>
+<img src="https://s2.ax1x.com/2019/01/05/F7u8Fe.png">
+<h6 id="hopping-recursion">Hopping Recursion</h6>
+<p>In order to get $L^{(2k)}$, instead of obtaining $L^{(2k-1)} \otimes L^{(1)}$, we can obtain $L^{(k)} \otimes L^{(k)}$.</p>
+<p>This decrease the numbers of matrix $\otimes$ from $|V|$ to $\log |V|$.</p>
+<h6 id="local-updating">Local Updating</h6>
+<p>Instead of creating a new matrix to store the result of $\otimes$, update the value in the original matrix.</p>
+<p>这样的话，在同一个矩阵空间内，分别得到的是 $L^{(1)}, L^{(2)}, L^{(4)}, \ldots, L<sup>{(2</sup>n)}$, 无法精确地得到每一步的值，但由于<a href="#attribute">前述</a>当 $k \geq |V| -1$ 时，$L^{(k)} = L^{(|V|-1)}$ 的性质，只需要迭代到 $2^n \geq |V|-1$ 就可以达到正确答案。</p>
+<h4 id="floyd-warshall-alogrithm">Floyd-Warshall Alogrithm</h4>
+<p>Definitions:</p>
+<ul>
+<li>$D^{(0)}_{vw}$ is the shortest path with no intermediate;</li>
+<li>$D^{(1)}_{vw}$ is the shortest path with intermediate vertex 1;</li>
+<li>$D^{(k)}_{vw}$ is the shortest path with intermediate vertex 1, 2, …, k;</li>
+</ul>
+<p>算法：$D^{(k)}<em>{vw} = \min (D^{(k-1)}</em>{vw}, D^{(k-1)}<em>{vk} + D^{(k-1)}</em>{kw})$.</p>
+<p>理解：从 $v$ 到 $w$，以 $1,2,\ldots,k$ 为中介的最短路径，是以下两者中的最小值：</p>
+<ul>
+<li>$D^{(k-1)}_{vw}$, 即与 $k$ 无关，$k - 1$ 时的最短路径仍然是 $k$ 时的最短路径</li>
+<li>从 $v$ 到 $k$ 的最短路径 + 从 $k$ 到 $w$ 的最短路径，两者分别可以以 $1,2,\ldots,k-1$ 为中介，即 $D^{(k-1)}<em>{vk}+ D^{(k-1)}</em>{kw}$</li>
+</ul>
+<p>初始的 $D^{(0)}$ 为原始的路径图。</p>
+<ul>
+<li>0 代表 $v=w$</li>
+<li>数字代表距离</li>
+<li>$\infty$ 代表从 $v$ 到 $w$ 没有直接路径</li>
+</ul>
+<p>迭代直到获得 $D^{(|V|)}_{vw}$, 这是考虑了全图的最终 all-pair shortest path.</p>
+<p>以求 $D^{(3)}$ 为例：</p>
+<img src="https://s2.ax1x.com/2019/01/05/F7wOGn.png">
+<p>深蓝色与红色的数字表示框中对应的 $d_{ij}$ 元素，浅蓝色的加号表示正常的数字相加。例如 <font color="0033cc">1</font> <font color="33ccff">+</font> <font color="ff3333">4</font> 表示的是 $d_{31} + d_{43}$, 以此类推。</p>
+<p>最终得到的 $e_{ij}$ 是 $D^{(2)}$ 和 $D^*$ 中 $ij$ 位置元素之间较小的值。</p>
+<p>注意因为求的是 $D^{(3)}$, 因此选择第 3 行第 3 列，下标从 1 开始。</p>
+<p>整个算法从 $D^{(0)}$ 出发，计算到 $D^{(4)}$，也即遍历过每一行每一列结束。</p>
+<h2 id="network-flow-problem">Network Flow Problem</h2>
+<p>考虑一个水流系统，“水流”从 $s$ 流向 $t$. 对于一条边 $&lt;v,w&gt;$, 其权重表示这条边可以经过的最大流量。</p>
+<p>Network Flow Problem 要解决从 $s$ 流向 $t$ 的最大流量。</p>
+<h3 id="simple-algorithm-v2">Simple Algorithm</h3>
+<p>对一张给定的 $G$, 画出 $G_f$ 和 $G_r$, 分别表示已经找到的流量和剩余的流量。</p>
+<p>初始状态：</p>
+<ul>
+<li>两张图的节点和边的位置与原图完全相同。</li>
+<li>$G_f$ 每条边的 value 为 0</li>
+<li>$G_f$ 每条边的 value 与 $G$ 相同</li>
+</ul>
+<p>实现过程：</p>
+<ol>
+<li>在 $G_r$ 中找到任意一条从 $s$ 到 $t$ 的路径</li>
+<li>找到这个路径上所有的边的 value 的最小值 $m$</li>
+<li>将 $G_r$ 这条路径上的所有边的 value 减去 $m$, 将 $G_f$ 这条路径上的所有边的 value 加上 $m$
+<ul>
+<li>注意当 $G_r$ 中有边的 value 为 0 时，就要删去这条边，不能再经过</li>
+</ul>
+</li>
+<li>重复以上过程，直到 $G_r$ 中没有任何可行的从 $s$ 到 $t$ 的路径为止</li>
+</ol>
+<p>初始情况: (left - $G_f$, right - $G_r$)
+<img src="https://s2.ax1x.com/2019/04/28/EQjTCq.png"></p>
+<p>选择完第一次路径之后的情况：
+<img src="https://s2.ax1x.com/2019/04/28/EQjI5n.png"></p>
+<p>算法得到的答案<strong>不一定是正确的</strong>。</p>
+<h3 id="modification">Modification</h3>
+<p>在每次从 $G_r$ 这条路径上的所有边 $&lt;v,w&gt;$ 的 value 减去 $m$ 时，增加一条 value 相同的 $&lt;w,v&gt;$ （反向）的边。</p>
+<p>这样就能保证答案的正确性。</p>
+<p>具体的实现可以使用 Unweighted Shortest Path 算法。</p>
+<p><span id="expMaxFlow"></span></p>
+<p>算法的复杂度为 $O(f \times |E|)$, 其中 $f$ 为最终的最大流量结果。</p>
+<h2 id="minimum-spanning-tree">Minimum Spanning Tree</h2>
+<p>Consider a cost weighted graph, when asked to traverse the graph with the lowest cost, then a minimum spanning tree will be constructed.</p>
+<p>Constructing the minimum spanning tree is to find the most cost-efficient N-1 edges to connect N verices.</p>
+<h3 id="prim-s-algorithm">Prim’s Algorithm</h3>
+<ul>
+<li>将所有的节点划分为两个集合，其一是已经被包含在树内的 (A)，其二是未被包含在树内的 (B)。</li>
+<li>遍历从 A 到 B 的所有可能路径，将其中最短的一条路径那端的节点加入树中，这条路径作为树的连接。</li>
+</ul>
+<p>本质与 <a href="#dijkstras-algorithm-for-weighted-graph">Dijkstra’s Algorithm</a>完全相同。</p>
+<h3 id="kruskal-s-algorithm">Kruskal’s Algorithm</h3>
+<p>解决方案：</p>
+<ol>
+<li>从全局的所有边中，依次选出选中最小的边</li>
+<li>如果这条边不会与已有的边形成回环，就将其包括入树中。否则，将其废弃</li>
+<li>循环，直到树中的边的数量达到 $|V|-1$ 为止</li>
+</ol>
+<p><em>PPT: Think about how to avoid a cycle. 以下是我参考资料后给出的想法，不保证正确性。</em></p>
+<p>解决方案：</p>
+<ol>
+<li>在建立第一条边 $e_1$ 时，建立一个集合 $S_1$, 其中元素为 $e_1$ 两侧的两个节点。</li>
+<li>之后建立每一条边 $e$ 时，对于 $e$ 两端的节点 $v,w$：
+<ol>
+<li>如果 $v,w$ 都不在任意 $S_i$ 中，就新建立一个集合 $S_{n+1}$</li>
+<li>如果 $v,w$ 中有一个在某个特定的 $S_k$ 中，另一个不在任何 $S_i$ 中，那就将这“另一个”加入 $S_k$</li>
+<li>如果 $v,w$ 分别属于两个特定的 $S_p, S_q$, 那就合并 $S_p, S_q$</li>
+<li>如果 $v,w$在同一个 $S_k$ 中，那么就会形成回环，这条边应当被舍弃</li>
+</ol>
+</li>
+</ol>
+<img src="https://s2.ax1x.com/2019/01/05/F7yYVK.png" width="600">
+<p>例如在上图中，如果下一条将要加入的边两侧的节点为：</p>
+<ul>
+<li>4 和 6: 合并 $S_1, S_2$</li>
+<li>4 和 2: 同属于 $S_1$ 中，此边应当废弃</li>
+<li>4 和 5: 将 5 加入 $S_1$ 中</li>
+</ul>
+<h1>Appendix: Table of Complexity of ALL algorithms</h1>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>项目</th>
+<th>Mean/Precise</th>
+<th>Worst</th>
+<th>Best</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>斐波那契数列</td>
+<td>递归</td>
+<td></td>
+<td>$O(\frac{5}{3}^N)$</td>
+<td>$O(\frac{3}{2}^N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>迭代</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>最小子串和</td>
+<td>穷举</td>
+<td>$O(N^3)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>优化</td>
+<td>$O(N^2)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Divide-and-Conquer</td>
+<td>$O(N\log N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>最佳</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>查找</td>
+<td>顺序</td>
+<td></td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>二分</td>
+<td></td>
+<td>$O(\log N)$</td>
+<td></td>
+</tr>
+<tr>
+<td>Array Lists</td>
+<td>PrintList</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Find</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Findkth</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Insert</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Delete</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linked Lists</td>
+<td>PrintList</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Find</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Findkth</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Insert</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Delete</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Linked List Implementation of Stacks</td>
+<td>IsEmpty</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateStack</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>MakeEmpty</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>DisposeStack</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Push</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Top</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Pop</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Array Implementation of Stacks</td>
+<td>IsEmpty</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateStack</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>MakeEmpty</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>DisposeStack</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Push</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Top</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Pop</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Array Implementation of Queue</td>
+<td>Enqueue</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dequeue</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IsEmpty</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>IsFull</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>CreateQueue</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>MakeEmpty</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>DisposeQueue</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Succ</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Front</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>找到迷宫路径</td>
+<td>Stacks</td>
+<td></td>
+<td>$O(N\times M)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Queue</td>
+<td></td>
+<td>$O(N\times M)$</td>
+<td></td>
+</tr>
+<tr>
+<td>Binary Tree</td>
+<td>四种遍历</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Height（函数）</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Binary Search Tree</td>
+<td>MakeEmpty</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Find</td>
+<td>Roughly $O(\log N)$</td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>FindMin</td>
+<td>Roughly $O(\log N)$</td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>FindMax</td>
+<td>Roughly $O(\log N)$</td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Insert</td>
+<td>Roughly $O(\log N)$</td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Delete</td>
+<td>Roughly $O(\log N)$</td>
+<td>$O(N)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Depth（层数空间复杂度）</td>
+<td>$O(\log N)$</td>
+<td>$O(N)$</td>
+<td>$\left\lfloor \log N\right\rfloor$</td>
+</tr>
+<tr>
+<td></td>
+<td>Depth after $O(N^2)$ random insert/delete</td>
+<td>$O(N^{1/2})$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Sorting</td>
+<td>BST-Based Sorting (Time)</td>
+<td>$O(N\log N)$</td>
+<td>$O(N^2)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>BST-Based Sorting (Space)</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Straight Selection Sort</td>
+<td>$O(N^2)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Insertion Sort</td>
+<td>$O(N^2)$</td>
+<td>$O(N^2)$</td>
+<td>$O(N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>Binary Insertion Sort</td>
+<td>$O(N^2)$</td>
+<td>Little better than Insertion Sort</td>
+<td>Little worse than Insertion Sort</td>
+</tr>
+<tr>
+<td></td>
+<td>Bubble Sort</td>
+<td>$O(N^2)$</td>
+<td>$O(N^2)$</td>
+<td>$O(N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>Shell Sort (General)</td>
+<td>$N/A$</td>
+<td>$N/A$</td>
+<td>$O(N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>Shell Sort (1,2,4,…,$2^k$)</td>
+<td></td>
+<td>$O(N^2)$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Shell Sort (1,3,7,…,$2^k-1$)</td>
+<td></td>
+<td>$O(N^{3/2})$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Merge Sort (Time)</td>
+<td>$O(N\log N)$</td>
+<td>$O(N\log N)$</td>
+<td>$O(N\log N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>Merge Sort (Space)</td>
+<td>$O(N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Quick Sort (Time)</td>
+<td>$O(N\log N)$</td>
+<td><a href="#qsdetail">Detail</a></td>
+<td>$O(N\log N)$</td>
+</tr>
+<tr>
+<td></td>
+<td>Quick Sort (Space)</td>
+<td>$O(1)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Table Sort Rearrangement</td>
+<td>$O(N)$</td>
+<td>$3N/2$</td>
+<td>$N+1$</td>
+</tr>
+<tr>
+<td></td>
+<td>Bucked Sort (Time)</td>
+<td>$O(M+N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Bucked Sort (Space)</td>
+<td>$O(M)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Radix Sort (Time) <a href="#radixExp">explanation</a></td>
+<td>$O(P(N+B))$</td>
+<td>$O(P(N+B))$</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Radix Sort (Space)</td>
+<td>$O(B \times N)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hash Table Searching</td>
+<td>Separate Chaining <a href="#scExp">explanation</a></td>
+<td>$1+\lambda/2$</td>
+<td>$1+\lambda$</td>
+<td></td>
+</tr>
+<tr>
+<td>Adjacency Matrix</td>
+<td>Indegree</td>
+<td>$O(|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Outdegree</td>
+<td>$O(|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Adjacency List</td>
+<td>Indegree (one vertex)</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Outdegree (one vertex)</td>
+<td>$O(|E|/|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>InsertEdge</td>
+<td>$O(|E|/|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Indegree (whole graph)</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Outdegree (whole graph)</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Topological Sort</td>
+<td>Straight</td>
+<td>$O(|V|^2)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Optimized</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Critical Path Analysis</td>
+<td>Unweighted Shortest Path</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Dijkstra</td>
+<td>$O(|V|^2)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Earliest Completion Time</td>
+<td>$O(|E|+|V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>All-Pairs Shortest Path</td>
+<td>|V| times Dijkstra</td>
+<td>$O(|V|^3)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Simple Matrix Iteration</td>
+<td>$O(|V|^4)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Optimized Matrix Iteration</td>
+<td>$O(|V|^3 \log |V|)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Floyd-Warshall</td>
+<td>$O(|V|^3)$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Network Flow Problem <a href="#expMaxFlow">explanation</a></td>
+<td></td>
+<td>$O(f\times |E|)$</td>
+<td></td>
+</tr>
+<tr>
+<td>Minimum Spanning Tree</td>
+<td>Prim</td>
+<td>$O(|V|^2)$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span id="qsdetail"> </span>
+Detail of the worst case efficiency of Quick Sort:</p>
+<p>对于基础算法，理论上的最差情况是 $O(N^2)$, 但是通过 Median-of-Three 等策略，可以进行规避，实际达到 $O(N\log N)$, 考试时如果遇到，会声明具体的场景。</p>
+<h1>List of Some Topics not Involved</h1>
+<p>因为<s>我觉得</s>不考所以跳过的一些部分：</p>
+<ul>
+<li>Page Rank</li>
+<li>B-Tree</li>
+<li>Computational Complexity of External Merge Sorting</li>
+<li>Pancake Sort</li>
+<li>Text Pattern Matching
+<ul>
+<li>Brute Force Algorithm</li>
+<li>KMP Algorithm</li>
+</ul>
+</li>
+<li>Social Network Analysis</li>
+</ul>
+
+      </div>
+      
+      <footer class="post-footer">
+        <div class="post-tags">
+            <a href="/tags/Study/">Study</a>
+            </div>
+        
+        <nav class="post-nav"><a class="prev" href="/2019/01/11/CheatSheet-share/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">概统 & 公司金融 Cheat Sheet</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    <a class="next" href="/2019/01/05/DSA-summary/">
+        <span class="next-text nav-default">数据结构自学报告【划去】期末整理</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></footer>
+    </article></div><div class="comments" id="comments"></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2015 - 2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Vopaaz</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>
